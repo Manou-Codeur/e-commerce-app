@@ -1,13 +1,13 @@
 .nav-bar {
   display: flex;
-  padding: 0 5rem;
-  height: 6rem;
+  padding: 0 5em;
+  height: 6em;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid rgba(128, 128, 128, 0.192);
 
   &__links {
-    margin: 0 1rem;
+    margin: 0 1em;
     text-decoration: none;
     color: black;
     font-weight: 500;
@@ -34,7 +34,7 @@
   }
 
   &__logo {
-    height: 5rem;
+    height: 5em;
   }
 
   &__right-part {
@@ -42,13 +42,12 @@
   }
 
   ion-icon {
-    font-size: 2rem;
+    font-size: 2em;
     display: none;
   }
 
   &__mobile {
-    transition: all 1s;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 100%;
     width: 100%;
@@ -58,6 +57,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: all 1s ease 0s;
 
     ion-icon {
       position: absolute;
@@ -70,11 +70,15 @@
       color: white;
       text-decoration: none;
       font-weight: 500;
-      margin: 1rem 0;
+      margin: 1em 0;
     }
   }
 
   @media only screen and (max-width: 800px) {
+    & {
+      font-size: 12px;
+    }
+
     &__left-part,
     &__right-part {
       display: none;

@@ -1,6 +1,8 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 
+import Search from "./../search/search";
+
 import "./navBar.scss";
 import Logo from "../../../assets/logo.png";
 
@@ -28,11 +30,9 @@ const NavBar = () => {
           Kids
         </Link>
       </div>
-
       <a href="/home">
         <img className="nav-bar__logo" src={Logo} alt="logo" />
       </a>
-
       <div className="nav-bar__right-part">
         <a href="#" className="nav-bar__links">
           Search
@@ -45,6 +45,7 @@ const NavBar = () => {
         </Link>
       </div>
 
+      {/* Down here is the mobile version of this nav bar */}
       <ion-icon
         name="menu"
         className="nav-bar__menu-bar"
@@ -77,6 +78,9 @@ const NavBar = () => {
           MyCart(1)
         </Link>
       </div>
+
+      {/* down here is the condition rendering of search and sing in components */}
+      {/* <Search /> */}
     </div>
   );
 };
