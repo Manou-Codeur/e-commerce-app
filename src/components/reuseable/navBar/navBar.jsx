@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 import Search from "./../search/search";
 
 import "./navBar.scss";
-import Logo from "../../../assets/logo.png";
+import Logo from "../../../assets/img/logo.png";
+import { ReactComponent as Close } from "../../../assets/img/close.svg";
+import { ReactComponent as Menu } from "../../../assets/img/menu.svg";
 
 const NavBar = () => {
   const mobileNav = useRef();
@@ -30,9 +32,11 @@ const NavBar = () => {
           Kids
         </Link>
       </div>
+
       <a href="/home">
         <img className="nav-bar__logo" src={Logo} alt="logo" />
       </a>
+
       <div className="nav-bar__right-part">
         <a href="#" className="nav-bar__links">
           Search
@@ -46,18 +50,11 @@ const NavBar = () => {
       </div>
 
       {/* Down here is the mobile version of this nav bar */}
-      <ion-icon
-        name="menu"
-        className="nav-bar__menu-bar"
-        onClick={showMenu}
-      ></ion-icon>
+      <Menu className="nav-bar__menu-bar" onClick={showMenu} stroke="black" />
 
       <div className="nav-bar__mobile" ref={mobileNav}>
-        <ion-icon
-          name="close"
-          className="nav-bar__close"
-          onClick={hideMenu}
-        ></ion-icon>
+        {/* <img src={Close} className="nav-bar__close" onClick={hideMenu} /> */}
+        <Close className="nav-bar__close" onClick={hideMenu} fill="white" />
 
         <Link className="nav-bar__links--white" to="/men">
           Men
@@ -80,7 +77,7 @@ const NavBar = () => {
       </div>
 
       {/* down here is the condition rendering of search and sing in components */}
-      {/* <Search /> */}
+      <Search />
     </div>
   );
 };

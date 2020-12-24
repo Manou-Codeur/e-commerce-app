@@ -41,8 +41,8 @@
     display: inherit;
   }
 
-  ion-icon {
-    font-size: 2em;
+  &__menu-bar {
+    height: 2em;
     display: none;
   }
 
@@ -59,11 +59,11 @@
     align-items: center;
     transition: all 1s ease 0s;
 
-    ion-icon {
+    .nav-bar__close {
       position: absolute;
       top: 5%;
       right: 10%;
-      color: white;
+      height: 2em;
     }
 
     .nav-bar__links--white {
@@ -77,15 +77,15 @@
   @media only screen and (max-width: 800px) {
     & {
       font-size: 12px;
+
+      &__menu-bar {
+        display: initial;
+      }
     }
 
     &__left-part,
     &__right-part {
       display: none;
-    }
-
-    ion-icon {
-      display: initial;
     }
   }
 }

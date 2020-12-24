@@ -1,7 +1,46 @@
-.search {
+.search--background {
   position: absolute;
-  border: 2px solid red;
+  background-color: rgba(0, 0, 0, 0.342);
   width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
+
+  .search {
+    width: 100%;
+    min-height: 35%;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2em;
+    align-items: center;
+
+    &__logo {
+      height: 5em;
+      margin-top: -10em;
+    }
+
+    &__core {
+      height: 13em;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    &__close-containner {
+      margin-top: -10em;
+      background-color: whitesmoke;
+      width: 2.5em;
+      height: 2.5em;
+      border-radius: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      .search__close-icon {
+        height: 1.7em;
+      }
+    }
+  }
 }
