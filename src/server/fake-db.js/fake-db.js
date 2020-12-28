@@ -2,6 +2,7 @@ export const shoes = {
   men: [
     {
       name: "Air Jordan Elevation",
+      id: "1",
       colors: {
         blue: {
           1: "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/d7e2664c-32ec-4f85-a882-93a0f6c66059/chaussure-de-basketball-jordan-react-elevation-pour-3MNcdW.jpg",
@@ -25,6 +26,7 @@ export const shoes = {
     },
     {
       name: "air Jordan XI",
+      id: "2",
       colors: {
         black: {
           1: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a7258139-517f-40e0-980a-d7fbd1fecef3/chaussure-air-jordan-11-retro-4N2GN7.jpg",
@@ -36,6 +38,7 @@ export const shoes = {
     },
     {
       name: "Nike Zoom X",
+      id: "3",
       colors: {
         orange: {
           1: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/6317f4a9-6761-4113-b436-85a87a01795b/chaussure-dentrainement-en-endurance-zoomx-superrep-surge-pour-rg4m19.jpg",
@@ -59,6 +62,7 @@ export const shoes = {
     },
     {
       name: "Nike Legend",
+      id: "4",
       colors: {
         blue: {
           1: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a5d4c177-4ca1-472a-9c87-d693c3c6dcc6/chaussure-de-running-legend-react-3-shield-pour-wDskG9.jpg",
@@ -76,6 +80,7 @@ export const shoes = {
     },
     {
       name: "Adidas UQT",
+      id: "5",
       colors: {
         black: {
           1: "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/d5a344f7dcc644e58e71ac6400b31c52_9366/Chaussure_NMD_R1_Noir_FX6794_01_standard.jpg",
@@ -95,6 +100,7 @@ export const shoes = {
   women: [
     {
       name: "Adidas UQT",
+      id: "6",
       colors: {
         black: {
           1: "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/d5a344f7dcc644e58e71ac6400b31c52_9366/Chaussure_NMD_R1_Noir_FX6794_01_standard.jpg",
@@ -112,6 +118,7 @@ export const shoes = {
     },
     {
       name: "Stan Smith",
+      id: "7",
       colors: {
         white: {
           1: "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/10b5f3e893ad4464960aabd50106a569_9366/Chaussure_Stan_Smith_Blanc_FW2524_01_standard.jpg",
@@ -129,6 +136,7 @@ export const shoes = {
     },
     {
       name: "Adidas Falcon",
+      id: "8",
       colors: {
         white: {
           1: "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/2be71a96aa5c4d6886dfac2f0131b1ec_9366/Chaussure_Falcon_Blanc_FW2520_01_standard.jpg",
@@ -146,6 +154,7 @@ export const shoes = {
     },
     {
       name: "Air Force 1",
+      id: "9",
       colors: {
         pink: {
           1: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/te6y2d0eti6qsqyfvl6e/chaussure-air-force-1-sage-low-pour-zQtBPv.jpg",
@@ -165,6 +174,7 @@ export const shoes = {
   kids: [
     {
       name: "Nike Revolution 5",
+      id: "10",
       colors: {
         gray: {
           1: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a1ac8959-4b62-4576-a204-fb41cbe8bbba/chaussure-revolution-5-pour-petit-BgH6Fj.jpg",
@@ -176,6 +186,7 @@ export const shoes = {
     },
     {
       name: "Nike Vision",
+      id: "11",
       colors: {
         blue: {
           1: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/956338ac-3a10-4cbe-905f-d0f0494cfd2e/chaussure-react-vision-pour-plus-age-pSC5vz.jpg",
@@ -193,6 +204,7 @@ export const shoes = {
     },
     {
       name: "Nike Valiant",
+      id: "12",
       colors: {
         black: {
           1: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/47ea58af-3d36-4ba0-b3e9-03f30260b473/chaussure-md-valiant-pour-et-petit-0GDDx9.jpg",
@@ -209,6 +221,7 @@ export const clothes = {
   men: [
     {
       name: "Nike Sport Jacket",
+      id: "13",
       colors: {
         white: {
           1: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/6aec520c-f008-41a9-8f7a-e9884267d47a/sweat-a-capuche-entierement-zippe-camouflage-sportswear-tech-fleece-pour-hz0hfG.jpg",
@@ -222,6 +235,7 @@ export const clothes = {
     },
     {
       name: "Nike Sport T-chirt",
+      id: "14",
       colors: {
         red: {
           1: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/uiglb3jy9jve0nwfzzhf/haut-sportswear-club-fleece-LLwr0X.jpg",
@@ -235,6 +249,7 @@ export const clothes = {
     },
     {
       name: "Adidas Jacket",
+      id: "15",
       colors: {
         black: {
           1: "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/1c44aa24b1794f449804a88f00c2da3c_9366/Doudoune_a_capuche_Varilite_Soft_Gris_CY8738_01_laydown.jpg",
@@ -248,6 +263,7 @@ export const clothes = {
     },
     {
       name: "Adidas Sweat pants",
+      id: "16",
       colors: {
         red: {
           1: "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/ffeb37a255444a978a82ab8b00ab23c4_9366/Pantalon_de_survetement_Adicolor_Classics_Primeblue_SST_Rouge_GF0208_21_model.jpg",
@@ -263,6 +279,7 @@ export const clothes = {
   women: [
     {
       name: "Nike Swoosh Sweat Pants",
+      id: "17",
       colors: {
         black: {
           1: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a3bed5db-53fb-407a-8fc0-22f774d90b67/legging-taille-haute-sportswear-swoosh-pour-pf73R5.jpg",
@@ -272,6 +289,7 @@ export const clothes = {
     },
     {
       name: "Jordan Moto",
+      id: "18",
       colors: {
         black: {
           1: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/i1-9dea31af-bc80-421a-8721-8cc1d7bce9b2/haut-court-jordan-moto-pour-VjvdRq.jpg",
@@ -281,6 +299,7 @@ export const clothes = {
     },
     {
       name: "Adidas Stripes Shorts",
+      id: "19",
       colors: {
         red: {
           1: "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/686336201aff4afdb8f1ac4400e94cb6_9366/Short_Adicolor_Classics_3-Stripes_Rouge_GN2886_21_model.jpg",
@@ -294,6 +313,7 @@ export const clothes = {
     },
     {
       name: "Adidas Sweat Shirt",
+      id: "20",
       colors: {
         white: {
           1: "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/8b44ca6081664ac19f71ac85007988f1_9366/Sweat-shirt_Adicolor_Essentials_Blanc_H45584_21_model.jpg",
@@ -309,6 +329,7 @@ export const clothes = {
   kids: [
     {
       name: "Nike Woven Hoodies",
+      id: "21",
       colors: {
         green: {
           1: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/adc5b5f4-0bba-4913-9ee7-e53aa397be2a/sweat-a-capuche-tisse-entierement-zippe-sportswear-tech-fleece-pour-plus-age-htNWRC.jpg",
@@ -318,6 +339,7 @@ export const clothes = {
     },
     {
       name: "Nike Kids Jacket",
+      id: "22",
       colors: {
         white: {
           1: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/eb1ea280-d150-4f0e-bd53-9835cd0776b5/veste-deperlante-a-garnissage-synthetique-avec-effet-marbre-sportswear-pour-plus-age-M1PHkH.jpg",
@@ -327,6 +349,7 @@ export const clothes = {
     },
     {
       name: "Trefoil Shorts Tee Set",
+      id: "23",
       colors: {
         whiteRed: {
           1: "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/8c8ad68a7cb640678a6bac4600a18ed6_9366/Ensemble_Trefoil_Shorts_Tee_Rouge_ED7725_21_model.jpg",

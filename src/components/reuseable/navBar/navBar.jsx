@@ -40,14 +40,10 @@ const NavBar = () => {
       </a>
 
       <div className="nav-bar__right-part">
-        <a
-          href="#"
-          className="nav-bar__links"
-          onClick={() => setSearchAsked(true)}
-        >
+        <a className="nav-bar__links" onClick={() => setSearchAsked(true)}>
           Search
         </a>
-        <a href="#" className="nav-bar__links">
+        <a className="nav-bar__links">
           Sing In
         </a>
         <Link className="nav-bar__links" to="/cart">
@@ -72,15 +68,12 @@ const NavBar = () => {
           Kids
         </Link>
         <a
-          href="#"
           className="nav-bar__links--white"
           onClick={() => setSearchAsked(true)}
         >
           Search
         </a>
-        <a href="#" className="nav-bar__links--white">
-          Sing In
-        </a>
+        <a className="nav-bar__links--white">Sing In</a>
         <Link className="nav-bar__links--white" to="/cart">
           MyCart(1)
         </Link>
