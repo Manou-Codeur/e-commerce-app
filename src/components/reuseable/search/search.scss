@@ -46,6 +46,20 @@
     &__down-part {
       width: 100%;
       height: 70%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  @media only screen and (max-width: 540px) {
+    & {
+      font-size: 8px;
+    }
+  }
+
+  @media only screen and (max-width: 340px) {
+    .search__logo {
+      display: none;
     }
   }
 }
