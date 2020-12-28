@@ -76,7 +76,7 @@ const NavBar = () => {
         </Link>
       </div>
 
-      {/* down here is the condition rendering of search and sing in components */}
+      {/* down here is the condition rendering of search and singIn components */}
       <Search />
     </div>
   );

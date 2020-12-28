@@ -11,15 +11,18 @@ const Search = () => {
   return (
     <div className="search--background">
       <div className="search">
-        <img src={Logo} className="search__logo" />
+        <div className="search__up-part">
+          <img src={Logo} className="search__logo" />
 
-        <div className="search__core">
           <SearchInput />
-          <SearchResult />
+
+          <div className="search__close-containner">
+            <Close fill="black" className="search__close-icon" />
+          </div>
         </div>
 
-        <div className="search__close-containner">
-          <Close fill="black" className="search__close-icon" />
+        <div className="search__down-part">
+          <SearchResult />
         </div>
       </div>
     </div>
