@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 import Search from "./../search/search";
@@ -9,6 +9,8 @@ import { ReactComponent as Close } from "../../../assets/img/close.svg";
 import { ReactComponent as Menu } from "../../../assets/img/menu.svg";
 
 const NavBar = () => {
+  const [searchAsked, setSearchAsked] = useState(false);
+
   const mobileNav = useRef();
 
   const showMenu = () => {
@@ -38,7 +40,11 @@ const NavBar = () => {
       </a>
 
       <div className="nav-bar__right-part">
-        <a href="#" className="nav-bar__links">
+        <a
+          href="#"
+          className="nav-bar__links"
+          onClick={() => setSearchAsked(true)}
+        >
           Search
         </a>
         <a href="#" className="nav-bar__links">
@@ -65,7 +71,11 @@ const NavBar = () => {
         <Link className="nav-bar__links--white" to="/kid">
           Kids
         </Link>
-        <a href="#" className="nav-bar__links--white">
+        <a
+          href="#"
+          className="nav-bar__links--white"
+          onClick={() => setSearchAsked(true)}
+        >
           Search
         </a>
         <a href="#" className="nav-bar__links--white">
@@ -77,7 +87,9 @@ const NavBar = () => {
       </div>
 
       {/* down here is the condition rendering of search and singIn components */}
-      <Search />
+      {searchAsked ? (
+        <Search changeSearchState={() => setSearchAsked(false)} />
+      ) : null}
     </div>
   );
 };
