@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
-import Search from "./../search/search";
+import Search from "./search/search";
 
 import "./navBar.scss";
 import Logo from "../../../assets/img/logo.png";

@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 
-import HistoryContext from "./../../../../context/historyContext";
+import HistoryContext from "./../../../../../context/historyContext";
+
 import "./search-result.scss";
 
 const SearchResult = ({ filtredProducts }) => {

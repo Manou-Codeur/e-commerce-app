@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 
-import { ReactComponent as SearchIcon } from "../../../../assets/img/search.svg";
-import { ReactComponent as Close } from "../../../../assets/img/close.svg";
+import { ReactComponent as SearchIcon } from "../../../../../assets/img/search.svg";
+import { ReactComponent as Close } from "../../../../../assets/img/close.svg";
 import "./search-input.scss";
 
 const SearchInput = ({ onchange }) => {
