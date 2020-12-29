@@ -15,12 +15,6 @@ const Search = ({ changeSearchState }) => {
   const searchBackground = useRef("");
   const search = useRef("");
 
-  const closeSearch = () => {
-    searchBackground.current.style.animation = "back-search-out 1s";
-    search.current.style.animation = "search-out 1s";
-    setTimeout(changeSearchState, 800);
-  };
-
   const onQueryChange = ({ target }) => {
     setFiltredProducts(filterProducts(target.value));
   };
@@ -30,6 +24,7 @@ const Search = ({ changeSearchState }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
+      exit={{ opacity: 0 }}
       className="search--background"
       ref={searchBackground}
     >
@@ -39,6 +34,7 @@ const Search = ({ changeSearchState }) => {
         initial={{ y: "-100%" }}
         animate={{ y: "0%" }}
         transition={{ duration: 1 }}
+        exit={{ y: "-100%" }}
       >
         <div className="search__up-part">
           <img src={Logo} className="search__logo" />
@@ -49,7 +45,7 @@ const Search = ({ changeSearchState }) => {
             <Close
               fill="black"
               className="search__close-icon"
-              onClick={closeSearch}
+              onClick={changeSearchState}
             />
           </div>
         </div>

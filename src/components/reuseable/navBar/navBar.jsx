@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 
 import Search from "./search/search";
 
@@ -78,9 +79,11 @@ const NavBar = () => {
       </div>
 
       {/* down here is the condition rendering of search and singIn components */}
-      {searchAsked ? (
-        <Search changeSearchState={() => setSearchAsked(false)} />
-      ) : null}
+      <AnimatePresence>
+        {searchAsked ? (
+          <Search changeSearchState={() => setSearchAsked(false)} />
+        ) : null}
+      </AnimatePresence>
     </div>
   );
 };
