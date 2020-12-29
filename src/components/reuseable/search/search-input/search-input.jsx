@@ -4,7 +4,7 @@ import { ReactComponent as SearchIcon } from "../../../../assets/img/search.svg"
 import { ReactComponent as Close } from "../../../../assets/img/close.svg";
 import "./search-input.scss";
 
-const SearchInput = ({ inputState }) => {
+const SearchInput = ({ onchange }) => {
   const InputRef = useRef("");
 
   const clearInput = () => {
@@ -19,8 +19,7 @@ const SearchInput = ({ inputState }) => {
         type="text"
         placeholder="Type something..."
         ref={InputRef}
-        value={inputState.inputVal}
-        onChange={e => inputState.setInputVal(e.target.value)}
+        onChange={onchange}
       />
 
       <Close

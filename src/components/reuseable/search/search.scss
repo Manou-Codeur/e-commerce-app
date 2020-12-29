@@ -6,7 +6,7 @@
   top: 0;
   left: 0;
   overflow: hidden;
-  animation: back-search-in 1s ease;
+  // animation: back-search-in 1s ease;
 
   @keyframes back-search-in {
     from {
@@ -32,7 +32,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    animation: search-in 1s ease;
+    // animation: search-in 1s ease;
 
     @keyframes search-in {
       from {

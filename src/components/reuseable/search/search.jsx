@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 import SearchInput from "./search-input/search-input";
 import SearchResult from "./search-result/search-result";
@@ -9,12 +10,7 @@ import Logo from "../../../assets/img/logo.png";
 import { ReactComponent as Close } from "../../../assets/img/close.svg";
 
 const Search = ({ changeSearchState }) => {
-  const [inputVal, setInputVal] = useState("");
   const [filtredProducts, setFiltredProducts] = useState([]);
-
-  useEffect(() => {
-    if (inputVal !== "") setFiltredProducts(filterProducts(inputVal));
-  }, [inputVal]);
 
   const searchBackground = useRef("");
   const search = useRef("");
@@ -25,13 +21,29 @@ const Search = ({ changeSearchState }) => {
     setTimeout(changeSearchState, 800);
   };
 
+  const onQueryChange = ({ target }) => {
+    setFiltredProducts(filterProducts(target.value));
+  };
+
   return (
-    <div className="search--background" ref={searchBackground}>
-      <div className="search" ref={search}>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+      className="search--background"
+      ref={searchBackground}
+    >
+      <motion.div
+        className="search"
+        ref={search}
+        initial={{ y: "-100%" }}
+        animate={{ y: "0%" }}
+        transition={{ duration: 1 }}
+      >
         <div className="search__up-part">
           <img src={Logo} className="search__logo" />
 
-          <SearchInput inputState={{ inputVal, setInputVal }} />
+          <SearchInput onchange={onQueryChange} />
 
           <div className="search__close-containner">
             <Close
@@ -45,8 +57,8 @@ const Search = ({ changeSearchState }) => {
         <div className="search__down-part">
           <SearchResult filtredProducts={filtredProducts} />
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

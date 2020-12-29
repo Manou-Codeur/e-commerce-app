@@ -43,9 +43,7 @@ const NavBar = () => {
         <a className="nav-bar__links" onClick={() => setSearchAsked(true)}>
           Search
         </a>
-        <a className="nav-bar__links">
-          Sing In
-        </a>
+        <a className="nav-bar__links">Sing In</a>
         <Link className="nav-bar__links" to="/cart">
           MyCart(1)
         </Link>
