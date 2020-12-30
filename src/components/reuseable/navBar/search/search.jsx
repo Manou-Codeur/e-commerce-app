@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 import SearchInput from "./search-input/search-input";
@@ -9,11 +9,8 @@ import "./search.scss";
 import Logo from "../../../../assets/img/logo.png";
 import { ReactComponent as Close } from "../../../../assets/img/close.svg";
 
-const Search = ({ changeSearchState }) => {
+const Search = ({ closeSearch }) => {
   const [filtredProducts, setFiltredProducts] = useState([]);
-
-  const searchBackground = useRef("");
-  const search = useRef("");
 
   const onQueryChange = ({ target }) => {
     setFiltredProducts(filterProducts(target.value));
@@ -21,19 +18,17 @@ const Search = ({ changeSearchState }) => {
 
   return (
     <motion.div
+      className="search--background"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
+      transition={{ duration: 1.2 }}
       exit={{ opacity: 0 }}
-      className="search--background"
-      ref={searchBackground}
     >
       <motion.div
         className="search"
-        ref={search}
         initial={{ y: "-100%" }}
         animate={{ y: "0%" }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 0.8 }}
         exit={{ y: "-100%" }}
       >
         <div className="search__up-part">
@@ -45,7 +40,7 @@ const Search = ({ changeSearchState }) => {
             <Close
               fill="black"
               className="search__close-icon"
-              onClick={changeSearchState}
+              onClick={closeSearch}
             />
           </div>
         </div>

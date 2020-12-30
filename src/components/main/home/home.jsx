@@ -1,8 +1,8 @@
 import React from "react";
 
 import NavBar from "./../../reuseable/navBar/navBar";
-
 import HistoryContext from "./../../../context/historyContext";
+
 import "./home.scss";
 
 const Home = ({ history }) => {
