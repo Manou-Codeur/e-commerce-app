@@ -1,6 +1,6 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 import Search from "./search/search";
 
@@ -10,17 +10,8 @@ import { ReactComponent as Close } from "../../../assets/img/close.svg";
 import { ReactComponent as Menu } from "../../../assets/img/menu.svg";
 
 const NavBar = () => {
-  const [searchAsked, setSearchAsked] = useState(false);
-
-  const mobileNav = useRef();
-
-  const showMenu = () => {
-    mobileNav.current.style.left = 0;
-  };
-
-  const hideMenu = () => {
-    mobileNav.current.style.left = "100%";
-  };
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <div className="nav-bar">
@@ -41,7 +32,7 @@ const NavBar = () => {
       </a>
 
       <div className="nav-bar__right-part">
-        <a className="nav-bar__links" onClick={() => setSearchAsked(true)}>
+        <a className="nav-bar__links" onClick={() => setSearchOpen(true)}>
           Search
         </a>
         <a className="nav-bar__links">Sing In</a>
@@ -51,11 +42,22 @@ const NavBar = () => {
       </div>
 
       {/* Down here is the mobile version of this nav bar */}
-      <Menu className="nav-bar__menu-bar" onClick={showMenu} stroke="black" />
+      <Menu
+        className="nav-bar__menu-bar"
+        onClick={() => setMenuOpen(true)}
+        stroke="black"
+      />
 
-      <div className="nav-bar__mobile" ref={mobileNav}>
-        {/* <img src={Close} className="nav-bar__close" onClick={hideMenu} /> */}
-        <Close className="nav-bar__close" onClick={hideMenu} fill="white" />
+      <motion.div
+        animate={!menuOpen ? { left: "100%" } : { left: 0 }}
+        transition={{ duration: 0.4 }}
+        className="nav-bar__mobile"
+      >
+        <Close
+          className="nav-bar__close"
+          onClick={() => setMenuOpen(false)}
+          fill="white"
+        />
 
         <Link className="nav-bar__links--white" to="/men">
           Men
@@ -68,7 +70,7 @@ const NavBar = () => {
         </Link>
         <a
           className="nav-bar__links--white"
-          onClick={() => setSearchAsked(true)}
+          onClick={() => setSearchOpen(true)}
         >
           Search
         </a>
@@ -76,12 +78,12 @@ const NavBar = () => {
         <Link className="nav-bar__links--white" to="/cart">
           MyCart(1)
         </Link>
-      </div>
+      </motion.div>
 
       {/* down here is the condition rendering of search and singIn components */}
       <AnimatePresence>
-        {searchAsked ? (
-          <Search changeSearchState={() => setSearchAsked(false)} />
+        {searchOpen ? (
+          <Search closeSearch={() => setSearchOpen(false)} />
         ) : null}
       </AnimatePresence>
     </div>
