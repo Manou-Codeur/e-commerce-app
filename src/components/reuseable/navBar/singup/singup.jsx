@@ -1,15 +1,44 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 
 import InputsWrapper from "./../../inputsWrapper/inputsWrapper";
 
+import { schema } from "./yup-schema";
 import "./singup.scss";
 import { ReactComponent as Close } from "../../../../assets/img/close.svg";
 import Logo from "../../../../assets/img/logo.png";
 
 const SingUp = ({ closeSingup }) => {
-  const closeSinginWithNoBubbling = e => {
-    if (e.target.className && e.target.className.includes("background"))
+  //Formik init
+  const {
+    handleSubmit,
+    touched,
+    errors,
+    handleChange,
+    values,
+    handleBlur,
+  } = useFormik({
+    initialValues: {
+      fullName: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
+      country: "",
+    },
+    validationSchema: Yup.object(schema),
+    onSubmit: values => {
+      doSubmit(values);
+    },
+  });
+
+  const doSubmit = values => {
+    alert("submited!");
+  };
+
+  const closeSinginWithNoBubbling = ({ target }) => {
+    if (target.nodeName === "DIV" && target.className === "singup--background")
       closeSingup();
   };
 
@@ -35,12 +64,48 @@ const SingUp = ({ closeSingup }) => {
 
         <InputsWrapper
           inputs={[
-            { type: "email", label: "E-mail" },
-            { type: "password", label: "Password" },
-            { type: "password", label: "Confrim password" },
-            { type: "text", label: "Full name" },
-            { type: "select", label: "Country" },
+            {
+              type: "email",
+              label: "E-mail",
+              value: values.email,
+              name: "email",
+              error: errors.email,
+              touched: touched.email,
+            },
+            {
+              type: "password",
+              label: "Password",
+              value: values.password,
+              name: "password",
+              error: errors.password,
+              touched: touched.password,
+            },
+            {
+              type: "password",
+              label: "Confrim password",
+              value: values.confirmPassword,
+              name: "confirmPassword",
+              error: errors.confirmPassword,
+              touched: touched.confirmPassword,
+            },
+            {
+              type: "text",
+              label: "Full name",
+              value: values.fullName,
+              name: "fullName",
+              error: errors.fullName,
+              touched: touched.fullName,
+            },
+            {
+              type: "select",
+              label: "Country",
+              value: values.country,
+              name: "country",
+              error: errors.country,
+              touched: touched.country,
+            },
           ]}
+          eventsFunctions={{ onChange: handleChange, onBlur: handleBlur }}
         />
 
         <button className="singup__btn">REGISTER</button>

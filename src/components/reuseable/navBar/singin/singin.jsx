@@ -7,9 +7,10 @@ import "./singin.scss";
 import { ReactComponent as Close } from "../../../../assets/img/close.svg";
 import Logo from "../../../../assets/img/logo.png";
 
-const singin = ({ closeLogin, openSingUp }) => {
-  const closeLoginWithNoBubbling = e => {
-    if (e.target.className && e.target.className.includes("background"))
+const Singin = ({ closeLogin, openSingUp }) => {
+  const closeLoginWithNoBubbling = ({ target }) => {
+    console.dir(target);
+    if (target.nodeName === "DIV" && target.className === "login--background")
       closeLogin();
   };
 
@@ -60,4 +61,4 @@ const singin = ({ closeLogin, openSingUp }) => {
   );
 };
 
-export default singin;
+export default Singin;

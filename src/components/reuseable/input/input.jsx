@@ -4,6 +4,7 @@ import Select from "@material-ui/core/Select";
 import FormControl from "@material-ui/core/FormControl";
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
+import FormHelperText from "@material-ui/core/FormHelperText";
 import { makeStyles } from "@material-ui/core/styles";
 
 import { countries } from "../../../server/fake-db/countries-list";
@@ -25,25 +26,41 @@ const useStyles = makeStyles({
   },
 });
 
-const Input = props => {
+const Input = ({ error, touched, ...rest }) => {
   const classes = useStyles();
 
-  if (props.type === "select")
+  if (rest.type === "select")
     return (
-      <FormControl variant="outlined" className={classes.root}>
-        <InputLabel id="countrt-select">{props.label}</InputLabel>
+      <FormControl
+        variant="outlined"
+        className={classes.root}
+        size={error && touched ? "small" : "medium"}
+      >
+        <InputLabel id="countrt-select">{rest.label}</InputLabel>
 
-        <Select labelId="countrt-select" label={props.label}>
+        <Select labelId="countrt-select" {...rest} error={error && touched}>
           {countries.map(country => (
             <MenuItem value={country} key={country}>
               {country}
             </MenuItem>
           ))}
         </Select>
+        {error && touched && (
+          <FormHelperText style={{ color: "red" }}>{error}</FormHelperText>
+        )}
       </FormControl>
     );
 
-  return <TextField variant="outlined" className={classes.root} {...props} />;
+  return (
+    <TextField
+      variant="outlined"
+      className={classes.root}
+      {...rest}
+      error={error && touched}
+      helperText={touched && error}
+      size={error && touched ? "small" : "medium"}
+    />
+  );
 };
 
 export default Input;
