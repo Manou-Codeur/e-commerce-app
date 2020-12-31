@@ -8,6 +8,11 @@ import { ReactComponent as Close } from "../../../../assets/img/close.svg";
 import Logo from "../../../../assets/img/logo.png";
 
 const singin = ({ closeLogin, openSingUp }) => {
+  const closeLoginWithNoBubbling = e => {
+    if (e.target.className && e.target.className.includes("background"))
+      closeLogin();
+  };
+
   return (
     <motion.div
       className="login--background"
@@ -15,7 +20,7 @@ const singin = ({ closeLogin, openSingUp }) => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
       exit={{ opacity: 0 }}
-      onClick={closeLogin}
+      onClickCapture={closeLoginWithNoBubbling}
     >
       <motion.div
         className="login"

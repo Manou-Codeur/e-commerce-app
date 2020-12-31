@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import SearchInput from "./search-input/search-input";
 import SearchResult from "./search-result/search-result";
 
-import { filterProducts } from "../../../../server/fake-db.js/db-functions";
+import { filterProducts } from "../../../../server/fake-db/db-functions";
 import "./search.scss";
 import Logo from "../../../../assets/img/logo.png";
 import { ReactComponent as Close } from "../../../../assets/img/close.svg";

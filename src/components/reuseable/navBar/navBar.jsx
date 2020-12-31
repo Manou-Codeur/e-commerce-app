@@ -80,7 +80,9 @@ const NavBar = () => {
         >
           Search
         </a>
-        <a className="nav-bar__links--white">Sing In</a>
+        <a className="nav-bar__links--white" onClick={() => setLoginOpen(true)}>
+          Sing In
+        </a>
         <Link className="nav-bar__links--white" to="/cart">
           MyCart(1)
         </Link>

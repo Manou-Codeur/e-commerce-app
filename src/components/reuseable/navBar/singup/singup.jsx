@@ -8,12 +8,17 @@ import { ReactComponent as Close } from "../../../../assets/img/close.svg";
 import Logo from "../../../../assets/img/logo.png";
 
 const SingUp = ({ closeSingup }) => {
+  const closeSinginWithNoBubbling = e => {
+    if (e.target.className && e.target.className.includes("background"))
+      closeSingup();
+  };
+
   return (
     <motion.div
       transition={{ duration: 0.6 }}
       exit={{ opacity: 0 }}
       className="singup--background"
-      onClick={closeSingup}
+      onClick={closeSinginWithNoBubbling}
     >
       <motion.div
         className="singup"

@@ -10,6 +10,7 @@ const InputsWrapper = ({ inputs }) => {
       {inputs.map(inputInfo => (
         <Input key={inputInfo.label} {...inputInfo} />
       ))}
+
       {inputs.length === 2 && (
         <span className="input-wrapper__forgetPass">Forget password ?</span>
       )}
