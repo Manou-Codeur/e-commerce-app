@@ -9,6 +9,7 @@ const useStyles = makeStyles({
       color: "black",
     },
     "& .MuiOutlinedInput-root": {
+      // padding: "5px 12px",
       "&:hover fieldset": {
         borderColor: "black",
       },

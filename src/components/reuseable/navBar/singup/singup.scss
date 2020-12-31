@@ -1,0 +1,22 @@
+@import "../../styles/mixin.scss";
+
+.singup--background {
+  @include background-filter;
+
+  .singup {
+    @include card-style;
+    height: 43em;
+
+    @media only screen and (max-width: 800px) {
+      & {
+        height: 50em;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 321px) {
+    & {
+      font-size: 11px;
+    }
+  }
+}

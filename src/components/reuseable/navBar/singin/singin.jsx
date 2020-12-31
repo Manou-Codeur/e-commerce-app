@@ -3,18 +3,19 @@ import { motion } from "framer-motion";
 
 import InputsWrapper from "../../inputsWrapper/inputsWrapper";
 
-import "./login.scss";
+import "./singin.scss";
 import { ReactComponent as Close } from "../../../../assets/img/close.svg";
 import Logo from "../../../../assets/img/logo.png";
 
-const Login = ({ closeLogin }) => {
+const singin = ({ closeLogin, openSingUp }) => {
   return (
     <motion.div
       className="login--background"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
+      transition={{ duration: 0.6 }}
       exit={{ opacity: 0 }}
+      onClick={closeLogin}
     >
       <motion.div
         className="login"
@@ -40,11 +41,18 @@ const Login = ({ closeLogin }) => {
 
         <p className="login__goToRegister">
           You are not member yet?
-          <span>Register now.</span>
+          <span
+            onClick={() => {
+              closeLogin();
+              openSingUp();
+            }}
+          >
+            Register now.
+          </span>
         </p>
       </motion.div>
     </motion.div>
   );
 };
 
-export default Login;
+export default singin;

@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
 import Search from "./search/search";
-import Login from "./login/login";
+import Singin from "./singin/singin";
+import SingUp from "./singup/singup";
 
 import "./navBar.scss";
 import Logo from "../../../assets/img/logo.png";
@@ -14,6 +15,7 @@ const NavBar = () => {
   const [searchOpen, setSearchOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [loginOpen, setLoginOpen] = useState(false);
+  const [singupOpen, setSingupOpen] = useState(false);
 
   return (
     <div className="nav-bar">
@@ -84,13 +86,22 @@ const NavBar = () => {
         </Link>
       </motion.div>
 
-      {/* down here is the condition rendering of search and singIn components */}
+      {/* down here is the condition rendering of search and authentification components */}
       <AnimatePresence>
         {searchOpen ? (
           <Search closeSearch={() => setSearchOpen(false)} />
         ) : null}
 
-        {loginOpen ? <Login closeLogin={() => setLoginOpen(false)} /> : null}
+        {loginOpen ? (
+          <Singin
+            closeLogin={() => setLoginOpen(false)}
+            openSingUp={() => setSingupOpen(true)}
+          />
+        ) : null}
+
+        {singupOpen ? (
+          <SingUp closeSingup={() => setSingupOpen(false)} />
+        ) : null}
       </AnimatePresence>
     </div>
   );
