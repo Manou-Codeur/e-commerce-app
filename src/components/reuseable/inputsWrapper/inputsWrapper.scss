@@ -1,0 +1,10 @@
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 3em 0 2.5em 0;
+
+  &__forgetPass {
+    cursor: pointer;
+  }
+}

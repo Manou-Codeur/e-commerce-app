@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
 import Search from "./search/search";
+import Login from "./login/login";
 
 import "./navBar.scss";
 import Logo from "../../../assets/img/logo.png";
@@ -12,6 +13,7 @@ import { ReactComponent as Menu } from "../../../assets/img/menu.svg";
 const NavBar = () => {
   const [searchOpen, setSearchOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [loginOpen, setLoginOpen] = useState(false);
 
   return (
     <div className="nav-bar">
@@ -35,7 +37,9 @@ const NavBar = () => {
         <a className="nav-bar__links" onClick={() => setSearchOpen(true)}>
           Search
         </a>
-        <a className="nav-bar__links">Sing In</a>
+        <a className="nav-bar__links" onClick={() => setLoginOpen(true)}>
+          Sing In
+        </a>
         <Link className="nav-bar__links" to="/cart">
           MyCart(1)
         </Link>
@@ -85,6 +89,8 @@ const NavBar = () => {
         {searchOpen ? (
           <Search closeSearch={() => setSearchOpen(false)} />
         ) : null}
+
+        {loginOpen ? <Login closeLogin={() => setLoginOpen(false)} /> : null}
       </AnimatePresence>
     </div>
   );
