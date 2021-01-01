@@ -37,8 +37,14 @@ const Singin = ({ closeLogin, openSingUp, firebase, openPasswordReset }) => {
     try {
       setLogging(true);
       await firebase.doSignInWithEmailAndPassword(email, password);
+      localStorage.setItem("user-authed", JSON.stringify(true));
+      closeLogin();
     } catch (error) {
-      setErrors({ email: " ", password: "Invalid information" });
+      if (error.code.includes("user-not-found")) {
+        setErrors({ email: " ", password: "Invalid e-mail or password." });
+      } else {
+        setErrors({ email: "There is an unexpected error, try again please!" });
+      }
     }
     setLogging(false);
   };
