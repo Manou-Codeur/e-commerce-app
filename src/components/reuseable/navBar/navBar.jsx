@@ -5,11 +5,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import Search from "./search/search";
 import Singin from "./singin/singin";
 import SingUp from "./singup/singup";
+import Firebase from "./../../../server/firebase/firebase-config";
 
 import "./navBar.scss";
 import Logo from "../../../assets/img/logo.png";
 import { ReactComponent as Close } from "../../../assets/img/close.svg";
 import { ReactComponent as Menu } from "../../../assets/img/menu.svg";
+
+const firebase = new Firebase();
 
 const NavBar = () => {
   const [searchOpen, setSearchOpen] = useState(false);
@@ -98,11 +101,15 @@ const NavBar = () => {
           <Singin
             closeLogin={() => setLoginOpen(false)}
             openSingUp={() => setSingupOpen(true)}
+            firebase={firebase}
           />
         ) : null}
 
         {singupOpen ? (
-          <SingUp closeSingup={() => setSingupOpen(false)} />
+          <SingUp
+            closeSingup={() => setSingupOpen(false)}
+            firebase={firebase}
+          />
         ) : null}
       </AnimatePresence>
     </div>

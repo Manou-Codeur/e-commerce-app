@@ -10,7 +10,7 @@ import "./singin.scss";
 import { ReactComponent as Close } from "../../../../assets/img/close.svg";
 import Logo from "../../../../assets/img/logo.png";
 
-const Singin = ({ closeLogin, openSingUp }) => {
+const Singin = ({ closeLogin, openSingUp, firebase }) => {
   //Formik init
   const {
     handleSubmit,
@@ -30,12 +30,15 @@ const Singin = ({ closeLogin, openSingUp }) => {
     },
   });
 
-  const doSubmit = values => {
-    alert("logged in!");
+  const doSubmit = async ({ email, password }) => {
+    try {
+      await firebase.doSignInWithEmailAndPassword(email, password);
+    } catch (error) {
+      console.log(error.message);
+    }
   };
 
   const closeLoginWithNoBubbling = ({ target }) => {
-    console.dir(target);
     if (target.nodeName === "DIV" && target.className === "login--background")
       closeLogin();
   };
@@ -47,7 +50,10 @@ const Singin = ({ closeLogin, openSingUp }) => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
       exit={{ opacity: 0 }}
-      onClickCapture={closeLoginWithNoBubbling}
+      onClick={closeLoginWithNoBubbling}
+      onKeyPress={e => {
+        if (e.key === "Enter") handleSubmit();
+      }}
     >
       <motion.div
         className="login"
@@ -60,7 +66,7 @@ const Singin = ({ closeLogin, openSingUp }) => {
 
         <img src={Logo} className="login__logo" />
 
-        <h1>Log in you account</h1>
+        <h1>Log in your account</h1>
 
         <InputsWrapper
           inputs={[
@@ -84,7 +90,9 @@ const Singin = ({ closeLogin, openSingUp }) => {
           eventsFunctions={{ onChange: handleChange, onBlur: handleBlur }}
         />
 
-        <button className="login__btn">LOGIN</button>
+        <button className="login__btn" type="submit" onClick={handleSubmit}>
+          LOGIN
+        </button>
 
         <p className="login__goToRegister">
           You are not member yet?
