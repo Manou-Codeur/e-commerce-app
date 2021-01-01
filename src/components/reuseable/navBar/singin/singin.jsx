@@ -11,6 +11,8 @@ import { ReactComponent as Close } from "../../../../assets/img/close.svg";
 import Logo from "../../../../assets/img/logo.png";
 
 const Singin = ({ closeLogin, openSingUp, firebase }) => {
+  const [logging, setLogging] = React.useState(false);
+
   //Formik init
   const {
     handleSubmit,
@@ -19,6 +21,7 @@ const Singin = ({ closeLogin, openSingUp, firebase }) => {
     handleChange,
     values,
     handleBlur,
+    setErrors,
   } = useFormik({
     initialValues: {
       email: "",
@@ -32,10 +35,12 @@ const Singin = ({ closeLogin, openSingUp, firebase }) => {
 
   const doSubmit = async ({ email, password }) => {
     try {
+      setLogging(true);
       await firebase.doSignInWithEmailAndPassword(email, password);
     } catch (error) {
-      console.log(error.message);
+      setErrors({ email: " ", password: "Invalid information" });
     }
+    setLogging(false);
   };
 
   const closeLoginWithNoBubbling = ({ target }) => {
@@ -90,8 +95,15 @@ const Singin = ({ closeLogin, openSingUp, firebase }) => {
           eventsFunctions={{ onChange: handleChange, onBlur: handleBlur }}
         />
 
-        <button className="login__btn" type="submit" onClick={handleSubmit}>
-          LOGIN
+        <span className="login__forgetPassword">Forget password ?</span>
+
+        <button
+          className="login__btn"
+          type="submit"
+          onClick={handleSubmit}
+          disabled={logging}
+        >
+          {logging ? "LOGGING..." : "LOGIN"}
         </button>
 
         <p className="login__goToRegister">

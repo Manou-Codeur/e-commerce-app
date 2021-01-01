@@ -7,6 +7,12 @@
     @include card-style;
     height: 35em;
 
+    &__forgetPassword {
+      cursor: pointer;
+      transform: translateX(-80%);
+      margin-bottom: 2.5em;
+    }
+
     &__goToRegister {
       margin-top: 1.5em;
 

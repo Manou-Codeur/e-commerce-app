@@ -33,6 +33,9 @@ class Firebase {
     return this.auth.signInWithEmailAndPassword(email, password);
   };
 
+  //method to reset the password
+  doResetPassword = email => this.auth.sendPasswordResetEmail(email);
+
   //method to singout a user
   doSignOut = () => {
     return this.auth.signOut();
