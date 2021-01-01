@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Search from "./search/search";
 import Singin from "./singin/singin";
 import SingUp from "./singup/singup";
+import PasswordReset from "./singin/passwordReset/passwordReset";
 import Firebase from "./../../../server/firebase/firebase-config";
 
 import "./navBar.scss";
@@ -19,6 +20,7 @@ const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [loginOpen, setLoginOpen] = useState(false);
   const [singupOpen, setSingupOpen] = useState(false);
+  const [passwordResetOpen, setPasswordReset] = useState(false);
 
   return (
     <div className="nav-bar">
@@ -101,6 +103,7 @@ const NavBar = () => {
           <Singin
             closeLogin={() => setLoginOpen(false)}
             openSingUp={() => setSingupOpen(true)}
+            openPasswordReset={() => setPasswordReset(true)}
             firebase={firebase}
           />
         ) : null}
@@ -110,6 +113,10 @@ const NavBar = () => {
             closeSingup={() => setSingupOpen(false)}
             firebase={firebase}
           />
+        ) : null}
+
+        {passwordResetOpen ? (
+          <PasswordReset closePasswordReset={() => setPasswordReset(false)} />
         ) : null}
       </AnimatePresence>
     </div>

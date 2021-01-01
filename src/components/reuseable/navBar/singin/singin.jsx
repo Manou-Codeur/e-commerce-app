@@ -10,7 +10,7 @@ import "./singin.scss";
 import { ReactComponent as Close } from "../../../../assets/img/close.svg";
 import Logo from "../../../../assets/img/logo.png";
 
-const Singin = ({ closeLogin, openSingUp, firebase }) => {
+const Singin = ({ closeLogin, openSingUp, firebase, openPasswordReset }) => {
   const [logging, setLogging] = React.useState(false);
 
   //Formik init
@@ -95,7 +95,15 @@ const Singin = ({ closeLogin, openSingUp, firebase }) => {
           eventsFunctions={{ onChange: handleChange, onBlur: handleBlur }}
         />
 
-        <span className="login__forgetPassword">Forget password ?</span>
+        <span
+          className="login__forgetPassword"
+          onClick={() => {
+            closeLogin();
+            openPasswordReset();
+          }}
+        >
+          Forget password ?
+        </span>
 
         <button
           className="login__btn"
