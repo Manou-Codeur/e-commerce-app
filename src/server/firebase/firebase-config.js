@@ -24,21 +24,23 @@ class Firebase {
     this.db = app.database();
   }
 
+  //auth methods
   doCreateUserWithEmailAndPassword = (email, password) => {
     return this.auth.createUserWithEmailAndPassword(email, password);
   };
 
-  //method to singin a user
   doSignInWithEmailAndPassword = (email, password) => {
     return this.auth.signInWithEmailAndPassword(email, password);
   };
 
-  //method to reset the password
   doResetPassword = email => this.auth.sendPasswordResetEmail(email);
 
-  //method to singout a user
   doSignOut = () => {
     return this.auth.signOut();
+  };
+
+  isUserAuthenticated = funct => {
+    return this.auth.onAuthStateChanged(funct);
   };
 
   //db methods

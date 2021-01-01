@@ -21,6 +21,25 @@ const NavBar = () => {
   const [loginOpen, setLoginOpen] = useState(false);
   const [singupOpen, setSingupOpen] = useState(false);
   const [passwordResetOpen, setPasswordReset] = useState(false);
+  //this state is used to force rerendering login/logout
+  const [render, setRender] = useState(false);
+
+  const userAuthed = JSON.parse(localStorage.getItem("user-authed"));
+
+  const SingOut_SingIn = () => {
+    //sing out
+    if (userAuthed) {
+      localStorage.setItem("user-authed", JSON.stringify(false));
+      firebase.doSignOut();
+      setRender(prev => !prev);
+    }
+
+    //sing in
+    else {
+      setLoginOpen(true);
+      setRender(prev => !prev);
+    }
+  };
 
   return (
     <div className="nav-bar">
@@ -44,8 +63,8 @@ const NavBar = () => {
         <a className="nav-bar__links" onClick={() => setSearchOpen(true)}>
           Search
         </a>
-        <a className="nav-bar__links" onClick={() => setLoginOpen(true)}>
-          Sing In
+        <a className="nav-bar__links" onClick={SingOut_SingIn}>
+          {userAuthed ? "Sing Out" : "Sing In"}
         </a>
         <Link className="nav-bar__links" to="/cart">
           MyCart(1)
@@ -85,8 +104,8 @@ const NavBar = () => {
         >
           Search
         </a>
-        <a className="nav-bar__links--white" onClick={() => setLoginOpen(true)}>
-          Sing In
+        <a className="nav-bar__links--white" onClick={SingOut_SingIn}>
+          {userAuthed ? "Sing Out" : "Sing In"}
         </a>
         <Link className="nav-bar__links--white" to="/cart">
           MyCart(1)
