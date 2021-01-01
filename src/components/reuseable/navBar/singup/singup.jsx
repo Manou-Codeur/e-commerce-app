@@ -5,7 +5,7 @@ import * as Yup from "yup";
 
 import InputsWrapper from "./../../inputsWrapper/inputsWrapper";
 
-import { schema } from "./yup-schema";
+import { singupSchema } from "../yup-schema";
 import "./singup.scss";
 import { ReactComponent as Close } from "../../../../assets/img/close.svg";
 import Logo from "../../../../assets/img/logo.png";
@@ -27,7 +27,7 @@ const SingUp = ({ closeSingup }) => {
       confirmPassword: "",
       country: "",
     },
-    validationSchema: Yup.object(schema),
+    validationSchema: Yup.object(singupSchema),
     onSubmit: values => {
       doSubmit(values);
     },
@@ -65,6 +65,14 @@ const SingUp = ({ closeSingup }) => {
         <InputsWrapper
           inputs={[
             {
+              type: "text",
+              label: "Full name",
+              value: values.fullName,
+              name: "fullName",
+              error: errors.fullName,
+              touched: touched.fullName,
+            },
+            {
               type: "email",
               label: "E-mail",
               value: values.email,
@@ -87,14 +95,6 @@ const SingUp = ({ closeSingup }) => {
               name: "confirmPassword",
               error: errors.confirmPassword,
               touched: touched.confirmPassword,
-            },
-            {
-              type: "text",
-              label: "Full name",
-              value: values.fullName,
-              name: "fullName",
-              error: errors.fullName,
-              touched: touched.fullName,
             },
             {
               type: "select",

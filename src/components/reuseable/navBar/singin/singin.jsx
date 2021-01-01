@@ -1,13 +1,39 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 
 import InputsWrapper from "../../inputsWrapper/inputsWrapper";
 
+import { singinSchema } from "../yup-schema";
 import "./singin.scss";
 import { ReactComponent as Close } from "../../../../assets/img/close.svg";
 import Logo from "../../../../assets/img/logo.png";
 
 const Singin = ({ closeLogin, openSingUp }) => {
+  //Formik init
+  const {
+    handleSubmit,
+    touched,
+    errors,
+    handleChange,
+    values,
+    handleBlur,
+  } = useFormik({
+    initialValues: {
+      email: "",
+      password: "",
+    },
+    validationSchema: Yup.object(singinSchema),
+    onSubmit: values => {
+      doSubmit(values);
+    },
+  });
+
+  const doSubmit = values => {
+    alert("logged in!");
+  };
+
   const closeLoginWithNoBubbling = ({ target }) => {
     console.dir(target);
     if (target.nodeName === "DIV" && target.className === "login--background")
@@ -38,9 +64,24 @@ const Singin = ({ closeLogin, openSingUp }) => {
 
         <InputsWrapper
           inputs={[
-            { type: "email", label: "E-mail" },
-            { type: "password", label: "Password" },
+            {
+              type: "email",
+              label: "E-mail",
+              value: values.email,
+              name: "email",
+              error: errors.email,
+              touched: touched.email,
+            },
+            {
+              type: "password",
+              label: "Password",
+              value: values.password,
+              name: "password",
+              error: errors.password,
+              touched: touched.password,
+            },
           ]}
+          eventsFunctions={{ onChange: handleChange, onBlur: handleBlur }}
         />
 
         <button className="login__btn">LOGIN</button>
