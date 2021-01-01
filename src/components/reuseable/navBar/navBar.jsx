@@ -116,7 +116,10 @@ const NavBar = () => {
         ) : null}
 
         {passwordResetOpen ? (
-          <PasswordReset closePasswordReset={() => setPasswordReset(false)} />
+          <PasswordReset
+            closePasswordReset={() => setPasswordReset(false)}
+            firebase={firebase}
+          />
         ) : null}
       </AnimatePresence>
     </div>

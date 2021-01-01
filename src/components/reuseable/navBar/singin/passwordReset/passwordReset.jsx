@@ -1,34 +1,52 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 
 import InputsWrapper from "../../../inputsWrapper/inputsWrapper";
 
-import { isValidEmail } from "./regex";
+import { resetPasswordSchema } from "../../yup-schema";
 import "./passwordReset.scss";
 import { ReactComponent as Close } from "../../../../../assets/img/close.svg";
 import Logo from "../../../../../assets/img/logo.png";
 
-const PasswordReset = ({ closePasswordReset }) => {
-  const [email, setEmail] = React.useState({
-    value: "",
-    errors: null,
+const PasswordReset = ({ closePasswordReset, firebase }) => {
+  const [resetting, setResetting] = useState(false);
+
+  //Formik init
+  const {
+    handleSubmit,
+    touched,
+    errors,
+    handleChange,
+    values,
+    handleBlur,
+    setErrors,
+  } = useFormik({
+    initialValues: {
+      email: "",
+    },
+    validationSchema: Yup.object(resetPasswordSchema),
+    onSubmit: values => {
+      doResetPassword(values.email);
+    },
   });
 
-  const onBlur = () => {
-    if (email.value === "")
-      setEmail({ ...email, errors: "E-mail is required!" });
-    else if (!isValidEmail(email.value)) {
-      setEmail({ ...email, errors: "E-mail is not valid!" });
-    } else {
-      setEmail({ ...email, errors: null });
+  const doResetPassword = async email => {
+    try {
+      setResetting(true);
+      await firebase.doResetPassword(email);
+      closePasswordReset();
+    } catch (error) {
+      if (error.code.includes("user-not-found"))
+        setErrors({
+          email: "Unfound email address, fill the right one please!",
+        });
+      else
+        setErrors({ email: "There is an unexpected error, try again please!" });
     }
-  };
 
-  const onChange = ({ target }) => {
-    setEmail({ ...email, value: target.value });
-    if (email.value !== "" || isValidEmail(email.value)) {
-      setEmail({ ...email, errors: null });
-    }
+    setResetting(false);
   };
 
   return (
@@ -58,22 +76,25 @@ const PasswordReset = ({ closePasswordReset }) => {
             {
               type: "email",
               label: "E-mail",
-              value: email.value,
+              value: values.email,
               name: "email",
-              error: email.errors,
+              error: errors.email,
+              touched: touched.email,
             },
           ]}
           eventsFunctions={{
-            onChange,
-            onBlur,
+            onChange: handleChange,
+            onBlur: handleBlur,
           }}
         />
 
         <button
           className="password-reset__btn password-reset__btn--margin"
           type="submit"
+          onClick={handleSubmit}
+          disabled={resetting || errors.email}
         >
-          RESET
+          {resetting ? "RESETTING..." : "RESET"}
         </button>
       </motion.div>
     </motion.div>

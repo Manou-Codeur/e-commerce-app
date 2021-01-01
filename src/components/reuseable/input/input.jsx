@@ -36,9 +36,9 @@ const Input = ({ error, touched, ...rest }) => {
         className={classes.root}
         size={error && touched ? "small" : "medium"}
       >
-        <InputLabel id="countrt-select">{rest.label}</InputLabel>
+        <InputLabel id="country-select">{rest.label}</InputLabel>
 
-        <Select labelId="countrt-select" {...rest} error={error && touched}>
+        <Select labelId="country-select" {...rest} error={error && touched}>
           {countries.map(country => (
             <MenuItem value={country} key={country}>
               {country}

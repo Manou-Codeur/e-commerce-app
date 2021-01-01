@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useFormik } from "formik";
 import * as Yup from "yup";
@@ -11,7 +11,7 @@ import { ReactComponent as Close } from "../../../../assets/img/close.svg";
 import Logo from "../../../../assets/img/logo.png";
 
 const Singin = ({ closeLogin, openSingUp, firebase, openPasswordReset }) => {
-  const [logging, setLogging] = React.useState(false);
+  const [logging, setLogging] = useState(false);
 
   //Formik init
   const {
@@ -109,7 +109,7 @@ const Singin = ({ closeLogin, openSingUp, firebase, openPasswordReset }) => {
           className="login__btn"
           type="submit"
           onClick={handleSubmit}
-          disabled={logging}
+          disabled={logging || errors.email || errors.password}
         >
           {logging ? "LOGGING..." : "LOGIN"}
         </button>
