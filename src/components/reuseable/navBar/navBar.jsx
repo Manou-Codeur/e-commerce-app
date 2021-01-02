@@ -1,17 +1,16 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 
 import Search from "./search/search";
 import Singin from "./singin/singin";
 import SingUp from "./singup/singup";
+import MobileNavBar from "./mobileNavBar/mobileNavBar";
 import PasswordReset from "./singin/passwordReset/passwordReset";
 import Firebase from "./../../../server/firebase/firebase-config";
 
 import "./navBar.scss";
 import Logo from "../../../assets/img/logo.png";
-import { ReactComponent as Close } from "../../../assets/img/close.svg";
-import { ReactComponent as Menu } from "../../../assets/img/menu.svg";
 
 const firebase = new Firebase();
 
@@ -72,45 +71,13 @@ const NavBar = () => {
       </div>
 
       {/* Down here is the mobile version of this nav bar */}
-      <Menu
-        className="nav-bar__menu-bar"
-        onClick={() => setMenuOpen(true)}
-        stroke="black"
+      <MobileNavBar
+        setMenuOpen={setMenuOpen}
+        menuOpen={menuOpen}
+        setSearchOpen={setSearchOpen}
+        SingOut_SingIn={SingOut_SingIn}
+        userAuthed={userAuthed}
       />
-
-      <motion.div
-        animate={!menuOpen ? { left: "100%" } : { left: 0 }}
-        transition={{ duration: 0.4 }}
-        className="nav-bar__mobile"
-      >
-        <Close
-          className="nav-bar__close"
-          onClick={() => setMenuOpen(false)}
-          fill="white"
-        />
-
-        <Link className="nav-bar__links--white" to="/men">
-          Men
-        </Link>
-        <Link className="nav-bar__links--white" to="/women">
-          Women
-        </Link>
-        <Link className="nav-bar__links--white" to="/kid">
-          Kids
-        </Link>
-        <a
-          className="nav-bar__links--white"
-          onClick={() => setSearchOpen(true)}
-        >
-          Search
-        </a>
-        <a className="nav-bar__links--white" onClick={SingOut_SingIn}>
-          {userAuthed ? "Sing Out" : "Sing In"}
-        </a>
-        <Link className="nav-bar__links--white" to="/cart">
-          MyCart(1)
-        </Link>
-      </motion.div>
 
       {/* down here is the condition rendering of search and authentification components */}
       <AnimatePresence>
