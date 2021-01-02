@@ -1,16 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
 import InputsWrapper from "./../../inputsWrapper/inputsWrapper";
 
+import { checkErrors } from "../helper-functions";
+import { generateSingupInputs } from "../inputs-list";
 import { singupSchema } from "../yup-schema";
 import "./singup.scss";
 import { ReactComponent as Close } from "../../../../assets/img/close.svg";
 import Logo from "../../../../assets/img/logo.png";
 
-const SingUp = ({ closeSingup }) => {
+const SingUp = ({ closeSingup, firebase }) => {
+  const [registering, setRegistering] = useState(false);
+  const [generalErrors, setGeneralErrors] = useState(null);
+
   //Formik init
   const {
     handleSubmit,
@@ -19,6 +24,7 @@ const SingUp = ({ closeSingup }) => {
     handleChange,
     values,
     handleBlur,
+    setErrors,
   } = useFormik({
     initialValues: {
       fullName: "",
@@ -33,8 +39,23 @@ const SingUp = ({ closeSingup }) => {
     },
   });
 
-  const doSubmit = values => {
-    alert("submited!");
+  const doSubmit = async ({ email, password }) => {
+    setGeneralErrors(null);
+
+    try {
+      setRegistering(true);
+      await firebase.doCreateUserWithEmailAndPassword(email, password);
+      localStorage.setItem("user-authed", JSON.stringify(true));
+      closeSingup();
+    } catch (error) {
+      if (error.code.includes("email-already-in-use")) {
+        setErrors({ email: "Email is already taken!" });
+      } else {
+        setGeneralErrors("There is an unexpected error, try again please!");
+      }
+    }
+
+    setRegistering(false);
   };
 
   const closeSinginWithNoBubbling = ({ target }) => {
@@ -48,6 +69,9 @@ const SingUp = ({ closeSingup }) => {
       exit={{ opacity: 0 }}
       className="singup--background"
       onClick={closeSinginWithNoBubbling}
+      onKeyPress={e => {
+        if (e.key === "Enter") handleSubmit();
+      }}
     >
       <motion.div
         className="singup"
@@ -63,52 +87,19 @@ const SingUp = ({ closeSingup }) => {
         <h1>Become a member</h1>
 
         <InputsWrapper
-          inputs={[
-            {
-              type: "text",
-              label: "Full name",
-              value: values.fullName,
-              name: "fullName",
-              error: errors.fullName,
-              touched: touched.fullName,
-            },
-            {
-              type: "email",
-              label: "E-mail",
-              value: values.email,
-              name: "email",
-              error: errors.email,
-              touched: touched.email,
-            },
-            {
-              type: "password",
-              label: "Password",
-              value: values.password,
-              name: "password",
-              error: errors.password,
-              touched: touched.password,
-            },
-            {
-              type: "password",
-              label: "Confrim password",
-              value: values.confirmPassword,
-              name: "confirmPassword",
-              error: errors.confirmPassword,
-              touched: touched.confirmPassword,
-            },
-            {
-              type: "select",
-              label: "Country",
-              value: values.country,
-              name: "country",
-              error: errors.country,
-              touched: touched.country,
-            },
-          ]}
+          inputs={generateSingupInputs(values, errors, touched)}
           eventsFunctions={{ onChange: handleChange, onBlur: handleBlur }}
         />
 
-        <button className="singup__btn">REGISTER</button>
+        {generalErrors && <div style={{ color: "red" }}>{generalErrors}</div>}
+
+        <button
+          className="singup__btn singup__btn--margin"
+          disabled={registering || checkErrors(errors)}
+          onClick={handleSubmit}
+        >
+          {registering ? "REGISTERING" : "REGISTER"}
+        </button>
       </motion.div>
     </motion.div>
   );

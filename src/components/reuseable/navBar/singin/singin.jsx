@@ -5,6 +5,8 @@ import * as Yup from "yup";
 
 import InputsWrapper from "../../inputsWrapper/inputsWrapper";
 
+import { checkErrors } from "../helper-functions";
+import { generateSinginInputs } from "../inputs-list";
 import { singinSchema } from "../yup-schema";
 import "./singin.scss";
 import { ReactComponent as Close } from "../../../../assets/img/close.svg";
@@ -46,6 +48,7 @@ const Singin = ({ closeLogin, openSingUp, firebase, openPasswordReset }) => {
         setErrors({ email: "There is an unexpected error, try again please!" });
       }
     }
+
     setLogging(false);
   };
 
@@ -80,24 +83,7 @@ const Singin = ({ closeLogin, openSingUp, firebase, openPasswordReset }) => {
         <h1>Log in your account</h1>
 
         <InputsWrapper
-          inputs={[
-            {
-              type: "email",
-              label: "E-mail",
-              value: values.email,
-              name: "email",
-              error: errors.email,
-              touched: touched.email,
-            },
-            {
-              type: "password",
-              label: "Password",
-              value: values.password,
-              name: "password",
-              error: errors.password,
-              touched: touched.password,
-            },
-          ]}
+          inputs={generateSinginInputs(values, errors, touched)}
           eventsFunctions={{ onChange: handleChange, onBlur: handleBlur }}
         />
 
@@ -115,7 +101,7 @@ const Singin = ({ closeLogin, openSingUp, firebase, openPasswordReset }) => {
           className="login__btn"
           type="submit"
           onClick={handleSubmit}
-          disabled={logging || errors.email || errors.password}
+          disabled={logging || checkErrors(errors)}
         >
           {logging ? "LOGGING..." : "LOGIN"}
         </button>

@@ -5,6 +5,7 @@ import * as Yup from "yup";
 
 import InputsWrapper from "../../../inputsWrapper/inputsWrapper";
 
+import { generateResetPasswordInputs } from "../../inputs-list";
 import { resetPasswordSchema } from "../../yup-schema";
 import "./passwordReset.scss";
 import { ReactComponent as Close } from "../../../../../assets/img/close.svg";
@@ -72,16 +73,7 @@ const PasswordReset = ({ closePasswordReset, firebase }) => {
         <h1>Reset your password</h1>
 
         <InputsWrapper
-          inputs={[
-            {
-              type: "email",
-              label: "E-mail",
-              value: values.email,
-              name: "email",
-              error: errors.email,
-              touched: touched.email,
-            },
-          ]}
+          inputs={generateResetPasswordInputs(values, errors, touched)}
           eventsFunctions={{
             onChange: handleChange,
             onBlur: handleBlur,
