@@ -5,6 +5,7 @@ import * as Yup from "yup";
 
 import InputsWrapper from "../../inputsWrapper/inputsWrapper";
 
+import { handleErrors } from "../../../../server/firebase/errorHandling";
 import { checkErrors } from "../helper-functions";
 import { generateSinginInputs } from "../inputs-list";
 import { singinSchema } from "../yup-schema";
@@ -14,6 +15,7 @@ import Logo from "../../../../assets/img/logo.png";
 
 const Singin = ({ closeLogin, openSingUp, firebase, openPasswordReset }) => {
   const [logging, setLogging] = useState(false);
+  const [globalErrors, setGlobalErrors] = useState(null);
 
   //Formik init
   const {
@@ -36,17 +38,15 @@ const Singin = ({ closeLogin, openSingUp, firebase, openPasswordReset }) => {
   });
 
   const doSubmit = async ({ email, password }) => {
+    setGlobalErrors(null);
+
     try {
       setLogging(true);
       await firebase.doSignInWithEmailAndPassword(email, password);
       localStorage.setItem("user-authed", JSON.stringify(true));
       closeLogin();
     } catch (error) {
-      if (error.code.includes("user-not-found")) {
-        setErrors({ email: " ", password: "Invalid e-mail or password." });
-      } else {
-        setErrors({ email: "There is an unexpected error, try again please!" });
-      }
+      handleErrors("singin", error, setErrors, setGlobalErrors);
     }
 
     setLogging(false);
@@ -81,6 +81,12 @@ const Singin = ({ closeLogin, openSingUp, firebase, openPasswordReset }) => {
         <img src={Logo} className="login__logo" />
 
         <h1>Log in your account</h1>
+
+        {globalErrors && (
+          <div style={{ color: "red", transform: "translateY(170%)" }}>
+            {globalErrors}
+          </div>
+        )}
 
         <InputsWrapper
           inputs={generateSinginInputs(values, errors, touched)}

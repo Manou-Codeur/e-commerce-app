@@ -5,6 +5,7 @@ import * as Yup from "yup";
 
 import InputsWrapper from "./../../inputsWrapper/inputsWrapper";
 
+import { handleErrors } from "../../../../server/firebase/errorHandling";
 import { checkErrors } from "../helper-functions";
 import { generateSingupInputs } from "../inputs-list";
 import { singupSchema } from "../yup-schema";
@@ -14,7 +15,7 @@ import Logo from "../../../../assets/img/logo.png";
 
 const SingUp = ({ closeSingup, firebase }) => {
   const [registering, setRegistering] = useState(false);
-  const [generalErrors, setGeneralErrors] = useState(null);
+  const [globalErrors, setGlobalErrors] = useState(null);
 
   //Formik init
   const {
@@ -40,7 +41,7 @@ const SingUp = ({ closeSingup, firebase }) => {
   });
 
   const doSubmit = async ({ email, password }) => {
-    setGeneralErrors(null);
+    setGlobalErrors(null);
 
     try {
       setRegistering(true);
@@ -48,11 +49,7 @@ const SingUp = ({ closeSingup, firebase }) => {
       localStorage.setItem("user-authed", JSON.stringify(true));
       closeSingup();
     } catch (error) {
-      if (error.code.includes("email-already-in-use")) {
-        setErrors({ email: "Email is already taken!" });
-      } else {
-        setGeneralErrors("There is an unexpected error, try again please!");
-      }
+      handleErrors("singup", error, setErrors, setGlobalErrors);
     }
 
     setRegistering(false);
@@ -86,12 +83,16 @@ const SingUp = ({ closeSingup, firebase }) => {
 
         <h1>Become a member</h1>
 
+        {globalErrors && (
+          <div style={{ color: "red", transform: "translateY(170%)" }}>
+            {globalErrors}
+          </div>
+        )}
+
         <InputsWrapper
           inputs={generateSingupInputs(values, errors, touched)}
           eventsFunctions={{ onChange: handleChange, onBlur: handleBlur }}
         />
-
-        {generalErrors && <div style={{ color: "red" }}>{generalErrors}</div>}
 
         <button
           className="singup__btn singup__btn--margin"

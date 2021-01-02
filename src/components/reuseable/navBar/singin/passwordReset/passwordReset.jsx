@@ -5,6 +5,7 @@ import * as Yup from "yup";
 
 import InputsWrapper from "../../../inputsWrapper/inputsWrapper";
 
+import { handleErrors } from "./../../../../../server/firebase/errorHandling";
 import { generateResetPasswordInputs } from "../../inputs-list";
 import { resetPasswordSchema } from "../../yup-schema";
 import "./passwordReset.scss";
@@ -13,6 +14,7 @@ import Logo from "../../../../../assets/img/logo.png";
 
 const PasswordReset = ({ closePasswordReset, firebase }) => {
   const [resetting, setResetting] = useState(false);
+  const [globalErrors, setGlobalErrors] = useState(null);
 
   //Formik init
   const {
@@ -34,17 +36,14 @@ const PasswordReset = ({ closePasswordReset, firebase }) => {
   });
 
   const doResetPassword = async email => {
+    setGlobalErrors(null);
+
     try {
       setResetting(true);
       await firebase.doResetPassword(email);
       closePasswordReset();
     } catch (error) {
-      if (error.code.includes("user-not-found"))
-        setErrors({
-          email: "Unfound email address, fill the right one please!",
-        });
-      else
-        setErrors({ email: "There is an unexpected error, try again please!" });
+      handleErrors("resetPassword", error, setErrors, setGlobalErrors);
     }
 
     setResetting(false);
@@ -71,6 +70,12 @@ const PasswordReset = ({ closePasswordReset, firebase }) => {
         <img src={Logo} className="password-reset__logo" />
 
         <h1>Reset your password</h1>
+
+        {globalErrors && (
+          <div style={{ color: "red", transform: "translateY(170%)" }}>
+            {globalErrors}
+          </div>
+        )}
 
         <InputsWrapper
           inputs={generateResetPasswordInputs(values, errors, touched)}
