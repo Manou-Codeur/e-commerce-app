@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
+import jwtGenerator from "jwt-decode";
 
 import Search from "./search/search";
 import Singin from "./singin/singin";
@@ -23,7 +24,11 @@ const NavBar = () => {
   //this state is used to force rerendering login/logout
   const [render, setRender] = useState(false);
 
-  const userAuthed = JSON.parse(localStorage.getItem("user-authed"));
+  //I wrapper this code in trycatch coz the jwtGenerator() throw an error if the string passed isn't valid jwt code
+  try {
+    const jwt = jwtGenerator(JSON.parse(localStorage.getItem("user-authed")));
+    var userAuthed = jwt.aud === "react-e-commerce-app-18fea";
+  } catch (error) {}
 
   const SingOut_SingIn = () => {
     //sing out

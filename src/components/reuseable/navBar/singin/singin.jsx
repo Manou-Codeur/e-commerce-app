@@ -42,8 +42,14 @@ const Singin = ({ closeLogin, openSingUp, firebase, openPasswordReset }) => {
 
     try {
       setLogging(true);
-      await firebase.doSignInWithEmailAndPassword(email, password);
-      localStorage.setItem("user-authed", JSON.stringify(true));
+      const data = await firebase.doSignInWithEmailAndPassword(email, password);
+      //store the json web token in the localstorage
+      localStorage.setItem(
+        "user-authed",
+        JSON.stringify(
+          data.user.ya.split(".")[0] + "." + data.user.ya.split(".")[1]
+        )
+      );
       closeLogin();
     } catch (error) {
       handleErrors("singin", error, setErrors, setGlobalErrors);

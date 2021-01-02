@@ -45,8 +45,17 @@ const SingUp = ({ closeSingup, firebase }) => {
 
     try {
       setRegistering(true);
-      await firebase.doCreateUserWithEmailAndPassword(email, password);
-      localStorage.setItem("user-authed", JSON.stringify(true));
+      const data = await firebase.doCreateUserWithEmailAndPassword(
+        email,
+        password
+      );
+      //store the json web token in the localstorage
+      localStorage.setItem(
+        "user-authed",
+        JSON.stringify(
+          data.user.ya.split(".")[0] + "." + data.user.ya.split(".")[1]
+        )
+      );
       closeSingup();
     } catch (error) {
       handleErrors("singup", error, setErrors, setGlobalErrors);
