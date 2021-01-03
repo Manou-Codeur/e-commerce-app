@@ -1,5 +1,6 @@
 import React from "react";
 
+import Header from "./header/header";
 import NavBar from "./../../reuseable/navBar/navBar";
 import HistoryContext from "./../../../context/historyContext";
 
@@ -11,6 +12,8 @@ const Home = ({ history }) => {
       <HistoryContext.Provider value={{ history }}>
         <NavBar />
       </HistoryContext.Provider>
+
+      <Header />
     </div>
   );
 };
