@@ -7,12 +7,14 @@ const Header = () => {
   return (
     <div className="header">
       <div className="header__left-part">
-        <span className="header__shoe-genre">Men's shoe</span>
-        <h1 className="header__shoe-name">
-          New Jordan
-          <br /> React Elevation
-        </h1>
-        <button>Check it out</button>
+        <div className="center">
+          <span className="header__shoe-genre">Men's shoe</span>
+          <h1 className="header__shoe-name">
+            New Jordan
+            <br /> React Elevation
+          </h1>
+          <button>Check it out</button>
+        </div>
       </div>
 
       <div className="header__right-part">

@@ -15,7 +15,7 @@
 
   &__left-part {
     justify-content: center;
-    padding-left: 5em;
+    padding-left: 3em;
 
     .header__shoe-name {
       font-size: 3.5em;
@@ -44,7 +44,6 @@
     align-items: center;
 
     .header__presentation-text {
-      border: 1px solid green;
       display: flex;
       flex-direction: column;
       position: relative;
@@ -68,7 +67,7 @@
         font-weight: 900;
         position: absolute;
         bottom: 0;
-        right: 0;
+        right: 7px;
         z-index: 10;
       }
     }
@@ -97,29 +96,29 @@
 
   @media screen and (max-width: 980px) {
     & {
-      position: relative;
+      height: 50vh;
 
-      &__left-part,
       &__right-part {
-        position: absolute;
-        width: 100%;
-        border: 1px solid red;
+        display: none;
       }
+
       &__left-part {
-        top: 15%;
-        left: 5%;
-      }
-      &__right-part {
-        bottom: 15%;
-        right: 5%;
-        align-items: flex-end;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0;
 
-        .header__shoe-img {
-          top: 31%;
-          right: 0%;
-          transform: translate(0, -50%);
+        .center {
+          width: 350px;
         }
       }
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    & {
+      font-size: 9px;
     }
   }
 }
