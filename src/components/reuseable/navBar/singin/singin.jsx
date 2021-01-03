@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { useFormik } from "formik";
-import * as Yup from "yup";
 
 import InputsWrapper from "../../inputsWrapper/inputsWrapper";
 
 import { handleErrors } from "../../../../server/firebase/errorHandling";
-import { checkErrors } from "../helper-functions";
+import {
+  checkErrors,
+  useCustomFormik,
+  closeFormWithNoBubbling,
+} from "../helper-functions";
 import { generateSinginInputs } from "../inputs-list";
-import { singinSchema } from "../yup-schema";
 import "./singin.scss";
 import { ReactComponent as Close } from "../../../../assets/img/close.svg";
 import Logo from "../../../../assets/img/logo.png";
@@ -26,20 +27,10 @@ const Singin = ({ closeLogin, openSingUp, firebase, openPasswordReset }) => {
     values,
     handleBlur,
     setErrors,
-  } = useFormik({
-    initialValues: {
-      email: "",
-      password: "",
-    },
-    validationSchema: Yup.object(singinSchema),
-    onSubmit: values => {
-      doSubmit(values);
-    },
-  });
+  } = useCustomFormik("singin", doSubmit);
 
-  const doSubmit = async ({ email, password }) => {
+  async function doSubmit({ email, password }) {
     setGlobalErrors(null);
-
     try {
       setLogging(true);
       const data = await firebase.doSignInWithEmailAndPassword(email, password);
@@ -54,14 +45,8 @@ const Singin = ({ closeLogin, openSingUp, firebase, openPasswordReset }) => {
     } catch (error) {
       handleErrors("singin", error, setErrors, setGlobalErrors);
     }
-
     setLogging(false);
-  };
-
-  const closeLoginWithNoBubbling = ({ target }) => {
-    if (target.nodeName === "DIV" && target.className === "login--background")
-      closeLogin();
-  };
+  }
 
   return (
     <motion.div
@@ -70,7 +55,7 @@ const Singin = ({ closeLogin, openSingUp, firebase, openPasswordReset }) => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
       exit={{ opacity: 0 }}
-      onClick={closeLoginWithNoBubbling}
+      onClick={e => closeFormWithNoBubbling(e, closeLogin)}
       onKeyPress={e => {
         if (e.key === "Enter") handleSubmit();
       }}

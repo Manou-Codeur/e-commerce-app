@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { useFormik } from "formik";
-import * as Yup from "yup";
 
 import InputsWrapper from "./../../inputsWrapper/inputsWrapper";
 
 import { handleErrors } from "../../../../server/firebase/errorHandling";
-import { checkErrors } from "../helper-functions";
+import {
+  checkErrors,
+  useCustomFormik,
+  closeFormWithNoBubbling,
+} from "../helper-functions";
 import { generateSingupInputs } from "../inputs-list";
-import { singupSchema } from "../yup-schema";
 import "./singup.scss";
 import { ReactComponent as Close } from "../../../../assets/img/close.svg";
 import Logo from "../../../../assets/img/logo.png";
@@ -26,23 +27,10 @@ const SingUp = ({ closeSingup, firebase }) => {
     values,
     handleBlur,
     setErrors,
-  } = useFormik({
-    initialValues: {
-      fullName: "",
-      email: "",
-      password: "",
-      confirmPassword: "",
-      country: "",
-    },
-    validationSchema: Yup.object(singupSchema),
-    onSubmit: values => {
-      doSubmit(values);
-    },
-  });
+  } = useCustomFormik("singup", doSubmit);
 
-  const doSubmit = async ({ email, password }) => {
+  async function doSubmit({ email, password }) {
     setGlobalErrors(null);
-
     try {
       setRegistering(true);
       const data = await firebase.doCreateUserWithEmailAndPassword(
@@ -60,21 +48,15 @@ const SingUp = ({ closeSingup, firebase }) => {
     } catch (error) {
       handleErrors("singup", error, setErrors, setGlobalErrors);
     }
-
     setRegistering(false);
-  };
-
-  const closeSinginWithNoBubbling = ({ target }) => {
-    if (target.nodeName === "DIV" && target.className === "singup--background")
-      closeSingup();
-  };
+  }
 
   return (
     <motion.div
       transition={{ duration: 0.6 }}
       exit={{ opacity: 0 }}
       className="singup--background"
-      onClick={closeSinginWithNoBubbling}
+      onClick={e => closeFormWithNoBubbling(e, closeSingup)}
       onKeyPress={e => {
         if (e.key === "Enter") handleSubmit();
       }}

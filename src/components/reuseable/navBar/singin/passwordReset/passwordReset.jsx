@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { useFormik } from "formik";
-import * as Yup from "yup";
 
 import InputsWrapper from "../../../inputsWrapper/inputsWrapper";
 
+import {
+  useCustomFormik,
+  closeFormWithNoBubbling,
+} from "./../../helper-functions";
 import { handleErrors } from "./../../../../../server/firebase/errorHandling";
 import { generateResetPasswordInputs } from "../../inputs-list";
-import { resetPasswordSchema } from "../../yup-schema";
 import "./passwordReset.scss";
 import { ReactComponent as Close } from "../../../../../assets/img/close.svg";
 import Logo from "../../../../../assets/img/logo.png";
@@ -25,19 +26,10 @@ const PasswordReset = ({ closePasswordReset, firebase }) => {
     values,
     handleBlur,
     setErrors,
-  } = useFormik({
-    initialValues: {
-      email: "",
-    },
-    validationSchema: Yup.object(resetPasswordSchema),
-    onSubmit: values => {
-      doResetPassword(values.email);
-    },
-  });
+  } = useCustomFormik("resetPassword", doResetPassword);
 
-  const doResetPassword = async email => {
+  async function doResetPassword(email) {
     setGlobalErrors(null);
-
     try {
       setResetting(true);
       await firebase.doResetPassword(email);
@@ -45,15 +37,15 @@ const PasswordReset = ({ closePasswordReset, firebase }) => {
     } catch (error) {
       handleErrors("resetPassword", error, setErrors, setGlobalErrors);
     }
-
     setResetting(false);
-  };
+  }
 
   return (
     <motion.div
       className="password-reset--background"
       transition={{ duration: 0.6 }}
       exit={{ opacity: 0 }}
+      onClick={e => closeFormWithNoBubbling(e, closePasswordReset)}
     >
       <motion.div
         className="password-reset"
