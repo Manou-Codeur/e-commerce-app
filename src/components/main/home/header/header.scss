@@ -34,6 +34,27 @@
       font-size: 0.9em;
       cursor: pointer;
     }
+
+    .header__progress {
+      display: flex;
+      margin-top: 3em;
+
+      .progress {
+        width: 0.8em;
+        height: 0.8em;
+        background-color: white;
+        margin: 0 0.2em;
+        cursor: pointer;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &--selected {
+          background-color: #3867d6;
+        }
+      }
+    }
   }
 
   &__right-part {

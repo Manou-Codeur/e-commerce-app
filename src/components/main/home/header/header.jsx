@@ -14,6 +14,11 @@ const Header = () => {
             <br /> React Elevation
           </h1>
           <button>Check it out</button>
+          <div className="header__progress">
+            <div className="progress progress--selected"></div>
+            <div className="progress"></div>
+            <div className="progress"></div>
+          </div>
         </div>
       </div>
 
