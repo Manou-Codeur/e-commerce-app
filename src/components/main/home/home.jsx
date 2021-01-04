@@ -11,9 +11,18 @@ const Home = ({ history }) => {
     <div className="home">
       <HistoryContext.Provider value={{ history }}>
         <NavBar />
+        <Header />
       </HistoryContext.Provider>
 
-      <Header />
+      <div className="extra">
+        <h1>hello world</h1>
+        <h1>hello world</h1>
+        <h1>hello world</h1>
+        <h1>hello world</h1>
+        <h1>hello world</h1>
+        <h1>hello world</h1>
+        <h1>hello world</h1>
+      </div>
     </div>
   );
 };

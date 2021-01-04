@@ -6,17 +6,28 @@
   justify-content: center;
   padding: 0 6em;
   position: relative;
+  z-index: 10;
 
   &::after {
     content: "";
     position: absolute;
     top: 0;
     right: -800px;
-    background-color: #3867d6;
     width: 2000px;
     height: 180px;
     transform: rotateZ(-60deg);
     z-index: 10;
+    transition: all 1s ease;
+  }
+
+  &--airJordan::after {
+    background-color: #3867d6;
+  }
+  &--nikeLegend::after {
+    background-color: #64a9b0;
+  }
+  &--adidasNMD::after {
+    background-color: #ff443c;
   }
 
   &__left-part,
@@ -53,19 +64,16 @@
       display: flex;
       margin-top: 3em;
 
-      .progress {
+      .progress-item {
         width: 0.8em;
         height: 0.8em;
         background-color: white;
         margin: 0 0.2em;
         cursor: pointer;
+        transition: background-color 1s ease;
 
         &:first-child {
           margin-left: 0;
-        }
-
-        &--selected {
-          background-color: #3867d6;
         }
       }
     }
@@ -81,6 +89,7 @@
     .header__shoe-img-wrapper {
       width: 40em;
       z-index: 15;
+      transform: translateY(-50px);
 
       .header__shoe-img {
         width: 100%;

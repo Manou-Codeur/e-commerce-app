@@ -79,17 +79,17 @@ export const shoes = {
       },
     },
     {
-      name: "Adidas UQT",
+      name: "Adidas NMD",
       id: "5",
       colors: {
         black: {
-          1: "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/d5a344f7dcc644e58e71ac6400b31c52_9366/Chaussure_NMD_R1_Noir_FX6794_01_standard.jpg",
+          1: "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/4d241e5c9bd0492aa085ac6400b327f1_9366/Chaussure_NMD_R1_Noir_FX6794_06_standard.jpg",
           2: "https://assets.adidas.com/images/h_2000,f_auto,q_auto:sensitive,fl_lossy/e58e037a683042f0b88fac6400b35552_9366/Chaussure_NMD_R1_Noir_FX6794_04_standard.jpg",
           3: "https://assets.adidas.com/images/h_2000,f_auto,q_auto:sensitive,fl_lossy/d0a8d63c70b84f75bb54ac6400b36177_9366/Chaussure_NMD_R1_Noir_FX6794_05_standard.jpg",
           4: "https://assets.adidas.com/images/h_2000,f_auto,q_auto:sensitive,fl_lossy/787dd4c02edb4d34871eac6400b3426f_9366/Chaussure_NMD_R1_Noir_FX6794_03_standard.jpg",
         },
         gray: {
-          1: "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/872299528a554356909cac4400f4ef29_9366/Chaussure_NMD_R1_Argent_FY5730_01_standard.jpg",
+          1: "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/7f732a3cdec64811a3c2ac4400f4f56b_9366/Chaussure_NMD_R1_Argent_FY5730_06_standard.jpg",
           2: "https://assets.adidas.com/images/h_2000,f_auto,q_auto:sensitive,fl_lossy/4ee1912f0df44727863fac4400f5084c_9366/Chaussure_NMD_R1_Argent_FY5730_04_standard.jpg",
           3: "https://assets.adidas.com/images/h_2000,f_auto,q_auto:sensitive,fl_lossy/368c674f004848ae8257ac4400f50fbb_9366/Chaussure_NMD_R1_Argent_FY5730_05_standard.jpg",
           4: "https://assets.adidas.com/images/h_2000,f_auto,q_auto:sensitive,fl_lossy/1dc74884c7f04a7ba0dfac4400f501c3_9366/Chaussure_NMD_R1_Argent_FY5730_03_standard.jpg",
@@ -99,7 +99,7 @@ export const shoes = {
   ],
   women: [
     {
-      name: "Adidas UQT",
+      name: "Adidas NMD",
       id: "6",
       colors: {
         black: {
