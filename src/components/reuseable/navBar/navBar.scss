@@ -5,6 +5,9 @@
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid rgba(128, 128, 128, 0.192);
+  background-color: white;
+  position: relative;
+  z-index: 20;
 
   &__links {
     margin: 0 1em;

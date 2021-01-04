@@ -23,20 +23,9 @@ const Header = () => {
       </div>
 
       <div className="header__right-part">
-        <div className="header__presentation-text">
-          <h1 className="header__shoe-name-1" style={{ color: "#3867D6" }}>
-            AIR
-          </h1>
-          <h1 className="header__shoe-name-2">JORDAN</h1>
-          <span
-            className="header__shoe-extra-name"
-            style={{ color: "#3867D6" }}
-          >
-            REACT ELEVATION
-          </span>
+        <div className="header__shoe-img-wrapper">
+          <img className="header__shoe-img" src={shoe} />
         </div>
-
-        <img className="header__shoe-img" src={shoe} />
       </div>
     </div>
   );
