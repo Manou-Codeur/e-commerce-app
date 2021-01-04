@@ -33,18 +33,18 @@ const Header = () => {
   let [index, setIndex] = useState(0);
   let currProduct = featuredProduct[index];
 
+  const { history } = useContext(HistoryContext);
+
   useEffect(() => {
-    const myIntrv = setInterval(() => {
+    const myIntrvl = setInterval(() => {
       if (index === 2) setIndex(0);
       else setIndex(prev => prev + 1);
-    }, 3000);
+    }, 5000);
 
     return () => {
-      clearInterval(myIntrv);
+      clearInterval(myIntrvl);
     };
   }, [index]);
-
-  const { history } = useContext(HistoryContext);
 
   const setProgressStyle = shoeName => {
     if (currProduct["name"].includes(shoeName))
@@ -52,10 +52,17 @@ const Header = () => {
     else return null;
   };
 
-  const controlSlide = ({ target: { nextSibling, previousSibling } }) => {
+  const controlSlider = ({ target: { nextSibling, previousSibling } }) => {
     if (!previousSibling) setIndex(0);
     else if (previousSibling && nextSibling) setIndex(1);
     else setIndex(2);
+  };
+
+  const goToProductPage = () => {
+    let { completeName } = currProduct;
+    //i'm removing 'New' from the completeName variable coz this is uncompatible with my fake db
+    completeName = completeName.replace("New", "").trim();
+    history.push(`/product/${completeName}`);
   };
 
   return (
@@ -64,10 +71,8 @@ const Header = () => {
         <div className="center">
           <span className="header__shoe-genre">Men's shoe</span>
           <h1 className="header__shoe-name">{currProduct["completeName"]}</h1>
-          <button onClick={() => history.push(`/product/${currProduct["name"]}`)}>
-            Check it out
-          </button>
-          <div className="header__progress" onClick={controlSlide}>
+          <button onClick={goToProductPage}>Check it out</button>
+          <div className="header__progress" onClick={controlSlider}>
             <div
               className="progress-item"
               style={setProgressStyle("Jordan")}
@@ -86,7 +91,14 @@ const Header = () => {
 
       <div className="header__right-part">
         <div className="header__shoe-img-wrapper">
-          <img className="header__shoe-img" src={currProduct.node} />
+          <motion.img
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1.5 }}
+            className="header__shoe-img"
+            key={currProduct.name}
+            src={currProduct.node}
+          />
         </div>
       </div>
     </div>
