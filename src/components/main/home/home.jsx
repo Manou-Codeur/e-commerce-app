@@ -1,7 +1,8 @@
 import React from "react";
 
-import Header from "./header/header";
 import NavBar from "./../../reuseable/navBar/navBar";
+import Header from "./header/header";
+import Recommend from "./recommend/recommend";
 import HistoryContext from "./../../../context/historyContext";
 
 import "./home.scss";
@@ -14,14 +15,8 @@ const Home = ({ history }) => {
         <Header />
       </HistoryContext.Provider>
 
-      <div className="extra">
-        <h1>hello world</h1>
-        <h1>hello world</h1>
-        <h1>hello world</h1>
-        <h1>hello world</h1>
-        <h1>hello world</h1>
-        <h1>hello world</h1>
-        <h1>hello world</h1>
+      <div className="home__main">
+        <Recommend />
       </div>
     </div>
   );

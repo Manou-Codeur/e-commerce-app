@@ -1,0 +1,26 @@
+.products-slider {
+  position: relative;
+
+  &__containner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 4em;
+  }
+
+  &__controls {
+    display: flex;
+    position: absolute;
+    top: -50px;
+    right: 70px;
+
+    .products-slider__left-control,
+    .products-slider__right-control {
+      height: 1.5em;
+      width: 1.5em;
+      background-color: #f5f5f5;
+      margin: 0 0.2em;
+      cursor: pointer;
+    }
+  }
+}
