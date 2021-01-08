@@ -1,10 +1,11 @@
 .product {
+  height: 100%;
   width: 26em;
-  height: 26em;
   display: flex;
   flex-direction: column;
   cursor: pointer;
   margin: 0 0.5em;
+  flex-shrink: 0;
 
   &__img-wrapper {
     height: 90%;
@@ -26,4 +27,14 @@
       font-weight: 700;
     }
   }
+
+  // @media only screen and (min-width: 1024px) {
+  //   width: calc((100% - 144px) / 3);
+  //   max-width: 586px;
+  // }
+
+  // @media only screen and (min-width: 640px) {
+  //   margin-right: 16px;
+  //   width: 330px;
+  // }
 }

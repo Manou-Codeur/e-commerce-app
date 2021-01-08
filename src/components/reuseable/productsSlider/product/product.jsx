@@ -6,7 +6,7 @@ const Product = ({ data }) => {
   return (
     <div className="product">
       <div className="product__img-wrapper">
-        <img src={data.color} alt="" />
+        <img src={data.imgUrl} alt="shoes img" />
       </div>
 
       <div className="product__info">
