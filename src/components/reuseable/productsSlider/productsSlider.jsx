@@ -10,27 +10,25 @@ const ProductsSlider = ({ productsList }) => {
   const containner = useRef();
 
   const goRight = () => {
-    const recommend = document.querySelector(".recommend");
+    const recommendComponent = document.querySelector(".recommend");
     const body = document.body;
-    const amount = containner.current.clientWidth - recommend.clientWidth;
+    const scrollAmount =
+      containner.current.clientWidth - recommendComponent.clientWidth;
+    const currPosition = parseFloat(
+      containner.current.style.left.split("px")[0]
+    );
 
     if (body.clientWidth >= 740) {
-      containner.current.style.left = `-${amount}px`;
+      containner.current.style.left = `-${scrollAmount}px`;
     } else if (body.clientWidth < 740 && body.clientWidth >= 495) {
-      const demiAmount = amount / 2;
-      if (
-        parseFloat(containner.current.style.left.split("px")[0]) !== -amount
-      ) {
-        containner.current.style.left = `${
-          containner.current.style.left.split("px")[0] - demiAmount
-        }px`;
+      const halfScrollAmount = scrollAmount / 2;
+      if (currPosition !== -scrollAmount) {
+        containner.current.style.left = `${currPosition - halfScrollAmount}px`;
       }
     } else {
-      const demiAmount = amount / 5;
-      if (parseInt(containner.current.style.left.split("px")[0]) !== -amount) {
-        containner.current.style.left = `${
-          containner.current.style.left.split("px")[0] - demiAmount
-        }px`;
+      const FifthScrollAmount = scrollAmount / 5;
+      if (currPosition !== -scrollAmount) {
+        containner.current.style.left = `${currPosition - FifthScrollAmount}px`;
       }
     }
   };
