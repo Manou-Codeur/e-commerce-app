@@ -17,10 +17,10 @@
 
   &__name {
     position: absolute;
-    bottom: 0.5em;
-    left: 0.5em;
+    bottom: 1em;
+    left: 1em;
     font-size: 1.3em;
-    font-weight: 700;
+    font-weight: 500;
     color: white;
   }
 
@@ -51,5 +51,6 @@
     left: 0.5em;
     font-size: 3.5em;
     font-weight: 700;
+    width: 50%;
   }
 }
