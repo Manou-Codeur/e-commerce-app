@@ -1,6 +1,7 @@
 .trend {
   width: 49.5%;
   position: relative;
+  cursor: pointer;
 
   &__img-wrapper {
     height: 32em;
@@ -31,6 +32,7 @@
 
 .trend--big {
   position: relative;
+  cursor: pointer;
 
   &__img-wrapper {
     height: 35em;

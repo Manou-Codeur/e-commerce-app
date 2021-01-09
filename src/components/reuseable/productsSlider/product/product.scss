@@ -6,6 +6,10 @@
   cursor: pointer;
   margin: 0 0.5em;
 
+  &:hover {
+    opacity: 0.8;
+  }
+
   &:nth-of-type(1) {
     margin-left: 0;
   }
