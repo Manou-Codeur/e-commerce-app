@@ -8,7 +8,7 @@ import "./recommend.scss";
 const Recommend = () => {
   return (
     <div className="recommend">
-      <h2 className="recommend__heading">EQUIP YOURSELF</h2>
+      <h2 className="recommend__heading">Equip Yourself</h2>
       <ProductsSlider productsList={getRecommendations()} />
     </div>
   );
