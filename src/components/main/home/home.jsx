@@ -13,11 +13,11 @@ const Home = ({ history }) => {
       <HistoryContext.Provider value={{ history }}>
         <NavBar />
         <Header />
-      </HistoryContext.Provider>
 
-      <div className="home__main">
-        <Recommend />
-      </div>
+        <div className="home__main">
+          <Recommend />
+        </div>
+      </HistoryContext.Provider>
     </div>
   );
 };

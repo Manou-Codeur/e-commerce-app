@@ -1,9 +1,26 @@
 .recommend {
   padding: 5em 0;
+  width: 87%;
+  margin: 0 auto;
 
   &__heading {
     margin-bottom: 1em;
-    padding: 0 3em;
     font-weight: 600;
+  }
+
+  @media only screen and (max-width: 1490px) {
+    font-size: 12px;
+  }
+
+  @media only screen and (max-width: 1120px) {
+    font-size: 10px;
+  }
+
+  @media only screen and (max-width: 935px) {
+    font-size: 8px;
+  }
+
+  @media only screen and (max-width: 750px) {
+    font-size: 7spx;
   }
 }
