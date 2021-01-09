@@ -14,9 +14,10 @@ const ProductsSlider = ({ productsList }) => {
     const body = document.body;
     const scrollAmount =
       containner.current.clientWidth - recommendComponent.clientWidth;
-    const currPosition = parseFloat(
-      containner.current.style.left.split("px")[0]
-    );
+    const currPosition =
+      containner.current.style.left.split("px")[0] !== ""
+        ? parseFloat(containner.current.style.left.split("px")[0])
+        : 0;
 
     if (body.clientWidth >= 740) {
       containner.current.style.left = `-${scrollAmount}px`;
@@ -25,7 +26,7 @@ const ProductsSlider = ({ productsList }) => {
       if (currPosition !== -scrollAmount) {
         containner.current.style.left = `${currPosition - halfScrollAmount}px`;
       }
-    } else {
+    } else if (body.clientWidth < 495) {
       const FifthScrollAmount = scrollAmount / 5;
       if (currPosition !== -scrollAmount) {
         containner.current.style.left = `${currPosition - FifthScrollAmount}px`;
