@@ -1,3 +1,5 @@
+@import "../../../../assets/sass/variables.scss";
+
 .recommend {
   padding: 5em 0;
   width: 87%;
@@ -5,7 +7,8 @@
 
   &__heading {
     margin-bottom: 1em;
-    font-weight: 600;
+    font-weight: $sectionHeadingWeight;
+    font-size: $sectionHeading;
   }
 
   @media only screen and (max-width: 1490px) {

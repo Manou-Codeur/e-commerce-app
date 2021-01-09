@@ -1,3 +1,5 @@
+@import "../../../assets/sass/variables.scss";
+
 @mixin background-filter {
   position: fixed;
   top: 0;
@@ -29,12 +31,12 @@
   }
 
   &__logo {
-    height: 5em;
-    width: 5em;
+    height: $logoHeight;
+    width: $logoHeight;
   }
 
   &__btn {
-    background-color: black;
+    background-color: $BtnColor;
     color: white;
     padding: 1.1em 0;
     border: 0;
