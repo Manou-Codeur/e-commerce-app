@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
+
+import HistoryContext from "./../../../../context/historyContext";
 
 import "./product.scss";
 
 const Product = ({ data }) => {
+  const { history } = useContext(HistoryContext);
+
   return (
-    <div className="product">
+    <div
+      className="product"
+      onClick={() => history.push(`/product/${data.name}`)}
+    >
       <div className="product__img-wrapper">
         <img src={data.imgUrl} alt="shoes img" />
       </div>
