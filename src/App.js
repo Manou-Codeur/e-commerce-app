@@ -19,7 +19,7 @@ const App = props => {
         <Route path="/notFound" component={NotFound} />
         <Route path="/men" exact component={GenreProduct} />
         <Route path="/women" exact component={GenreProduct} />
-        <Route path="/kid" exact component={GenreProduct} />
+        <Route path="/kids" exact component={GenreProduct} />
         <Redirect from="/" exact to="/home" />
         <Redirect to="/notFound" />
       </Switch>
