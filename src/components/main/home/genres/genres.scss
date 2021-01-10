@@ -1,4 +1,5 @@
 @import "../../../../assets/sass/variables.scss";
+@import "../homeMixins.scss";
 
 .genres {
   width: 87%;
@@ -10,19 +11,5 @@
     font-size: $sectionHeading;
   }
 
-  @media only screen and (max-width: 1490px) {
-    font-size: 12px;
-  }
-
-  @media only screen and (max-width: 1120px) {
-    font-size: 10px;
-  }
-
-  @media only screen and (max-width: 935px) {
-    font-size: 8px;
-  }
-
-  @media only screen and (max-width: 750px) {
-    font-size: 7spx;
-  }
+  @include homeResponsive;
 }
