@@ -1,0 +1,78 @@
+@import "../../../assets/sass/variables.scss";
+
+.footer {
+  background-color: $mainColor;
+  height: 11em;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  font-weight: 600;
+  padding: 3em 4em 0 4em;
+
+  &__left {
+    span {
+      margin: 0 0.5em;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &__center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateX(-30%);
+
+    img {
+      height: $logoHeight;
+      width: $logoHeight;
+      margin-top: 0.6em;
+    }
+  }
+
+  &__right {
+    svg {
+      height: 2em;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1490px) {
+    font-size: 12px;
+  }
+
+  @media only screen and (max-width: 1120px) {
+    font-size: 10px;
+  }
+
+  @media only screen and (max-width: 935px) {
+    font-size: 8px;
+  }
+
+  @media only screen and (max-width: 750px) {
+    font-size: 7spx;
+  }
+
+  @media only screen and (max-width: 560px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 20em;
+
+    &__center {
+      transform: none;
+      margin: 3em 0;
+
+      img {
+        margin: 0;
+      }
+    }
+  }
+}
