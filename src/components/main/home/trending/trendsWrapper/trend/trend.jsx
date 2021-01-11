@@ -4,13 +4,13 @@ import HistoryContext from "./../../../../../../context/historyContext";
 
 import "./trend.scss";
 
-const Trend = ({ data: { imgUrl, name }, big }) => {
+const Trend = ({ data: { imgUrl, name, color, type, genre }, big }) => {
   const { history } = useContext(HistoryContext);
 
   return (
     <div
       className={big ? "trend--big" : "trend"}
-      onClick={() => history.push(`/product/${name}`)}
+      onClick={() => history.push(`/product/${type}@${genre}@${name}@${color}`)}
     >
       <div className={big ? "trend--big__img-wrapper" : "trend__img-wrapper"}>
         <img src={imgUrl} alt="shoe image" />

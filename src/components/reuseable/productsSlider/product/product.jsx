@@ -4,20 +4,20 @@ import HistoryContext from "./../../../../context/historyContext";
 
 import "./product.scss";
 
-const Product = ({ data }) => {
+const Product = ({ data: { name, type, genre, imgUrl, color } }) => {
   const { history } = useContext(HistoryContext);
 
   return (
     <div
       className="product"
-      onClick={() => history.push(`/product/${data.name}`)}
+      onClick={() => history.push(`/product/${type}@${genre}@${name}@${color}`)}
     >
       <div className="product__img-wrapper">
-        <img src={data.imgUrl} alt="shoes img" />
+        <img src={imgUrl} alt="product img" />
       </div>
 
       <div className="product__info">
-        <span className="product__name">{data.name}</span>
+        <span className="product__name">{name}</span>
         <span className="product__price">24.99 $</span>
       </div>
     </div>

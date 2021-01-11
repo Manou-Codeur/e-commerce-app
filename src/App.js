@@ -12,7 +12,7 @@ const App = props => {
   return (
     <React.Fragment>
       <Switch>
-        <Route path="/product/:productname" exact component={ProdcutPage} />
+        <Route path="/product/:productInfo" exact component={ProdcutPage} />
         <Route path="/home" exact component={Home} />
         <Route path="/cart" exact component={Cart} />
         <Route path="/order" exact component={Order} />

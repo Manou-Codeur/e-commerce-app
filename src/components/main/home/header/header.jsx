@@ -11,21 +11,30 @@ import adidasNMD from "../../../../assets/img/featured-products/adidas-uqt.png";
 const Header = () => {
   const featuredProduct = [
     {
+      type: "shoes",
+      genre: "men",
       name: "airJordan",
       completeName: "New Jordan React Elevation",
-      color: "#3867d6",
+      hexColor: "#3867d6",
+      namedColor: "blue",
       node: airJordan,
     },
     {
+      type: "shoes",
+      genre: "men",
       name: "nikeLegend",
       completeName: "New Nike Legend React 3",
-      color: "#64a9b0",
+      hexColor: "#64a9b0",
+      namedColor: "blue",
       node: nikeLegend,
     },
     {
+      type: "shoes",
+      genre: "men",
       name: "adidasNMD",
       completeName: "New Adidas NMD_R1 V1",
-      color: "#FF443C",
+      hexColor: "#FF443C",
+      namedColor: "black",
       node: adidasNMD,
     },
   ];
@@ -48,7 +57,7 @@ const Header = () => {
 
   const setProgressStyle = shoeName => {
     if (currProduct["name"].includes(shoeName))
-      return { backgroundColor: currProduct["color"] };
+      return { backgroundColor: currProduct["hexColor"] };
     else return null;
   };
 
@@ -59,10 +68,10 @@ const Header = () => {
   };
 
   const goToProductPage = () => {
-    let { completeName } = currProduct;
+    let { completeName, namedColor, type, genre } = currProduct;
     //i'm removing 'New' from the completeName variable coz this is uncompatible with my fake db
     completeName = completeName.replace("New", "").trim();
-    history.push(`/product/${completeName}`);
+    history.push(`/product/${type}@${genre}@${completeName}@${namedColor}`);
   };
 
   return (
