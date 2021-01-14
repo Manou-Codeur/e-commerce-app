@@ -259,13 +259,17 @@ export const clothes = {
       name: "Adidas Jacket",
       id: "15",
       colors: {
-        black: {
-          1: "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/1c44aa24b1794f449804a88f00c2da3c_9366/Doudoune_a_capuche_Varilite_Soft_Gris_CY8738_01_laydown.jpg",
-          2: "https://assets.adidas.com/images/h_2000,f_auto,q_auto:sensitive,fl_lossy/a03fe943f4c64da29cefa88f00c2e63a_9366/Doudoune_a_capuche_Varilite_Soft_Gris_CY8738_02_laydown_hover.jpg",
-        },
         blue: {
           1: "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/d7e1f9f92762438aa8fdaa4500aae950_9366/Doudoune_a_capuche_Varilite_Soft_Bleu_DZ1447_21_model.jpg",
-          2: "https://assets.adidas.com/images/h_2000,f_auto,q_auto:sensitive,fl_lossy/31cfe0764dc846fab1dbaa4500ab0d80_9366/Doudoune_a_capuche_Varilite_Soft_Bleu_DZ1447_23_hover_model.jpg",
+          2: "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/00d44375f6df470d9ebfaa4500aafbd0_9366/Doudoune_a_capuche_Varilite_Soft_Bleu_DZ1447_22_model.jpg",
+          3: "https://assets.adidas.com/images/h_2000,f_auto,q_auto:sensitive,fl_lossy/31cfe0764dc846fab1dbaa4500ab0d80_9366/Doudoune_a_capuche_Varilite_Soft_Bleu_DZ1447_23_hover_model.jpg",
+          4: "https://assets.adidas.com/images/h_2000,f_auto,q_auto:sensitive,fl_lossy/20f442c76ff948fcb4a1aa4500ab3d0f_9366/Doudoune_a_capuche_Varilite_Soft_Bleu_DZ1447_41_detail.jpg",
+        },
+        brown: {
+          1: "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/5d97a627cff446a583f0ab5f01316b49_9366/Doudoune_a_capuche_Varilite_Soft_Beige_GE5878_21_model.jpg",
+          2: "https://assets.adidas.com/images/h_2000,f_auto,q_auto:sensitive,fl_lossy/7e911b44f6d94d79bac9ab5f013177ae_9366/Doudoune_a_capuche_Varilite_Soft_Beige_GE5878_22_model.jpg",
+          3: "https://assets.adidas.com/images/h_2000,f_auto,q_auto:sensitive,fl_lossy/b128df30521e4df38891ab5f013185b9_9366/Doudoune_a_capuche_Varilite_Soft_Beige_GE5878_23_hover_model.jpg",
+          4: "https://assets.adidas.com/images/h_2000,f_auto,q_auto:sensitive,fl_lossy/6ab917d4c2be48fbbd79ab5f0131a104_9366/Doudoune_a_capuche_Varilite_Soft_Beige_GE5878_41_detail.jpg",
         },
       },
     },
@@ -276,22 +280,28 @@ export const clothes = {
         red: {
           1: "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/ffeb37a255444a978a82ab8b00ab23c4_9366/Pantalon_de_survetement_Adicolor_Classics_Primeblue_SST_Rouge_GF0208_21_model.jpg",
           2: "https://assets.adidas.com/images/h_2000,f_auto,q_auto:sensitive,fl_lossy/f53d1f3e84f14335ad37ab8b00ab3c48_9366/Pantalon_de_survetement_Adicolor_Classics_Primeblue_SST_Rouge_GF0208_23_hover_model.jpg",
+          3: "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/4a5939b0ca7f43a98c3cab8b00ab3006_9366/Pantalon_de_survetement_Adicolor_Classics_Primeblue_SST_Rouge_GF0208_22_model.jpg",
+          4: "https://assets.adidas.com/images/h_2000,f_auto,q_auto:sensitive,fl_lossy/4a0713bb1dc342dd83f8ab8b00ab5892_9366/Pantalon_de_survetement_Adicolor_Classics_Primeblue_SST_Rouge_GF0208_41_detail.jpg",
         },
         gray: {
           1: "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/3575204185e8458586eeac750110b47d_9366/Pantalon_de_survetement_Adicolor_Classics_Primeblue_SST_Bleu_GN3514_21_model.jpg",
           2: "https://assets.adidas.com/images/h_2000,f_auto,q_auto:sensitive,fl_lossy/56b5e85b0dff43c6bc3eac7501110c9d_9366/Pantalon_de_survetement_Adicolor_Classics_Primeblue_SST_Bleu_GN3514_23_hover_model.jpg",
+          3: "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/01949a254ce74e17927eac7501111b9c_9366/Pantalon_de_survetement_Adicolor_Classics_Primeblue_SST_Bleu_GN3514_25_model.jpg",
+          4: "https://assets.adidas.com/images/h_2000,f_auto,q_auto:sensitive,fl_lossy/5fea2af65f1e4b749162ac7501112c3e_9366/Pantalon_de_survetement_Adicolor_Classics_Primeblue_SST_Bleu_GN3514_41_detail.jpg",
         },
       },
     },
   ],
   women: [
     {
-      name: "Nike Swoosh Sweat Pants",
+      name: "Nike Sportswear Icon Clash",
       id: "17",
       colors: {
         black: {
-          1: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a3bed5db-53fb-407a-8fc0-22f774d90b67/legging-taille-haute-sportswear-swoosh-pour-pf73R5.jpg",
-          2: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/682791f4-c46b-4c99-87e5-92d418dab52f/legging-taille-haute-sportswear-swoosh-pour-pf73R5.jpg",
+          1: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/9c1f356c-95f2-48d4-8aa2-965f329b0ae2/legging-taille-haute-sportswear-icon-clash-pour-Wl0Hl3.jpg",
+          2: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/e30b221c-46b6-4f85-bc75-e498cdd9ecd4/legging-taille-haute-sportswear-icon-clash-pour-Wl0Hl3.jpg",
+          3: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/15b446e9-1c77-4c3a-9a28-3c4060dea95e/legging-taille-haute-sportswear-icon-clash-pour-Wl0Hl3.jpg",
+          4: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/bce0f90b-cb11-4df6-8d48-f8d7d9a466c8/legging-taille-haute-sportswear-icon-clash-pour-Wl0Hl3.jpg",
         },
       },
     },
@@ -302,6 +312,8 @@ export const clothes = {
         black: {
           1: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/i1-9dea31af-bc80-421a-8721-8cc1d7bce9b2/haut-court-jordan-moto-pour-VjvdRq.jpg",
           2: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/i1-a17dfb16-2a6c-46bf-a02a-83af5b065611/haut-court-jordan-moto-pour-VjvdRq.jpg",
+          3: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/i1-d60be581-ff7a-4fae-9d70-f0e6aef4d870/haut-court-jordan-moto-pour-VjvdRq.jpg",
+          4: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/i1-e1a36efd-3da8-4897-a025-3e7f9c81beb9/haut-court-jordan-moto-pour-VjvdRq.jpg",
         },
       },
     },
@@ -312,10 +324,8 @@ export const clothes = {
         red: {
           1: "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/686336201aff4afdb8f1ac4400e94cb6_9366/Short_Adicolor_Classics_3-Stripes_Rouge_GN2886_21_model.jpg",
           2: "https://assets.adidas.com/images/h_2000,f_auto,q_auto:sensitive,fl_lossy/86fd30895ad94bf9885cac4400e95a64_9366/Short_Adicolor_Classics_3-Stripes_Rouge_GN2886_23_hover_model.jpg",
-        },
-        black: {
-          1: "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/964985cc0c1c4f29b42dac840037001d_9366/Short_Adicolor_Classics_3-Stripes_Noir_GN2885_21_model.jpg",
-          2: "https://assets.adidas.com/images/h_2000,f_auto,q_auto:sensitive,fl_lossy/31cb84c34e93418a8b1dac8400370eba_9366/Short_Adicolor_Classics_3-Stripes_Noir_GN2885_23_hover_model.jpg",
+          3: "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/224e28ca87c6451fbef5ac4400e968e5_9366/Short_Adicolor_Classics_3-Stripes_Rouge_GN2886_25_model.jpg",
+          4: "https://assets.adidas.com/images/h_2000,f_auto,q_auto:sensitive,fl_lossy/e0a2f96c3a934cfc98a3ac4400e979d7_9366/Short_Adicolor_Classics_3-Stripes_Rouge_GN2886_41_detail.jpg",
         },
       },
     },
@@ -324,24 +334,36 @@ export const clothes = {
       id: "20",
       colors: {
         white: {
-          1: "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/8b44ca6081664ac19f71ac85007988f1_9366/Sweat-shirt_Adicolor_Essentials_Blanc_H45584_21_model.jpg",
-          2: "https://assets.adidas.com/images/h_2000,f_auto,q_auto:sensitive,fl_lossy/cc89b83fca8e4fa9a7b7ac8601560345_9366/Sweat-shirt_Adicolor_Essentials_Blanc_H45584_23_hover_model.jpg",
+          1: "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/a7907f66cd0147f7aee3ac85007945df_9366/Sweat-shirt_a_capuche_LOUNGEWEAR_Adicolor_Essentials_Blanc_H45581_21_model.jpg",
+          2: "https://assets.adidas.com/images/h_2000,f_auto,q_auto:sensitive,fl_lossy/b98bbbfc01a64b8fa081ac860155b431_9366/Sweat-shirt_a_capuche_LOUNGEWEAR_Adicolor_Essentials_Blanc_H45581_23_hover_model.jpg",
+          3: "https://assets.adidas.com/images/h_2000,f_auto,q_auto:sensitive,fl_lossy/76a1311147ee4e2e9c4aac860155e03b_9366/Sweat-shirt_a_capuche_LOUNGEWEAR_Adicolor_Essentials_Blanc_H45581_25_model.jpg",
+          4: "https://assets.adidas.com/images/h_2000,f_auto,q_auto:sensitive,fl_lossy/9bd5c867cf814df692a3ac860155eedd_9366/Sweat-shirt_a_capuche_LOUNGEWEAR_Adicolor_Essentials_Blanc_H45581_42_detail.jpg",
         },
         pink: {
-          1: "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/c92a79dcefda4ed389ceac7801150964_9366/Sweat-shirt_Adicolor_Essentials_Rose_H36802_21_model.jpg",
-          2: "https://assets.adidas.com/images/h_2000,f_auto,q_auto:sensitive,fl_lossy/9b76b597dd6946d4b4e4ac78011517e2_9366/Sweat-shirt_Adicolor_Essentials_Rose_H36802_23_hover_model.jpg",
+          1: "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/cd8f013cddc9426c8e14ac7500e3dce5_9366/Sweat-shirt_a_capuche_LOUNGEWEAR_Adicolor_Essentials_Rose_H13875_21_model.jpg",
+          2: "https://assets.adidas.com/images/h_2000,f_auto,q_auto:sensitive,fl_lossy/c9d834dbf6a94006a9acac7500e3eb7c_9366/Sweat-shirt_a_capuche_LOUNGEWEAR_Adicolor_Essentials_Rose_H13875_23_hover_model.jpg",
+          3: "https://assets.adidas.com/images/h_2000,f_auto,q_auto:sensitive,fl_lossy/c905d2e990044c0fb437ac7500e3fc1e_9366/Sweat-shirt_a_capuche_LOUNGEWEAR_Adicolor_Essentials_Rose_H13875_25_model.jpg",
+          4: "https://assets.adidas.com/images/h_2000,f_auto,q_auto:sensitive,fl_lossy/70dd27b2342d473bb420ac7500e40e85_9366/Sweat-shirt_a_capuche_LOUNGEWEAR_Adicolor_Essentials_Rose_H13875_41_detail.jpg",
         },
       },
     },
   ],
   kids: [
     {
-      name: "Nike Woven Hoodies",
+      name: "Nike Sportswear",
       id: "21",
       colors: {
-        green: {
-          1: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/adc5b5f4-0bba-4913-9ee7-e53aa397be2a/sweat-a-capuche-tisse-entierement-zippe-sportswear-tech-fleece-pour-plus-age-htNWRC.jpg",
-          2: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/367fdb6a-116e-45b7-bd8c-a02d0927a527/sweat-a-capuche-tisse-entierement-zippe-sportswear-tech-fleece-pour-plus-age-htNWRC.jpg",
+        gray: {
+          1: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/vm6ob7sb9lciwasdak8k/sweat-a-capuche-a-zip-integral-sportswear-pour-Vt3Rps.jpg",
+          2: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/eigedzvhlz6ssdtjdzg6/sweat-a-capuche-a-zip-integral-sportswear-pour-Vt3Rps.jpg",
+          3: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/maezkvwrl7yfd0aq7qsd/sweat-a-capuche-a-zip-integral-sportswear-pour-Vt3Rps.jpg",
+          4: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/ehormcbfmsdtibnrh7gj/sweat-a-capuche-a-zip-integral-sportswear-pour-Vt3Rps.jpg",
+        },
+        blue: {
+          1: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/kdivmo2kj6eiyq1sq7wu/sweat-a-capuche-a-zip-integral-sportswear-pour-Vt3Rps.jpg",
+          2: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/fagay1rmydyzpiw4uwxs/sweat-a-capuche-a-zip-integral-sportswear-pour-Vt3Rps.jpg",
+          3: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/r76kdyazcdcy4dp8emok/sweat-a-capuche-a-zip-integral-sportswear-pour-Vt3Rps.jpg",
+          4: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/x3i2ow91nhhdnkoojahl/sweat-a-capuche-a-zip-integral-sportswear-pour-Vt3Rps.jpg",
         },
       },
     },
@@ -352,16 +374,26 @@ export const clothes = {
         white: {
           1: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/eb1ea280-d150-4f0e-bd53-9835cd0776b5/veste-deperlante-a-garnissage-synthetique-avec-effet-marbre-sportswear-pour-plus-age-M1PHkH.jpg",
           2: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/2efd060e-0e0e-474f-bb29-dee7407e4280/veste-deperlante-a-garnissage-synthetique-avec-effet-marbre-sportswear-pour-plus-age-M1PHkH.jpg",
+          3: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/2a95ec33-4ee7-43e1-a416-32df163721ed/veste-deperlante-a-garnissage-synthetique-avec-effet-marbre-sportswear-pour-plus-age-M1PHkH.jpg",
+          4: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/e61853d5-d7db-49cf-8d73-999f0df8c1e2/veste-deperlante-a-garnissage-synthetique-avec-effet-marbre-sportswear-pour-plus-age-M1PHkH.jpg",
         },
       },
     },
     {
-      name: "Trefoil Shorts Tee Set",
+      name: "Nike Sportswear Windrunner",
       id: "23",
       colors: {
-        whiteRed: {
-          1: "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/8c8ad68a7cb640678a6bac4600a18ed6_9366/Ensemble_Trefoil_Shorts_Tee_Rouge_ED7725_21_model.jpg",
-          2: "https://assets.adidas.com/images/h_2000,f_auto,q_auto:sensitive,fl_lossy/9cbcc6b3347e4f2294fbac4600a1ddfc_9366/Ensemble_Trefoil_Shorts_Tee_Rouge_ED7725_23_hover_model.jpg",
+        blue: {
+          1: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/ec0b21f1-086c-47ee-8665-4799c5037965/veste-sportswear-windrunner-pour-plus-age-3mzkTS.jpg",
+          2: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/ff3f5150-ce9e-4fdb-bc52-0e7c570a3f52/veste-sportswear-windrunner-pour-plus-age-3mzkTS.jpg",
+          3: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/33ab97af-59e4-48ed-bebd-16afe65af676/veste-sportswear-windrunner-pour-plus-age-3mzkTS.jpg",
+          4: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/e18caa01-f191-4062-8496-d673c05985aa/veste-sportswear-windrunner-pour-plus-age-3mzkTS.jpg",
+        },
+        black: {
+          1: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/c8dd03da-9400-4a60-877e-3aed06dc66d4/veste-sportswear-windrunner-pour-plus-age-3mzkTS.jpg",
+          2: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/3a8cc228-1da9-4d33-85ac-5ef711a8fae7/veste-sportswear-windrunner-pour-plus-age-3mzkTS.jpg",
+          3: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/a655a7ba-b6ee-489b-b3eb-4fa3ab742040/veste-sportswear-windrunner-pour-plus-age-3mzkTS.jpg",
+          4: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/44117d20-6694-4f8c-b10b-d4aeb4b2d3e6/veste-sportswear-windrunner-pour-plus-age-3mzkTS.jpg",
         },
       },
     },

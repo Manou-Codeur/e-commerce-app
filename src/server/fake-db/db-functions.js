@@ -58,8 +58,8 @@ export const fetchRecommendations = () => {
       type: "clothes",
       genre: "kids",
       name: clothes.kids[0].name,
-      imgUrl: clothes.kids[0].colors.green["1"],
-      color: "green",
+      imgUrl: clothes.kids[0].colors.gray["1"],
+      color: "gray",
     },
   ];
 };
