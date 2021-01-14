@@ -31,7 +31,7 @@ const useStyles = makeStyles({
 const SizeSelect = ({ productType }) => {
   const classes = useStyles();
 
-  const size =
+  const sizes =
     productType === "shoes" ? [36, 37, 38, 39, 40, 41, 42] : ["S", "M", "L"];
 
   return (
@@ -39,10 +39,10 @@ const SizeSelect = ({ productType }) => {
       <FormControl variant="standard" className={classes.root}>
         <InputLabel id="size-select">Select Size</InputLabel>
 
-        <Select labelId="size-select">
-          {size.map(country => (
-            <MenuItem value={country} key={country}>
-              {country}
+        <Select labelId="size-select" defaultValue="">
+          {sizes.map(size => (
+            <MenuItem value={size} key={size}>
+              {size}
             </MenuItem>
           ))}
         </Select>

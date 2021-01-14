@@ -22,25 +22,15 @@ const ProductPresentation = ({ productDetails }) => {
     const otherColors = [];
 
     for (let els in colors) {
-      if (els !== currColor) otherColors.push(colors[els]["1"]);
+      if (els !== currColor) otherColors.push(colors[els][0]);
     }
 
     return otherColors;
   }
 
-  function getCurrImages() {
-    const currImages = [];
-
-    for (let els in product.colors[currColor]) {
-      currImages.push(product.colors[currColor][els]);
-    }
-
-    return currImages;
-  }
-
   return (
     <div className="product-presentation">
-      <ImagesWrapper images={getCurrImages()} />
+      <ImagesWrapper images={product.colors[currColor]} />
 
       <div className="product-presentation__info">
         <span className="product-presentation__genre">
