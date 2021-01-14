@@ -46,7 +46,10 @@ const Search = ({ closeSearch }) => {
         </div>
 
         <div className="search__down-part">
-          <SearchResult filtredProducts={filtredProducts} />
+          <SearchResult
+            filtredProducts={filtredProducts}
+            closeSearch={closeSearch}
+          />
         </div>
       </motion.div>
     </motion.div>

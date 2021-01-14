@@ -1,0 +1,46 @@
+@import "../../../../assets/sass/variables.scss";
+
+.product-presentation {
+  padding: 5em 0;
+  display: flex;
+  width: 87%;
+  margin: 0 auto;
+
+  &__info {
+    border: 1px solid black;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    padding: 5em 0 0 3em;
+
+    .product-presentation__genre {
+      margin-bottom: 1.5em;
+    }
+
+    .product-presentation__name {
+      font-size: 1.7em;
+      margin-bottom: 1em;
+    }
+
+    .product-presentation__payment {
+      button {
+        background-color: $BtnColor;
+        border: 0;
+        padding: 1em 4em;
+        color: white;
+        font-weight: 600;
+        cursor: pointer;
+        outline: none;
+      }
+
+      .price {
+        margin-left: 3em;
+        font-weight: 700;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1190px) {
+    font-size: 14px;
+  }
+}

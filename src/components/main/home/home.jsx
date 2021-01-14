@@ -6,14 +6,13 @@ import Header from "./header/header";
 import Recommend from "./recommend/recommend";
 import Trending from "./trending/trending";
 import Genres from "./genres/genres";
-import Footer from "./../../reuseable/footer/footer";
 
 import "./home.scss";
 
 const Home = ({ history }) => {
   return (
-    <div className="home">
-      <HistoryContext.Provider value={{ history }}>
+    <HistoryContext.Provider value={{ history }}>
+      <div className="home">
         <NavBar />
         <Header />
 
@@ -22,10 +21,8 @@ const Home = ({ history }) => {
           <Trending />
           <Genres />
         </div>
-      </HistoryContext.Provider>
-
-      <Footer />
-    </div>
+      </div>
+    </HistoryContext.Provider>
   );
 };
 

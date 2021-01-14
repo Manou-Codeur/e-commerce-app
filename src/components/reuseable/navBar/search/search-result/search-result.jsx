@@ -4,10 +4,12 @@ import HistoryContext from "./../../../../../context/historyContext";
 
 import "./search-result.scss";
 
-const SearchResult = ({ filtredProducts }) => {
+const SearchResult = ({ filtredProducts, closeSearch }) => {
   const { history } = useContext(HistoryContext);
 
   const goToProductPage = ({ target }) => {
+    closeSearch();
+
     if (target.nodeName === "P") {
       history.push(`/product/${target.textContent}`);
     }

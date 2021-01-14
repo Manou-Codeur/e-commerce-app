@@ -65,8 +65,8 @@ export const fetchRecommendations = () => {
 };
 
 export const fetchProduct = (type, genre, name, color) => {
-  const product = products[type][genre].filter(
+  const product = products[type][genre.toLowerCase()].filter(
     product => product.name === name
   );
-  return product[0].colors[color];
+  return { ...product[0], genre, type, color };
 };

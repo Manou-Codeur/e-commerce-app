@@ -1,0 +1,26 @@
+.images-wrapper {
+  width: 65%;
+  display: flex;
+  border: 1px solid red;
+  justify-content: space-between;
+
+  &__left,
+  &__right {
+    width: 49.5%;
+
+    .images-wrapper__item {
+      width: 100%;
+      max-width: 27em;
+      height: 30em;
+      background-color: bisque;
+      margin: 0.5em 0;
+      flex-shrink: 0;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}

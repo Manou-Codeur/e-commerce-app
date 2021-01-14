@@ -17,7 +17,7 @@ const Footer = () => {
 
       <div className="footer__center">
         <span>
-          2020 <em>FASHION</em> All Rights Reserved
+          2021 <em>FASHION</em> All Rights Reserved
         </span>
         <img src={Logo} alt="logo" />
       </div>

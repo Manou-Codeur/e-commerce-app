@@ -12,16 +12,16 @@ const Header = () => {
   const featuredProduct = [
     {
       type: "shoes",
-      genre: "men",
+      genre: "Men",
       name: "airJordan",
-      completeName: "New Jordan React Elevation",
+      completeName: "New Air Jordan React Elevation",
       hexColor: "#3867d6",
       namedColor: "blue",
       node: airJordan,
     },
     {
       type: "shoes",
-      genre: "men",
+      genre: "Men",
       name: "nikeLegend",
       completeName: "New Nike Legend React 3",
       hexColor: "#64a9b0",
@@ -30,7 +30,7 @@ const Header = () => {
     },
     {
       type: "shoes",
-      genre: "men",
+      genre: "Men",
       name: "adidasNMD",
       completeName: "New Adidas NMD_R1 V1",
       hexColor: "#FF443C",

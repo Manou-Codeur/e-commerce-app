@@ -1,7 +1,7 @@
 export const shoes = {
   men: [
     {
-      name: "Air Jordan Elevation",
+      name: "Air Jordan React Elevation",
       id: "1",
       colors: {
         blue: {
@@ -67,7 +67,7 @@ export const shoes = {
       },
     },
     {
-      name: "Nike Legend",
+      name: "Nike Legend React 3",
       id: "4",
       colors: {
         blue: {
@@ -85,7 +85,7 @@ export const shoes = {
       },
     },
     {
-      name: "Adidas NMD",
+      name: "Adidas NMD_R1 V1",
       id: "5",
       colors: {
         black: {
@@ -224,26 +224,34 @@ export const clothes = {
       id: "13",
       colors: {
         white: {
-          1: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/6aec520c-f008-41a9-8f7a-e9884267d47a/sweat-a-capuche-entierement-zippe-camouflage-sportswear-tech-fleece-pour-hz0hfG.jpg",
-          2: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/5901522a-3c06-43d3-b71b-aaf608a3f4a7/sweat-a-capuche-entierement-zippe-camouflage-sportswear-tech-fleece-pour-hz0hfG.jpg",
+          1: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/6aec520c-f008-41a9-8f7a-e9884267d47a/sweat-a-capuche-entierement-zippe-camouflage-sportswear-tech-fleece-pour-PpdHNV.jpg",
+          2: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/5901522a-3c06-43d3-b71b-aaf608a3f4a7/sweat-a-capuche-entierement-zippe-camouflage-sportswear-tech-fleece-pour-PpdHNV.jpg",
+          3: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/4ba5ce5e-0be1-42be-95e8-61313cc3618b/sweat-a-capuche-entierement-zippe-camouflage-sportswear-tech-fleece-pour-PpdHNV.jpg",
+          4: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/60c4a881-a666-4c58-8d9f-422e6affaddb/sweat-a-capuche-entierement-zippe-camouflage-sportswear-tech-fleece-pour-PpdHNV.jpg",
         },
         green: {
-          1: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b64b0927-290c-4100-89aa-6ff05b9fd481/sweat-a-capuche-entierement-zippe-camouflage-sportswear-tech-fleece-pour-hz0hfG.jpg",
-          2: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/754af90d-234c-4d59-aef5-96abc3d7fa0a/sweat-a-capuche-entierement-zippe-camouflage-sportswear-tech-fleece-pour-hz0hfG.jpg",
+          1: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/b64b0927-290c-4100-89aa-6ff05b9fd481/sweat-a-capuche-entierement-zippe-camouflage-sportswear-tech-fleece-pour-PpdHNV.jpg",
+          2: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/754af90d-234c-4d59-aef5-96abc3d7fa0a/sweat-a-capuche-entierement-zippe-camouflage-sportswear-tech-fleece-pour-PpdHNV.jpg",
+          3: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/976b74e9-56fe-40ae-b6c8-1052211c6995/sweat-a-capuche-entierement-zippe-camouflage-sportswear-tech-fleece-pour-PpdHNV.jpg",
+          4: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/6af182db-503c-425b-8c93-52db57d3d07f/sweat-a-capuche-entierement-zippe-camouflage-sportswear-tech-fleece-pour-PpdHNV.jpg",
         },
       },
     },
     {
-      name: "Nike Sport T-chirt",
+      name: "Nike Sportswear Club Fleece",
       id: "14",
       colors: {
         red: {
-          1: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/uiglb3jy9jve0nwfzzhf/haut-sportswear-club-fleece-LLwr0X.jpg",
-          2: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/cdkxfchjuzpdw5jtpas9/haut-sportswear-club-fleece-LLwr0X.jpg",
+          1: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/nl2xle7edpxe0ggnalzw/sweat-a-capuche-sportswear-club-fleece-39qLnk.jpg",
+          2: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/l4nkapf9h0mnm2xrzlth/sweat-a-capuche-sportswear-club-fleece-39qLnk.jpg",
+          3: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/ivagjst1ppcyft9egdx8/sweat-a-capuche-sportswear-club-fleece-39qLnk.jpg",
+          4: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/sgbhetlivvwve5l8dmqr/sweat-a-capuche-sportswear-club-fleece-39qLnk.jpg",
         },
-        black: {
-          1: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/omufkuhutuyxg9ebscnd/haut-sportswear-club-fleece-LLwr0X.jpg",
-          2: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/cmxi7ftnujprjaffbwtu/haut-sportswear-club-fleece-LLwr0X.jpg",
+        blue: {
+          1: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/bac5eb03-d24b-43fa-999c-7fc1d0255511/sweat-a-capuche-sportswear-club-fleece-39qLnk.jpg",
+          2: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/ca8nexbowuinx5s4vvkx/sweat-a-capuche-sportswear-club-fleece-39qLnk.jpg",
+          3: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/ahdesa57es8eoo5jj1ni/sweat-a-capuche-sportswear-club-fleece-39qLnk.jpg",
+          4: "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5,q_80/ffe65f9d-99c1-4f1d-a81c-91b1ce46ff7f/sweat-a-capuche-sportswear-club-fleece-39qLnk.jpg",
         },
       },
     },
