@@ -1,7 +1,8 @@
+@import "../../../../../assets/sass/variables.scss";
+
 .images-wrapper {
   width: 65%;
   display: flex;
-  border: 1px solid red;
   justify-content: space-between;
 
   &__left,
@@ -10,9 +11,8 @@
 
     .images-wrapper__item {
       width: 100%;
-      max-width: 27em;
       height: 30em;
-      background-color: bisque;
+      background-color: $mainColor;
       margin: 0.5em 0;
       flex-shrink: 0;
 
@@ -20,7 +20,28 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        object-position: center;
       }
+    }
+  }
+
+  @media screen and (max-width: 850px) {
+    flex-direction: column;
+    width: 100%;
+
+    &__left,
+    &__right {
+      width: 100%;
+
+      .images-wrapper__item {
+        height: 40em;
+      }
+    }
+  }
+
+  @media screen and (max-width: 360px) {
+    .images-wrapper__item {
+      height: 25em;
     }
   }
 }

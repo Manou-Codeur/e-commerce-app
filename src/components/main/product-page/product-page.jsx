@@ -23,9 +23,11 @@ const ProdcutPage = ({
     <HistoryContext.Provider value={{ history }}>
       <div className="product-page">
         <NavBar />
-        <ProductPresentation productDetails={productDetails} />
-        {/* reviwe component */}
-        {/* slider component*/}
+        <div className="product-page__main">
+          <ProductPresentation productDetails={productDetails} />
+          {/* reviwe component */}
+          {/* slider component*/}
+        </div>
       </div>
     </HistoryContext.Provider>
   );

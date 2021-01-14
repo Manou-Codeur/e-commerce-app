@@ -1,10 +1,17 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 import "./images-wrapper.scss";
 
 const ImagesWrapper = ({ images }) => {
   return (
-    <div className="images-wrapper">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+      className="images-wrapper"
+      key={new Date().getMilliseconds()}
+    >
       <div className="images-wrapper__left">
         {images.slice(0, 2).map(image => (
           <div className="images-wrapper__item" key={image}>
@@ -20,7 +27,7 @@ const ImagesWrapper = ({ images }) => {
           </div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

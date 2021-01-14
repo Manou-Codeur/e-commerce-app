@@ -1,8 +1,10 @@
+@import "../../../../../assets//sass/variables.scss";
+
 .other-colors {
   display: flex;
 
   &__item {
-    background-color: bisque;
+    background-color: $mainColor;
     width: 6.5em;
     height: 6.5em;
     margin: 0 0.5em;

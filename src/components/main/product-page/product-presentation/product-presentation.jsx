@@ -22,7 +22,8 @@ const ProductPresentation = ({ productDetails }) => {
     const otherColors = [];
 
     for (let els in colors) {
-      if (els !== currColor) otherColors.push(colors[els][0]);
+      if (els !== currColor)
+        otherColors.push({ color: els, images: [...colors[els]] });
     }
 
     return otherColors;
@@ -37,7 +38,7 @@ const ProductPresentation = ({ productDetails }) => {
           {`${product.genre}'s ${product.type}`}
         </span>
         <h3 className="product-presentation__name">{product.name}</h3>
-        <OtherColors images={getOtherColors()} />
+        <OtherColors data={getOtherColors()} selectColor={setCurrColor} />
         <SizeSelect productType={product.type} />
         <div className="product-presentation__payment">
           <button>Add to cart</button>
