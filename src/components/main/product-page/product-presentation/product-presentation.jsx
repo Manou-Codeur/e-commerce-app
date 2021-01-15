@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import ImagesWrapper from "./imagesWrapper/images-wrapper";
 import OtherColors from "./otherColors/otherColors";
@@ -7,15 +7,22 @@ import SizeSelect from "./sizeSelect/sizeSelect";
 import { fetchProduct } from "./../../../../server/fake-db/db-functions";
 import "./product-presentation.scss";
 
-const ProductPresentation = ({ productDetails }) => {
-  const product = fetchProduct(
-    productDetails.type,
-    productDetails.genre,
-    productDetails.name,
-    productDetails.color
+const ProductPresentation = ({
+  productDetails: { type, genre, name, color },
+}) => {
+  const [product, setProduct] = useState(
+    fetchProduct(type, genre, name, color)
   );
-
   const [currColor, setCurrColor] = useState(product.color);
+
+  useEffect(() => {
+    const fetchedProduct = fetchProduct(type, genre, name, color);
+
+    if (fetchedProduct.name !== product.name) {
+      setProduct(fetchedProduct);
+      setCurrColor(fetchedProduct.color);
+    }
+  });
 
   function getOtherColors() {
     const colors = product.colors;

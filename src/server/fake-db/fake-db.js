@@ -1,6 +1,8 @@
 export const shoes = {
   men: [
     {
+      genre: "men",
+      type: "shoes",
       name: "Air Jordan React Elevation",
       id: "1",
       colors: {
@@ -25,6 +27,8 @@ export const shoes = {
       },
     },
     {
+      genre: "men",
+      type: "shoes",
       name: "Sneakers Run Breaker",
       id: "2",
       colors: {
@@ -43,6 +47,8 @@ export const shoes = {
       },
     },
     {
+      genre: "men",
+      type: "shoes",
       name: "Nike Zoom X",
       id: "3",
       colors: {
@@ -67,6 +73,8 @@ export const shoes = {
       },
     },
     {
+      genre: "men",
+      type: "shoes",
       name: "Nike Legend React 3",
       id: "4",
       colors: {
@@ -85,6 +93,8 @@ export const shoes = {
       },
     },
     {
+      genre: "men",
+      type: "shoes",
       name: "Adidas NMD_R1 V1",
       id: "5",
       colors: {
@@ -105,6 +115,8 @@ export const shoes = {
   ],
   women: [
     {
+      genre: "women",
+      type: "shoes",
       name: "Nike React Infinity Run Flyknit 2",
       id: "2",
       colors: {
@@ -117,6 +129,8 @@ export const shoes = {
       },
     },
     {
+      genre: "women",
+      type: "shoes",
       name: "Stan Smith",
       id: "7",
       colors: {
@@ -135,6 +149,8 @@ export const shoes = {
       },
     },
     {
+      genre: "women",
+      type: "shoes",
       name: "Adidas Falcon",
       id: "8",
       colors: {
@@ -153,6 +169,8 @@ export const shoes = {
       },
     },
     {
+      genre: "women",
+      type: "shoes",
       name: "Air Force 1",
       id: "9",
       colors: {
@@ -173,6 +191,8 @@ export const shoes = {
   ],
   kids: [
     {
+      genre: "kids",
+      type: "shoes",
       name: "Nike Revolution 5",
       id: "10",
       colors: {
@@ -185,6 +205,8 @@ export const shoes = {
       },
     },
     {
+      genre: "kids",
+      type: "shoes",
       name: "Nike Vision",
       id: "11",
       colors: {
@@ -203,6 +225,8 @@ export const shoes = {
       },
     },
     {
+      genre: "kids",
+      type: "shoes",
       name: "Nike Valiant",
       id: "12",
       colors: {
@@ -220,6 +244,8 @@ export const shoes = {
 export const clothes = {
   men: [
     {
+      genre: "men",
+      type: "clothes",
       name: "Nike Sport Jacket",
       id: "13",
       colors: {
@@ -238,6 +264,8 @@ export const clothes = {
       },
     },
     {
+      genre: "men",
+      type: "clothes",
       name: "Nike Sportswear Club Fleece",
       id: "14",
       colors: {
@@ -256,6 +284,8 @@ export const clothes = {
       },
     },
     {
+      genre: "men",
+      type: "clothes",
       name: "Adidas Jacket",
       id: "15",
       colors: {
@@ -274,6 +304,8 @@ export const clothes = {
       },
     },
     {
+      genre: "men",
+      type: "clothes",
       name: "Adidas Sweat pants",
       id: "16",
       colors: {
@@ -294,6 +326,8 @@ export const clothes = {
   ],
   women: [
     {
+      type: "clothes",
+      genre: "women",
       name: "Nike Sportswear Icon Clash",
       id: "17",
       colors: {
@@ -306,6 +340,8 @@ export const clothes = {
       },
     },
     {
+      type: "clothes",
+      genre: "women",
       name: "Jordan Moto",
       id: "18",
       colors: {
@@ -318,6 +354,8 @@ export const clothes = {
       },
     },
     {
+      type: "clothes",
+      genre: "women",
       name: "Adidas Stripes Shorts",
       id: "19",
       colors: {
@@ -330,6 +368,8 @@ export const clothes = {
       },
     },
     {
+      type: "clothes",
+      genre: "women",
       name: "Adidas Sweat Shirt",
       id: "20",
       colors: {
@@ -350,6 +390,8 @@ export const clothes = {
   ],
   kids: [
     {
+      type: "clothes",
+      genre: "kids",
       name: "Nike Sportswear",
       id: "21",
       colors: {
@@ -368,6 +410,8 @@ export const clothes = {
       },
     },
     {
+      type: "clothes",
+      genre: "kids",
       name: "Nike Kids Jacket",
       id: "22",
       colors: {
@@ -380,6 +424,8 @@ export const clothes = {
       },
     },
     {
+      type: "clothes",
+      genre: "kids",
       name: "Nike Sportswear Windrunner",
       id: "23",
       colors: {

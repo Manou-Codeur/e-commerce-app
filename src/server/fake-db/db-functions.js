@@ -1,16 +1,17 @@
 import * as products from "./fake-db";
 
-export const filterProducts = query => {
-  const { clothes, shoes } = products;
+const { clothes, shoes } = products;
+const allProducts = [
+  ...shoes.men,
+  ...shoes.women,
+  ...shoes.kids,
+  ...clothes.men,
+  ...clothes.women,
+  ...clothes.kids,
+];
 
-  return [
-    ...clothes.kids,
-    ...clothes.men,
-    ...clothes.women,
-    ...shoes.kids,
-    ...shoes.men,
-    ...shoes.women,
-  ].filter(product => {
+export const filterProducts = query => {
+  return allProducts.filter(product => {
     return product.name.toLowerCase().includes(query.toLowerCase().trim());
   });
 };
@@ -65,8 +66,19 @@ export const fetchRecommendations = () => {
 };
 
 export const fetchProduct = (type, genre, name, color) => {
-  const product = products[type][genre.toLowerCase()].filter(
-    product => product.name === name
-  );
-  return { ...product[0], genre, type, color };
+  //here if the we come from the search component (no type, genre and color)
+  if (!color) {
+    //i'm using "genre" coz in this case the "genre" is considred as "id"
+    const index = genre;
+    const product = allProducts[index - 1];
+    return {
+      ...product,
+      color: Object.keys(product.colors)[0],
+    };
+  } else {
+    const product = products[type][genre.toLowerCase()].filter(
+      product => product.name === name
+    );
+    return { ...product[0], genre, type, color };
+  }
 };
