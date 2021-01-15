@@ -1,0 +1,30 @@
+@import "../../../../../assets/sass/variables.scss";
+
+.review-form {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+
+  .input-wrapper {
+    margin-top: 0;
+  }
+
+  &__submit-btn {
+    border: 0;
+    padding: 1.3em;
+    width: 80%;
+    color: white;
+    background-color: $BtnColor;
+    font-size: 0.9em;
+    font-weight: 500;
+    margin-top: 1.3em;
+    cursor: pointer;
+    outline: none;
+  }
+
+  @media screen and (max-width: 650px) {
+    width: 100%;
+  }
+}

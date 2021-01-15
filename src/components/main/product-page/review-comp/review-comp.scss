@@ -1,0 +1,19 @@
+.review-comp {
+  width: 87%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 5em;
+
+  @media screen and (max-width: 1200px) {
+    font-size: 13px;
+  }
+
+  @media screen and (max-width: 990px) {
+    font-size: 11px;
+  }
+
+  @media screen and (max-width: 650px) {
+    flex-direction: column;
+  }
+}

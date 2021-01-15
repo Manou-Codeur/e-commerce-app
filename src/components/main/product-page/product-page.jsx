@@ -1,8 +1,9 @@
 import React from "react";
 
+import HistoryContext from "./../../../context/historyContext";
 import NavBar from "./../../reuseable/navBar/navBar";
 import ProductPresentation from "./product-presentation/product-presentation";
-import HistoryContext from "./../../../context/historyContext";
+import ReviewComp from "./review-comp/review-comp";
 
 import "./product-page.scss";
 
@@ -25,7 +26,7 @@ const ProdcutPage = ({
         <NavBar />
         <div className="product-page__main">
           <ProductPresentation productDetails={productDetails} />
-          {/* reviwe component */}
+          <ReviewComp />
           {/* slider component*/}
         </div>
       </div>
