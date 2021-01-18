@@ -4,6 +4,7 @@ import HistoryContext from "./../../../context/historyContext";
 import NavBar from "./../../reuseable/navBar/navBar";
 import ProductPresentation from "./product-presentation/product-presentation";
 import ReviewComp from "./review-comp/review-comp";
+import Recommend from "../../reuseable/recommend/recommend";
 
 import "./product-page.scss";
 
@@ -24,10 +25,11 @@ const ProdcutPage = ({
     <HistoryContext.Provider value={{ history }}>
       <div className="product-page">
         <NavBar />
+
         <div className="product-page__main">
           <ProductPresentation productDetails={productDetails} />
           <ReviewComp />
-          {/* slider component*/}
+          <Recommend headingTitle="You May Like Also" />
         </div>
       </div>
     </HistoryContext.Provider>

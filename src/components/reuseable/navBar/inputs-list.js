@@ -1,3 +1,5 @@
+import { countries } from "./../../../server/fake-db/countries-list";
+
 export const generateSingupInputs = (values, errors, touched) => [
   {
     type: "text",
@@ -38,6 +40,7 @@ export const generateSingupInputs = (values, errors, touched) => [
     name: "country",
     error: errors.country,
     touched: touched.country,
+    selectList: countries,
   },
 ];
 

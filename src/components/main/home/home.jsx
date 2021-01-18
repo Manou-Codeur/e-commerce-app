@@ -3,7 +3,7 @@ import React from "react";
 import HistoryContext from "./../../../context/historyContext";
 import NavBar from "./../../reuseable/navBar/navBar";
 import Header from "./header/header";
-import Recommend from "./recommend/recommend";
+import Recommend from "../../reuseable/recommend/recommend";
 import Trending from "./trending/trending";
 import Genres from "./genres/genres";
 
@@ -17,7 +17,7 @@ const Home = ({ history }) => {
         <Header />
 
         <div className="home__main">
-          <Recommend />
+          <Recommend headingTitle="Equip Yourself" />
           <Trending />
           <Genres />
         </div>
