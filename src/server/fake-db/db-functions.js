@@ -16,10 +16,10 @@ export const filterProducts = query => {
   });
 };
 
-export const fetchRecommendations = () => {
+export const fetchRecommendations = currProduct => {
   const { shoes, clothes } = products;
 
-  return [
+  const recomended = [
     {
       type: "shoes",
       genre: "men",
@@ -62,7 +62,19 @@ export const fetchRecommendations = () => {
       imgUrl: clothes.kids[0].colors.gray[0],
       color: "gray",
     },
+    {
+      type: "clothes",
+      genre: "kids",
+      name: clothes.kids[1].name,
+      imgUrl: clothes.kids[1].colors.white[0],
+      color: "white",
+    },
   ];
+
+  if (currProduct) {
+    return recomended.filter(product => product.name !== currProduct);
+  }
+  return recomended.slice(0, 6);
 };
 
 export const fetchProduct = (type, genre, name, color) => {

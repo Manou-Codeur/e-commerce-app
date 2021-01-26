@@ -29,7 +29,10 @@ const ProdcutPage = ({
         <div className="product-page__main">
           <ProductPresentation productDetails={productDetails} />
           <ReviewComp />
-          <Recommend headingTitle="You May Like Also" />
+          <Recommend
+            headingTitle="You May Like Also"
+            currProduct={productDetails.name}
+          />
         </div>
       </div>
     </HistoryContext.Provider>
