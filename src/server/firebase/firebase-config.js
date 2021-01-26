@@ -20,7 +20,7 @@ class Firebase {
     //init firebase auth method so we could use all it's functions
     this.auth = app.auth();
 
-    //init firebase auth method so we could use all it's functions
+    //init firebase database method so we could use all it's functions
     this.db = app.database();
   }
 
