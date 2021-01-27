@@ -21,6 +21,14 @@ const ProdcutPage = ({
     color: productInfo.split("@")[3],
   };
 
+  const getCurrProductName = () => {
+    //check if the curr url has the "name" param
+    if (productDetails.color) {
+      return productDetails.name;
+    }
+    return productDetails.type;
+  };
+
   return (
     <HistoryContext.Provider value={{ history }}>
       <div className="product-page">
@@ -31,7 +39,7 @@ const ProdcutPage = ({
           <ReviewComp />
           <Recommend
             headingTitle="You May Like Also"
-            currProduct={productDetails.name}
+            currProduct={getCurrProductName()}
           />
         </div>
       </div>

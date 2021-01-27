@@ -7,8 +7,6 @@ import "./search-result.scss";
 const SearchResult = ({ filtredProducts, closeSearch }) => {
   const { history } = useContext(HistoryContext);
 
-  console.log(filtredProducts);
-
   const goToProductPage = ({ target }) => {
     closeSearch();
 

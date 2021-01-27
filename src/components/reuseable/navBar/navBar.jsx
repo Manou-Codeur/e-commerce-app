@@ -70,7 +70,7 @@ const NavBar = () => {
         <a className="nav-bar__links" onClick={SingOut_SingIn}>
           {userAuthed ? "Sing Out" : "Sing In"}
         </a>
-        <Link className="nav-bar__links" to="/cart">
+        <Link className="nav-bar__links" to="/bag">
           MyCart(1)
         </Link>
       </div>
