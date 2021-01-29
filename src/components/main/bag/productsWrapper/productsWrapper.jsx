@@ -9,9 +9,6 @@ const ProductsWrapper = () => {
     <div className="product-wrapper">
       <Product />
       <Product />
-      <Product />
-      <Product />
-      <Product />
     </div>
   );
 };

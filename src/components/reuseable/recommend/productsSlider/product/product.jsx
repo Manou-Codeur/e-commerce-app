@@ -4,11 +4,11 @@ import HistoryContext from "./../../../../../context/historyContext";
 
 import "./product.scss";
 
-const Product = ({ data: { name, type, genre, imgUrl, color } }) => {
+const Product = ({ data: { name, type, genre, mainColor, colors } }) => {
   const { history } = useContext(HistoryContext);
 
   const goToProductPage = () => {
-    history.push(`/product/${type}@${genre}@${name}@${color}`);
+    history.push(`/product/${type}@${genre}@${name}@${mainColor}`);
     //this is when we are already in the "product" router we need to scroll the page to the top automatically
     window.scrollTo({ top: 0 });
   };
@@ -16,7 +16,7 @@ const Product = ({ data: { name, type, genre, imgUrl, color } }) => {
   return (
     <div className="product" onClick={goToProductPage}>
       <div className="product__img-wrapper">
-        <img src={imgUrl} alt="product img" />
+        <img src={colors[mainColor][0]} alt="product img" />
       </div>
 
       <div className="product__info">

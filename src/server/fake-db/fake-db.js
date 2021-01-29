@@ -4,6 +4,7 @@ export const shoes = {
       genre: "men",
       type: "shoes",
       name: "Air Jordan React Elevation",
+      mainColor: "blue",
       id: "1",
       colors: {
         blue: [
@@ -30,6 +31,7 @@ export const shoes = {
       genre: "men",
       type: "shoes",
       name: "Sneakers Run Breaker",
+      mainColor: "white",
       id: "2",
       colors: {
         white: [
@@ -50,6 +52,7 @@ export const shoes = {
       genre: "men",
       type: "shoes",
       name: "Nike Zoom X",
+      mainColor: "orange",
       id: "3",
       colors: {
         orange: [
@@ -76,6 +79,7 @@ export const shoes = {
       genre: "men",
       type: "shoes",
       name: "Nike Legend React 3",
+      mainColor: "blue",
       id: "4",
       colors: {
         blue: [
@@ -96,6 +100,7 @@ export const shoes = {
       genre: "men",
       type: "shoes",
       name: "Adidas NMD_R1 V1",
+      mainColor: "black",
       id: "5",
       colors: {
         black: [
@@ -118,6 +123,7 @@ export const shoes = {
       genre: "women",
       type: "shoes",
       name: "Nike React Infinity Run Flyknit 2",
+      mainColor: "pink",
       id: "2",
       colors: {
         pink: [
@@ -132,6 +138,7 @@ export const shoes = {
       genre: "women",
       type: "shoes",
       name: "Stan Smith",
+      mainColor: "white",
       id: "7",
       colors: {
         white: [
@@ -152,6 +159,7 @@ export const shoes = {
       genre: "women",
       type: "shoes",
       name: "Adidas Falcon",
+      mainColor: "white",
       id: "8",
       colors: {
         white: [
@@ -172,6 +180,7 @@ export const shoes = {
       genre: "women",
       type: "shoes",
       name: "Air Force 1",
+      mainColor: "pink",
       id: "9",
       colors: {
         pink: [
@@ -194,6 +203,7 @@ export const shoes = {
       genre: "kids",
       type: "shoes",
       name: "Nike Revolution 5",
+      mainColor: "gray",
       id: "10",
       colors: {
         gray: [
@@ -208,6 +218,7 @@ export const shoes = {
       genre: "kids",
       type: "shoes",
       name: "Nike Vision",
+      mainColor: "blue",
       id: "11",
       colors: {
         blue: [
@@ -228,6 +239,7 @@ export const shoes = {
       genre: "kids",
       type: "shoes",
       name: "Nike Valiant",
+      mainColor: "black",
       id: "12",
       colors: {
         black: [
@@ -247,6 +259,7 @@ export const clothes = {
       genre: "men",
       type: "clothes",
       name: "Nike Sport Jacket",
+      mainColor: "white",
       id: "13",
       colors: {
         white: [
@@ -267,6 +280,7 @@ export const clothes = {
       genre: "men",
       type: "clothes",
       name: "Nike Sportswear Club Fleece",
+      mainColor: "red",
       id: "14",
       colors: {
         red: [
@@ -287,6 +301,7 @@ export const clothes = {
       genre: "men",
       type: "clothes",
       name: "Adidas Jacket",
+      mainColor: "blue",
       id: "15",
       colors: {
         blue: [
@@ -307,6 +322,7 @@ export const clothes = {
       genre: "men",
       type: "clothes",
       name: "Adidas Sweat pants",
+      mainColor: "red",
       id: "16",
       colors: {
         red: [
@@ -329,6 +345,7 @@ export const clothes = {
       type: "clothes",
       genre: "women",
       name: "Nike Sportswear Icon Clash",
+      mainColor: "black",
       id: "17",
       colors: {
         black: [
@@ -343,6 +360,7 @@ export const clothes = {
       type: "clothes",
       genre: "women",
       name: "Jordan Moto",
+      mainColor: "black",
       id: "18",
       colors: {
         black: [
@@ -357,6 +375,7 @@ export const clothes = {
       type: "clothes",
       genre: "women",
       name: "Adidas Stripes Shorts",
+      mainColor: "red",
       id: "19",
       colors: {
         red: [
@@ -371,6 +390,7 @@ export const clothes = {
       type: "clothes",
       genre: "women",
       name: "Adidas Sweat Shirt",
+      mainColor: "white",
       id: "20",
       colors: {
         white: [
@@ -393,6 +413,7 @@ export const clothes = {
       type: "clothes",
       genre: "kids",
       name: "Nike Sportswear",
+      mainColor: "gray",
       id: "21",
       colors: {
         gray: [
@@ -413,6 +434,7 @@ export const clothes = {
       type: "clothes",
       genre: "kids",
       name: "Nike Kids Jacket",
+      mainColor: "white",
       id: "22",
       colors: {
         white: [
@@ -427,6 +449,7 @@ export const clothes = {
       type: "clothes",
       genre: "kids",
       name: "Nike Sportswear Windrunner",
+      mainColor: "blue",
       id: "23",
       colors: {
         blue: [

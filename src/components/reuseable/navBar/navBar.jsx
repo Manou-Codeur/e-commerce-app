@@ -54,7 +54,7 @@ const NavBar = () => {
         <Link className="nav-bar__links" to="/women">
           Women
         </Link>
-        <Link className="nav-bar__links" to="/kid">
+        <Link className="nav-bar__links" to="/kids">
           Kids
         </Link>
       </div>

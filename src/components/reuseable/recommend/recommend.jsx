@@ -2,14 +2,13 @@ import React from "react";
 
 import ProductsSlider from "./productsSlider/productsSlider";
 
-import { fetchRecommendations } from "../../../server/fake-db/db-functions";
 import "./recommend.scss";
 
-const Recommend = ({ headingTitle, currProduct }) => {
+const Recommend = ({ headingTitle, productList }) => {
   return (
     <div className="recommend">
       <h2 className="recommend__heading">{headingTitle}</h2>
-      <ProductsSlider productsList={fetchRecommendations(currProduct)} />
+      <ProductsSlider productsList={productList} />
     </div>
   );
 };

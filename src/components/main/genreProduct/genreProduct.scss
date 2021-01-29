@@ -1,0 +1,13 @@
+.genre-product {
+  &__main {
+    padding: 2em 0;
+    width: 87%;
+    max-width: 1920px;
+    margin: 0 auto;
+
+    .recommend {
+      padding: 3em 0;
+      width: 100%;
+    }
+  }
+}

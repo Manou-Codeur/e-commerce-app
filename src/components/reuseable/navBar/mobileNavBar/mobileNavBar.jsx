@@ -37,7 +37,7 @@ const MobileNavBar = ({
         <Link className="nav-bar__links--white" to="/women">
           Women
         </Link>
-        <Link className="nav-bar__links--white" to="/kid">
+        <Link className="nav-bar__links--white" to="/kids">
           Kids
         </Link>
         <a

@@ -6,6 +6,7 @@ import ProductPresentation from "./product-presentation/product-presentation";
 import ReviewComp from "./review-comp/review-comp";
 import Recommend from "../../reuseable/recommend/recommend";
 
+import { fetchRecommendations } from "../../../server/fake-db/db-functions";
 import "./product-page.scss";
 
 const ProdcutPage = ({
@@ -39,7 +40,7 @@ const ProdcutPage = ({
           <ReviewComp />
           <Recommend
             headingTitle="You May Like Also"
-            currProduct={getCurrProductName()}
+            productList={fetchRecommendations(getCurrProductName())}
           />
         </div>
       </div>

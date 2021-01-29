@@ -13,7 +13,7 @@ const ProductPresentation = ({
   const [product, setProduct] = useState(
     fetchProduct(type, genre, name, color)
   );
-  const [currColor, setCurrColor] = useState(product.color);
+  const [currColor, setCurrColor] = useState(product.mainColor);
 
   useEffect(() => {
     const fetchedProduct = fetchProduct(type, genre, name, color);
@@ -35,6 +35,8 @@ const ProductPresentation = ({
 
     return otherColors;
   }
+
+  console.log(product);
 
   return (
     <div className="product-presentation">
