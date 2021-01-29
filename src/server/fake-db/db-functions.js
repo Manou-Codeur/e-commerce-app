@@ -75,7 +75,7 @@ export const fetchRecommendations = currProduct => {
     const filtredRecommend = recomended.filter(
       product => product.name !== currProduct
     );
-    if (filtredRecommend.length > 6) return recomended.slice(0, 7);
+    if (filtredRecommend.length > 6) return recomended.slice(0, 6);
     return filtredRecommend;
   }
   return recomended.slice(0, 6);
