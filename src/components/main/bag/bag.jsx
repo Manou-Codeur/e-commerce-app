@@ -2,6 +2,8 @@ import React from "react";
 
 import HistoryContext from "../../../context/historyContext";
 import NavBar from "./../../reuseable/navBar/navBar";
+import ProductsWrapper from "./productsWrapper/productsWrapper";
+import BagSummary from "./bagSummary/bagSummary";
 
 import "./bag.scss";
 
@@ -11,7 +13,10 @@ const Bag = ({ history }) => {
       <div className="bag">
         <NavBar />
 
-        <h1>My Bag</h1>
+        <div className="bag__main">
+          <ProductsWrapper />
+          <BagSummary />
+        </div>
       </div>
     </HistoryContext.Provider>
   );

@@ -1,0 +1,10 @@
+.product-wrapper {
+  width: 50%;
+  border-right: 1px solid rgba(112, 112, 112, 0.36);
+  padding-right: 1em;
+
+  @media only screen and (max-width: 1000px) {
+    border-right: 0;
+    width: 100%;
+  }
+}
