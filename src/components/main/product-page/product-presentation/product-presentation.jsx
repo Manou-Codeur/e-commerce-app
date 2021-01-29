@@ -10,17 +10,15 @@ import "./product-presentation.scss";
 const ProductPresentation = ({
   productDetails: { type, genre, name, color },
 }) => {
-  const [product, setProduct] = useState(
-    fetchProduct(type, genre, name, color)
-  );
-  const [currColor, setCurrColor] = useState(product.mainColor);
+  const [product, setProduct] = useState(null);
+  const [currColor, setCurrColor] = useState(null);
 
   useEffect(() => {
     const fetchedProduct = fetchProduct(type, genre, name, color);
 
-    if (fetchedProduct.name !== product.name) {
+    if (!product || product.name !== fetchProduct.name) {
       setProduct(fetchedProduct);
-      setCurrColor(fetchedProduct.color);
+      setCurrColor(fetchedProduct.mainColor);
     }
   });
 
@@ -36,26 +34,28 @@ const ProductPresentation = ({
     return otherColors;
   }
 
-  console.log(product);
+  if (product)
+    return (
+      <div className="product-presentation">
+        <ImagesWrapper images={product.colors[currColor]} />
 
-  return (
-    <div className="product-presentation">
-      <ImagesWrapper images={product.colors[currColor]} />
-
-      <div className="product-presentation__info">
-        <span className="product-presentation__genre">
-          {`${product.genre}'s ${product.type}`}
-        </span>
-        <h3 className="product-presentation__name">{product.name}</h3>
-        <OtherColors data={getOtherColors()} selectColor={setCurrColor} />
-        <SizeSelect productType={product.type} />
-        <div className="product-presentation__payment">
-          <button>Add to cart</button>
-          <span className="price">$139.95</span>
+        <div className="product-presentation__info">
+          <span className="product-presentation__genre">
+            {`${product.genre}'s ${product.type}`}
+          </span>
+          <h3 className="product-presentation__name">{product.name}</h3>
+          <OtherColors data={getOtherColors()} selectColor={setCurrColor} />
+          <SizeSelect productType={product.type} />
+          <div className="product-presentation__payment">
+            <button>Add to cart</button>
+            <span className="price">$139.95</span>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  else {
+    return <h1>wait...</h1>;
+  }
 };
 
 export default ProductPresentation;

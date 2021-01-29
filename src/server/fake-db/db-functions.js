@@ -41,17 +41,18 @@ export const fetchRecommendations = currProduct => {
 
 export const fetchProduct = (type, genre, name, color) => {
   //here if we came from the search component (no type, genre and color)
-  let product;
   if (!color) {
     //i'm using "genre" coz in this case the "genre" is considred as "id"
     const index = genre;
-    product = allProducts[index - 1];
+    const product = allProducts[index - 1];
+    console.log(product);
+    return product;
   } else {
-    product = products[type][genre.toLowerCase()].filter(
+    const product = products[type][genre.toLowerCase()].filter(
       product => product.name === name
     );
+    return product[0];
   }
-  return product[0];
 };
 
 export const fetchGenres = genre => {
