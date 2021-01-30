@@ -16,11 +16,9 @@ const ProductPresentation = ({
   useEffect(() => {
     const fetchedProduct = fetchProduct(type, genre, name, color);
 
-    if (!product || product.name !== fetchProduct.name) {
-      setProduct(fetchedProduct);
-      setCurrColor(fetchedProduct.mainColor);
-    }
-  });
+    setProduct(fetchedProduct);
+    setCurrColor(fetchedProduct.mainColor);
+  }, [type, genre, name, color]);
 
   function getOtherColors() {
     const colors = product.colors;

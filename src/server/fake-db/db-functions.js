@@ -45,7 +45,6 @@ export const fetchProduct = (type, genre, name, color) => {
     //i'm using "genre" coz in this case the "genre" is considred as "id"
     const index = genre;
     const product = allProducts[index - 1];
-    console.log(product);
     return product;
   } else {
     const product = products[type][genre.toLowerCase()].filter(
