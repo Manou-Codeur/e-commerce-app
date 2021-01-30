@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 
 import Product from "./product/product";
 
@@ -8,6 +8,11 @@ import "./productsSlider.scss";
 
 const ProductsSlider = ({ productsList }) => {
   const containner = useRef();
+
+  useEffect(() => {
+    //init the left property of the containner to 0
+    containner.current.style.left = 0;
+  });
 
   const goRight = () => {
     const recommendComponent = document.querySelector(".recommend");
