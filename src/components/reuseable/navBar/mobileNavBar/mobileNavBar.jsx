@@ -12,22 +12,27 @@ const MobileNavBar = ({
   SingOut_SingIn,
   userAuthed,
 }) => {
+  const closeNavBarSlider = ({ target }) => {
+    if (target.className !== "nav-bar__mobile") setMenuOpen(false);
+  };
+
   return (
     <Fragment>
       <Menu
         className="nav-bar__menu-bar"
-        onClick={() => setMenuOpen(true)}
         stroke="black"
+        onClick={() => setMenuOpen(true)}
       />
 
       <motion.div
         animate={!menuOpen ? { left: "100%" } : { left: 0 }}
         transition={{ duration: 0.4 }}
         className="nav-bar__mobile"
+        onClick={closeNavBarSlider}
       >
         <Close
           className="nav-bar__close"
-          onClick={() => setMenuOpen(false)}
+          // onClick={() => setMenuOpen(false)}
           fill="white"
         />
 

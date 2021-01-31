@@ -12,6 +12,7 @@ const ProductsSlider = ({ productsList }) => {
   useEffect(() => {
     //init the left property of the containner to 0
     containner.current.style.left = 0;
+    containner.current.style.width = `${productsList.length * 27}em`;
   });
 
   const goRight = () => {
@@ -43,12 +44,6 @@ const ProductsSlider = ({ productsList }) => {
     containner.current.style.left = "0";
   };
 
-  const getContainnerWidth = productsList => {
-    const numberOfProduct = productsList.length;
-    const width = `${numberOfProduct * 27}em`;
-    return width;
-  };
-
   return (
     <div className="products-slider">
       <div className="products-slider__left-control" onClick={goLeft}>
@@ -58,11 +53,7 @@ const ProductsSlider = ({ productsList }) => {
         <RightArrow />
       </div>
 
-      <div
-        className="products-slider__containner"
-        ref={containner}
-        style={{ width: getContainnerWidth(productsList) }}
-      >
+      <div className="products-slider__containner" ref={containner}>
         {productsList.map(product => (
           <Product key={product.name} data={product} />
         ))}
