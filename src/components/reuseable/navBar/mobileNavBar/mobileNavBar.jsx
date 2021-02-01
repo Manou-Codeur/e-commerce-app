@@ -30,11 +30,7 @@ const MobileNavBar = ({
         className="nav-bar__mobile"
         onClick={closeNavBarSlider}
       >
-        <Close
-          className="nav-bar__close"
-          // onClick={() => setMenuOpen(false)}
-          fill="white"
-        />
+        <Close className="nav-bar__close" fill="white" />
 
         <Link className="nav-bar__links--white" to="/men">
           Men
