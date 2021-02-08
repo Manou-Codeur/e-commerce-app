@@ -3,6 +3,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 5em;
 
   span {
     border: 2px solid black;
@@ -29,5 +30,9 @@
     height: 1.6px;
     background-color: black;
     width: 20%;
+  }
+
+  @media only screen and (max-width: 600px) {
+    width: 90%;
   }
 }

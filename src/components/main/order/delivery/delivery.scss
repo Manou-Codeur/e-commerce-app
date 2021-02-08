@@ -1,0 +1,19 @@
+.delivery {
+  width: 90%;
+
+  &__heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .hr {
+      width: 40%;
+      height: 1px;
+      background-color: black;
+    }
+
+    h2 {
+      text-align: center;
+    }
+  }
+}
