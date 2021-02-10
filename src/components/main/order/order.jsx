@@ -10,7 +10,7 @@ import Done from "./done/done";
 import "./order.scss";
 
 const Order = ({ history }) => {
-  const [orderStep, setOrderStep] = useState("delivery");
+  const [orderStep, setOrderStep] = useState("done");
 
   return (
     <div className="order-page">
