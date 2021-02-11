@@ -1,14 +1,10 @@
-import React, { useState, useEffect, useCallback, useMemo } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import {
   CSSTransition,
   TransitionGroup,
   SwitchTransition,
 } from "react-transition-group";
-
 import "./styles.scss";
-import * as cardTypeImg from "./cardTypesImg";
-import BackColor from "./card-background/25.jpeg";
-import chipPng from "./chip.png";
 
 const CARDS = {
   visa: "^4",
@@ -19,6 +15,12 @@ const CARDS = {
   troy: "^9792",
   diners: "^(30[0-5]|36)",
 };
+
+const cardBackgroundName = () => {
+  return `25.jpeg`;
+};
+
+const BACKGROUND_IMG = cardBackgroundName();
 
 const Card = ({
   cardHolder,
@@ -82,10 +84,6 @@ const Card = ({
     return cardNumberArr;
   };
 
-  const getCardTypeImg = cardType => {
-    return cardTypeImg[`${cardType}Logo`];
-  };
-
   return (
     <div className={"card-item " + (isCardFlipped ? "-active" : "")}>
       <div className="card-item__side -front">
@@ -94,16 +92,20 @@ const Card = ({
           style={style}
         />
         <div className="card-item__cover">
-          <img alt="" src={BackColor} className="card-item__bg" />
+          <img
+            alt=""
+            src={`/card-background/${BACKGROUND_IMG}`}
+            className="card-item__bg"
+          />
         </div>
 
         <div className="card-item__wrapper">
           <div className="card-item__top">
-            <img src={chipPng} alt="" className="card-item__chip" />
+            <img src={"/chip.png"} alt="" className="card-item__chip" />
             <div className="card-item__type">
               <img
                 alt={useCardType}
-                src={getCardTypeImg(useCardType)}
+                src={`/card-type/${useCardType}.png`}
                 className="card-item__typeImg"
               />
             </div>
@@ -197,7 +199,11 @@ const Card = ({
 
       <div className="card-item__side -back">
         <div className="card-item__cover">
-          <img alt="" src={BackColor} className="card-item__bg" />
+          <img
+            alt=""
+            src={`/card-background/${BACKGROUND_IMG}`}
+            className="card-item__bg"
+          />
         </div>
         <div className="card-item__band" />
         <div className="card-item__cvv">
