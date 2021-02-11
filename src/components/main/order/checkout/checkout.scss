@@ -104,6 +104,18 @@
         margin-top: 10px;
       }
     }
+
+    &__submit {
+      width: 100%;
+      border: 0;
+      background-color: black;
+      color: white;
+      font-size: 1.1em;
+      font-weight: 500;
+      padding: 1em 0;
+      border-radius: 5px;
+      cursor: pointer;
+    }
   }
 
   .card-list {

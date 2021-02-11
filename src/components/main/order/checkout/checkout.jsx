@@ -1,11 +1,12 @@
 import React from "react";
 
 import "./checkout.scss";
+import MainScreen from "./../../../other/MainScreen/index";
 
 const Checkout = () => {
   return (
     <div className="checkout">
-      <h1>Checkout</h1>
+      <MainScreen />
     </div>
   );
 };
