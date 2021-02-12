@@ -1,0 +1,46 @@
+@import "../../../../../../assets/sass/variables.scss";
+
+.form {
+  background-color: $mainColor;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  padding-top: 10em;
+  width: 35em;
+
+  &__line {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .input-wrapper {
+      margin: 0;
+    }
+  }
+
+  &__line:nth-of-type(2) {
+    .input-wrapper {
+      flex-direction: row;
+      justify-content: space-between;
+
+      .makeStyles-root-1 {
+        width: 30%;
+      }
+    }
+  }
+
+  &__submit {
+    background-color: $BtnColor;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: 500;
+    padding: 1em 0;
+    margin: 2em 0;
+    width: 80%;
+    outline: none;
+    cursor: pointer;
+  }
+}

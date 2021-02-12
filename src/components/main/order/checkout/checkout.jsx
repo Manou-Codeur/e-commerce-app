@@ -1,12 +1,15 @@
 import React from "react";
 
+import CardPaiment from "./cardPayement/cardPaiment";
+import PaypalPaiment from "./PaypalPaiment/paypalPaiment";
+
 import "./checkout.scss";
-import MainScreen from "./../../../other/MainScreen/index";
 
 const Checkout = () => {
   return (
     <div className="checkout">
-      <MainScreen />
+      <CardPaiment />
+      <PaypalPaiment />
     </div>
   );
 };
