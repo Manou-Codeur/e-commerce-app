@@ -37,7 +37,7 @@ export const generateLine3 = (values, errors, touched) => [
     selectList: [22, 23, 24, 25, 26, 27, 28, 29],
   },
   {
-    type: "text",
+    type: "password",
     label: "Cvv",
     value: values.cvv,
     name: "cvv",
