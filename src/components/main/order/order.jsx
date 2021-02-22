@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 
-import HistoryContext from "./../../../context/historyContext";
-import NavBar from "./../../reuseable/navBar/navBar";
 import Steps from "./steps/steps";
 import Checkout from "./checkout/checkout";
 import Delivery from "./delivery/delivery";
@@ -14,10 +12,6 @@ const Order = ({ history }) => {
 
   return (
     <div className="order-page">
-      <HistoryContext.Provider value={{ history }}>
-        <NavBar />
-      </HistoryContext.Provider>
-
       <div className="order-page__main">
         <Steps currentStep={orderStep} />
 

@@ -14,7 +14,6 @@ const Home = ({ history }) => {
   return (
     <HistoryContext.Provider value={{ history }}>
       <div className="home">
-        <NavBar />
         <Header />
 
         <div className="home__main">

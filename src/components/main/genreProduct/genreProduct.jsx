@@ -1,7 +1,6 @@
 import React from "react";
 
 import HistoryContext from "../../../context/historyContext";
-import NavBar from "./../../reuseable/navBar/navBar";
 import Recommend from "./../../reuseable/recommend/recommend";
 
 import { fetchGenres } from "./../../../server/fake-db/db-functions";
@@ -15,8 +14,6 @@ const GenreProduct = ({ history, location: { pathname } }) => {
   return (
     <HistoryContext.Provider value={{ history }}>
       <div className="genre-product">
-        <NavBar />
-
         <div className="genre-product__main">
           <Recommend headingTitle="Shoes" productList={shoesList} />
           <Recommend headingTitle="Clothing" productList={clothesList} />

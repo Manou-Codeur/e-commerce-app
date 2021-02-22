@@ -1,7 +1,6 @@
 import React from "react";
 
 import HistoryContext from "../../../context/historyContext";
-import NavBar from "./../../reuseable/navBar/navBar";
 import ProductsWrapper from "./productsWrapper/productsWrapper";
 import BagSummary from "./bagSummary/bagSummary";
 
@@ -11,8 +10,6 @@ const Bag = ({ history }) => {
   return (
     <HistoryContext.Provider value={{ history }}>
       <div className="bag">
-        <NavBar />
-
         <div className="bag__main">
           <ProductsWrapper />
           <BagSummary />

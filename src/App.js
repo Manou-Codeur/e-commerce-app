@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 
+import NavBar from "./components/reuseable/navBar/navBar";
 import Home from "./components/main/home/home";
 import ProdcutPage from "./components/main/product-page/product-page";
 import Bag from "./components/main/bag/bag";
@@ -27,6 +28,7 @@ const Router = () => (
 const App = () => {
   return (
     <React.Fragment>
+      <NavBar />
       <Router />
       <Footer />
     </React.Fragment>
