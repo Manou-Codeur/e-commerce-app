@@ -4,7 +4,7 @@ import HistoryContext from "./../../../../../context/historyContext";
 
 import "./product.scss";
 
-const Product = ({ data: { name, type, genre, mainColor, colors } }) => {
+const Product = ({ data: { name, type, genre, mainColor, colors, price } }) => {
   const { history } = useContext(HistoryContext);
 
   const goToProductPage = () => {
@@ -21,7 +21,7 @@ const Product = ({ data: { name, type, genre, mainColor, colors } }) => {
 
       <div className="product__info">
         <span className="product__name">{name}</span>
-        <span className="product__price">24.99 $</span>
+        <span className="product__price">{price}</span>
       </div>
     </div>
   );

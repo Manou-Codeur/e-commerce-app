@@ -3,6 +3,7 @@ export const shoes = {
     {
       genre: "men",
       type: "shoes",
+      price: "$ 80",
       name: "Air Jordan React Elevation",
       mainColor: "blue",
       id: "1",
@@ -30,6 +31,7 @@ export const shoes = {
     {
       genre: "men",
       type: "shoes",
+      price: "$ 80",
       name: "Sneakers Run Breaker",
       mainColor: "white",
       id: "2",
@@ -51,6 +53,7 @@ export const shoes = {
     {
       genre: "men",
       type: "shoes",
+      price: "$ 80",
       name: "Nike Zoom X",
       mainColor: "orange",
       id: "3",
@@ -78,6 +81,7 @@ export const shoes = {
     {
       genre: "men",
       type: "shoes",
+      price: "$ 80",
       name: "Nike Legend React 3",
       mainColor: "blue",
       id: "4",
@@ -99,6 +103,7 @@ export const shoes = {
     {
       genre: "men",
       type: "shoes",
+      price: "$ 80",
       name: "Adidas NMD_R1 V1",
       mainColor: "black",
       id: "5",
@@ -122,6 +127,7 @@ export const shoes = {
     {
       genre: "women",
       type: "shoes",
+      price: "$ 80",
       name: "Nike React Infinity Run Flyknit 2",
       mainColor: "pink",
       id: "2",
@@ -137,6 +143,7 @@ export const shoes = {
     {
       genre: "women",
       type: "shoes",
+      price: "$ 80",
       name: "Stan Smith",
       mainColor: "white",
       id: "7",
@@ -158,6 +165,7 @@ export const shoes = {
     {
       genre: "women",
       type: "shoes",
+      price: "$ 80",
       name: "Adidas Falcon",
       mainColor: "white",
       id: "8",
@@ -179,6 +187,7 @@ export const shoes = {
     {
       genre: "women",
       type: "shoes",
+      price: "$ 80",
       name: "Air Force 1",
       mainColor: "pink",
       id: "9",
@@ -202,6 +211,7 @@ export const shoes = {
     {
       genre: "kids",
       type: "shoes",
+      price: "$ 80",
       name: "Nike Revolution 5",
       mainColor: "gray",
       id: "10",
@@ -217,6 +227,7 @@ export const shoes = {
     {
       genre: "kids",
       type: "shoes",
+      price: "$ 80",
       name: "Nike Vision",
       mainColor: "blue",
       id: "11",
@@ -238,6 +249,7 @@ export const shoes = {
     {
       genre: "kids",
       type: "shoes",
+      price: "$ 80",
       name: "Nike Valiant",
       mainColor: "black",
       id: "12",
@@ -258,6 +270,7 @@ export const clothes = {
     {
       genre: "men",
       type: "clothes",
+      price: "$ 120",
       name: "Nike Sport Jacket",
       mainColor: "white",
       id: "13",
@@ -279,6 +292,7 @@ export const clothes = {
     {
       genre: "men",
       type: "clothes",
+      price: "$ 120",
       name: "Nike Sportswear Club Fleece",
       mainColor: "red",
       id: "14",
@@ -300,6 +314,7 @@ export const clothes = {
     {
       genre: "men",
       type: "clothes",
+      price: "$ 120",
       name: "Adidas Jacket",
       mainColor: "blue",
       id: "15",
@@ -321,6 +336,7 @@ export const clothes = {
     {
       genre: "men",
       type: "clothes",
+      price: "$ 120",
       name: "Adidas Sweat pants",
       mainColor: "red",
       id: "16",
@@ -343,6 +359,7 @@ export const clothes = {
   women: [
     {
       type: "clothes",
+      price: "$ 120",
       genre: "women",
       name: "Nike Sportswear Icon Clash",
       mainColor: "black",
@@ -358,6 +375,7 @@ export const clothes = {
     },
     {
       type: "clothes",
+      price: "$ 120",
       genre: "women",
       name: "Jordan Moto",
       mainColor: "black",
@@ -373,6 +391,7 @@ export const clothes = {
     },
     {
       type: "clothes",
+      price: "$ 120",
       genre: "women",
       name: "Adidas Stripes Shorts",
       mainColor: "red",
@@ -388,6 +407,7 @@ export const clothes = {
     },
     {
       type: "clothes",
+      price: "$ 120",
       genre: "women",
       name: "Adidas Sweat Shirt",
       mainColor: "white",
@@ -411,6 +431,7 @@ export const clothes = {
   kids: [
     {
       type: "clothes",
+      price: "$ 120",
       genre: "kids",
       name: "Nike Sportswear",
       mainColor: "gray",
@@ -432,6 +453,7 @@ export const clothes = {
     },
     {
       type: "clothes",
+      price: "$ 120",
       genre: "kids",
       name: "Nike Kids Jacket",
       mainColor: "white",
@@ -447,6 +469,7 @@ export const clothes = {
     },
     {
       type: "clothes",
+      price: "$ 120",
       genre: "kids",
       name: "Nike Sportswear Windrunner",
       mainColor: "blue",

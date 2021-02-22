@@ -46,7 +46,7 @@ const ProductPresentation = ({
           <SizeSelect productType={product.type} />
           <div className="product-presentation__payment">
             <button>Add to cart</button>
-            <span className="price">$139.95</span>
+            <span className="price">{product.price}</span>
           </div>
         </div>
       </div>
