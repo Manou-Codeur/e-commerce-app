@@ -2,15 +2,27 @@ import app from "firebase/app";
 import "firebase/auth";
 import "firebase/database";
 
+const {
+  REACT_APP_APIKEY,
+  REACT_APP_AUTHDOMAIN,
+  REACT_APP_PROJECTID,
+  REACT_APP_STORAGEBUCKET,
+  REACT_APP_MESSAGINGSENDERID,
+  REACT_APP_APPID,
+  REACT_APP_MEASUREMENTID,
+} = process.env;
+
 const config = {
-  apiKey: "AIzaSyDvHWYBNzSQK1KEjkM5PImDv-jfFtBdSgs",
-  authDomain: "react-e-commerce-app-18fea.firebaseapp.com",
-  projectId: "react-e-commerce-app-18fea",
-  storageBucket: "react-e-commerce-app-18fea.appspot.com",
-  messagingSenderId: "1067863401277",
-  appId: "1:1067863401277:web:976b7d36a3d863b7809b54",
-  measurementId: "G-K110GH0GKD",
+  apiKey: REACT_APP_APIKEY,
+  authDomain: REACT_APP_AUTHDOMAIN,
+  projectId: REACT_APP_PROJECTID,
+  storageBucket: REACT_APP_STORAGEBUCKET,
+  messagingSenderId: REACT_APP_MESSAGINGSENDERID,
+  appId: REACT_APP_APPID,
+  measurementId: REACT_APP_MEASUREMENTID,
 };
+
+console.log(process.env);
 
 class Firebase {
   constructor() {
