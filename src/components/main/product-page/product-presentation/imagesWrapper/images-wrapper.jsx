@@ -15,7 +15,7 @@ const ImagesWrapper = ({ images }) => {
       <div className="images-wrapper__left">
         {images.slice(0, 2).map(image => (
           <div className="images-wrapper__item" key={image}>
-            <img src={image} alt="product" />
+            <img src={image} alt="Another color" />
           </div>
         ))}
       </div>
@@ -23,7 +23,7 @@ const ImagesWrapper = ({ images }) => {
       <div className="images-wrapper__right">
         {images.slice(2).map(image => (
           <div className="images-wrapper__item" key={image}>
-            <img src={image} alt="product" />
+            <img src={image} alt="Another color" />
           </div>
         ))}
       </div>

@@ -16,7 +16,7 @@ const Product = ({ data: { name, type, genre, mainColor, colors } }) => {
   return (
     <div className="product" onClick={goToProductPage}>
       <div className="product__img-wrapper">
-        <img src={colors[mainColor][0]} alt="product img" />
+        <img src={colors[mainColor][0]} alt={name} />
       </div>
 
       <div className="product__info">

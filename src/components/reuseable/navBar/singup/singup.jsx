@@ -70,7 +70,7 @@ const SingUp = ({ closeSingup, firebase }) => {
       >
         <Close className="singup__close-icon" onClick={closeSingup} />
 
-        <img src={Logo} className="singup__logo" />
+        <img src={Logo} className="singup__logo" alt="logo" />
 
         <h1>Become a member</h1>
 

@@ -69,7 +69,7 @@ const Singin = ({ closeLogin, openSingUp, firebase, openPasswordReset }) => {
       >
         <Close className="login__close-icon" onClick={closeLogin} />
 
-        <img src={Logo} className="login__logo" />
+        <img src={Logo} className="login__logo" alt="logo" />
 
         <h1>Log in your account</h1>
 

@@ -32,7 +32,7 @@ const Search = ({ closeSearch }) => {
         exit={{ y: "-100%" }}
       >
         <div className="search__up-part">
-          <img src={Logo} className="search__logo" />
+          <img src={Logo} className="search__logo" alt="logo" />
 
           <SearchInput onchange={onQueryChange} />
 

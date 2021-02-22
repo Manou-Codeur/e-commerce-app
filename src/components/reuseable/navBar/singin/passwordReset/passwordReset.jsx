@@ -59,7 +59,7 @@ const PasswordReset = ({ closePasswordReset, firebase }) => {
           onClick={closePasswordReset}
         />
 
-        <img src={Logo} className="password-reset__logo" />
+        <img src={Logo} className="password-reset__logo" alt="logo" />
 
         <h1>Reset your password</h1>
 

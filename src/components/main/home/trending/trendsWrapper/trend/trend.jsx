@@ -13,7 +13,7 @@ const Trend = ({ data: { imgUrl, name, color, type, genre }, big }) => {
       onClick={() => history.push(`/product/${type}@${genre}@${name}@${color}`)}
     >
       <div className={big ? "trend--big__img-wrapper" : "trend__img-wrapper"}>
-        <img src={imgUrl} alt="shoe image" />
+        <img src={imgUrl} alt={name} />
       </div>
 
       <div className={big ? "trend--big__name" : "trend__name"}>{name}</div>

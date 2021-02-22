@@ -107,6 +107,7 @@ const Header = () => {
             className="header__shoe-img"
             key={currProduct.name}
             src={currProduct.node}
+            alt={currProduct.name}
           />
         </div>
       </div>
