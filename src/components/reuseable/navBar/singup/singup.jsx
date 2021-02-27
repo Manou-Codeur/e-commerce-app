@@ -29,7 +29,7 @@ const SingUp = ({ closeSingup, firebase }) => {
     setErrors,
   } = useCustomFormik("singup", doSubmit);
 
-  async function doSubmit({ email, password }) {
+  async function doSubmit({ email, password, fullName }) {
     setGlobalErrors(null);
     try {
       setRegistering(true);
@@ -44,6 +44,12 @@ const SingUp = ({ closeSingup, firebase }) => {
           data.user.ya.split(".")[0] + "." + data.user.ya.split(".")[1]
         )
       );
+      //add the new user to database
+      firebase.addUser({
+        uid: data.user.uid,
+        name: fullName,
+        email,
+      });
       closeSingup();
     } catch (error) {
       handleErrors("singup", error, setErrors, setGlobalErrors);

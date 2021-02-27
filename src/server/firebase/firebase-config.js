@@ -22,8 +22,6 @@ const config = {
   measurementId: REACT_APP_MEASUREMENTID,
 };
 
-console.log(process.env);
-
 class Firebase {
   constructor() {
     //init firebase config
@@ -56,7 +54,16 @@ class Firebase {
   };
 
   //db methods
+  users = () => this.db.ref("/users");
   user = uid => this.db.ref(`users/${uid}`);
+
+  addUser = ({ name, email, uid }) =>
+    this.user(uid).set({
+      name,
+      email,
+      personalAddress: "",
+      reviews: "[]",
+    });
 }
 
 export default Firebase;
