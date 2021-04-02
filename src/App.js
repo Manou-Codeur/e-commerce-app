@@ -9,6 +9,8 @@ import GenreProduct from "./components/main/genreProduct/genreProduct";
 import Order from "./components/main/order/order";
 import NotFound from "./components/main/notFound/notFound";
 import Footer from "./components/reuseable/footer/footer";
+import FirebaseContext from "./server/firebase/firebaseContext";
+import Firebase from "./server/firebase/firebase-config";
 
 const Router = () => (
   <Switch>
@@ -25,13 +27,17 @@ const Router = () => (
   </Switch>
 );
 
+const firebase = new Firebase();
+
 const App = () => {
   return (
-    <React.Fragment>
-      <NavBar />
-      <Router />
-      <Footer />
-    </React.Fragment>
+    <FirebaseContext.Provider value={{ firebase }}>
+      <React.Fragment>
+        <NavBar />
+        <Router />
+        <Footer />
+      </React.Fragment>
+    </FirebaseContext.Provider>
   );
 };
 

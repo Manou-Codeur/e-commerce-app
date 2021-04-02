@@ -62,8 +62,23 @@ class Firebase {
       name,
       email,
       personalAddress: "",
-      reviews: "[]",
     });
+
+  getProductReviews = productId => this.db.ref(`/productsReviews/${productId}`);
+
+  addProductReview = (productId, uid, rating, title, description) => {
+    var updates = {};
+    const reviewObj = {
+      description,
+      rating,
+      title,
+      uid,
+    };
+
+    updates["/productsReviews/" + productId + "/" + uid] = reviewObj;
+
+    return this.db.ref().update(updates);
+  };
 }
 
 export default Firebase;

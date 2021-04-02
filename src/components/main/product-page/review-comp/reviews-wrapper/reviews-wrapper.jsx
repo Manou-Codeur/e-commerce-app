@@ -1,25 +1,42 @@
-import React from "react";
+import React, { useEffect, useState, useContext } from "react";
+
+import FirebaseContext from "./../../../../../server/firebase/firebaseContext";
 
 import "./reviews-wrapper.scss";
 import { ReactComponent as Star } from "../../../../../assets/img/star.svg";
 
 const ReviewsWrapper = () => {
+  const { firebase } = useContext(FirebaseContext);
+
+  const [reviews, setReviews] = useState([]);
+
+  useEffect(() => {
+    const data = firebase.getProductReviews(10);
+    data.on("value", snapshot => {
+      const reviewsObj = snapshot.val();
+      setReviews(Object.values(reviewsObj));
+    });
+  }, []);
+
+  const starsInArray = rating => {
+    const arr = [];
+    for (let i = 1; i <= rating; i++) {
+      arr.push(i);
+    }
+    return arr;
+  };
+
   return (
     <div className="reviews-wrapper">
-      {[0, 1].map(el => (
-        <div className="reviews-wrapper__item" key={el}>
-          <h3>Best shoes ever</h3>
+      {reviews.map(review => (
+        <div className="reviews-wrapper__item" key={review.uid}>
+          <h3>{review.title}</h3>
           <div className="reviews-wrapper__stars">
-            <Star />
-            <Star />
-            <Star />
-            <Star />
-            <Star />
+            {starsInArray(review.rating).map(star => (
+              <Star key={star} />
+            ))}
           </div>
-          <p>
-            Great service, great delivery definitely recommend ordering from
-            here. Love this app too much lol.
-          </p>
+          <p>{review.description}</p>
         </div>
       ))}
     </div>

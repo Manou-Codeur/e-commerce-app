@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import jwtGenerator from "jwt-decode";
@@ -8,12 +8,10 @@ import Singin from "./singin/singin";
 import SingUp from "./singup/singup";
 import MobileNavBar from "./mobileNavBar/mobileNavBar";
 import PasswordReset from "./singin/passwordReset/passwordReset";
-import Firebase from "./../../../server/firebase/firebase-config";
+import FirebaseContext from "../../../server/firebase/firebaseContext";
 
 import "./navBar.scss";
 import Logo from "../../../assets/img/logo.png";
-
-const firebase = new Firebase();
 
 const NavBar = () => {
   const [searchOpen, setSearchOpen] = useState(false);
@@ -23,6 +21,8 @@ const NavBar = () => {
   const [passwordResetOpen, setPasswordReset] = useState(false);
   //this state is used to force rerendering login/logout
   const [render, setRender] = useState(false);
+
+  const { firebase } = useContext(FirebaseContext);
 
   //I wrapper this code in trycatch coz the jwtGenerator() throw an error if the string passed isn't valid jwt code
   try {
