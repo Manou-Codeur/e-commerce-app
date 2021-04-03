@@ -13,6 +13,11 @@ const ReviewsWrapper = ({ productId, firebase }) => {
       if (reviewsObj) setReviews(Object.values(reviewsObj));
       else setReviews("There is no reviews!");
     });
+
+    //cleanup firebase subscription once the component get unmounted
+    return () => {
+      firebase.getProductReviews(productId).off();
+    };
   }, [productId]);
 
   const starsInArray = rating => {
