@@ -79,6 +79,9 @@ class Firebase {
 
     return this.db.ref().update(updates);
   };
+
+  getSpecificReview = (productId, uid) =>
+    this.db.ref(`/productsReviews/${productId}/${uid}`);
 }
 
 export default Firebase;

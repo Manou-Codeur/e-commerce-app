@@ -35,13 +35,19 @@ const ReviewForm = ({ productId, firebase }) => {
     //check if the user is authed
     try {
       const jwt = jwtGenerator(JSON.parse(localStorage.getItem("user-authed")));
-      firebase.addProductReview(
-        productId,
-        jwt.user_id,
-        rating,
-        title,
-        description
-      );
+
+      firebase.getSpecificReview(productId, jwt.user_id).on("value", snap => {
+        if (!snap.exists()) {
+          firebase.addProductReview(
+            productId,
+            jwt.user_id,
+            rating,
+            title,
+            description
+          );
+        }
+      });
+
       //reset all the inputs
       handleReset();
     } catch (error) {
