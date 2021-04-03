@@ -67,7 +67,7 @@ const NavBar = () => {
         <a className="nav-bar__links" onClick={() => setSearchOpen(true)}>
           Search
         </a>
-        <a className="nav-bar__links" onClick={SingOut_SingIn}>
+        <a className="nav-bar__links" onClick={SingOut_SingIn} id="singIn">
           {userAuthed ? "Sing Out" : "Sing In"}
         </a>
         <Link className="nav-bar__links" to="/bag">

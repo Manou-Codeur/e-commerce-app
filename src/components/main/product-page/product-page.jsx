@@ -30,7 +30,12 @@ const ProdcutPage = ({
   };
 
   return (
-    <HistoryContext.Provider value={{ history }}>
+    <HistoryContext.Provider
+      value={{
+        history,
+        productId: productInfo.split("@")[productInfo.split("@").length - 1],
+      }}
+    >
       <div className="product-page">
         <div className="product-page__main">
           <ProductPresentation productDetails={productDetails} />

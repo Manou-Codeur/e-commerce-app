@@ -29,6 +29,7 @@ export const fetchRecommendations = currProduct => {
     clothes.kids[1],
   ];
 
+  //we don't want to render the curr product in the slider
   if (currProduct) {
     const filtredRecommend = recomended.filter(
       product => product.name !== currProduct

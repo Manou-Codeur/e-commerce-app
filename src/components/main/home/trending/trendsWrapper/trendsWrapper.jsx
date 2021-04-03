@@ -18,6 +18,7 @@ const TrendsWrapper = () => {
             imgUrl: NikeInfinity,
             name: "Nike React Infinity Run Flyknit 2",
             color: "pink",
+            id: 6,
           }}
           big={true}
         />
@@ -31,6 +32,7 @@ const TrendsWrapper = () => {
             imgUrl: LacosteSneakers,
             name: "Sneakers Run Breaker",
             color: "white",
+            id: 2,
           }}
         />
         <Trend
@@ -40,6 +42,7 @@ const TrendsWrapper = () => {
             imgUrl: NikeZoom,
             name: "Nike Zoom X",
             color: "orange",
+            id: 3,
           }}
         />
       </div>

@@ -130,7 +130,7 @@ export const shoes = {
       price: "$ 80",
       name: "Nike React Infinity Run Flyknit 2",
       mainColor: "pink",
-      id: "2",
+      id: "6",
       colors: {
         pink: [
           "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/767b0f87-f47a-4c9b-bb74-6e875e6c5887/chaussure-de-running-react-infinity-run-flyknit-2-pour-qzRzKl.jpg",

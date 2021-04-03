@@ -1,22 +1,19 @@
 import React, { useEffect, useState, useContext } from "react";
 
-import FirebaseContext from "./../../../../../server/firebase/firebaseContext";
-
 import "./reviews-wrapper.scss";
 import { ReactComponent as Star } from "../../../../../assets/img/star.svg";
 
-const ReviewsWrapper = () => {
-  const { firebase } = useContext(FirebaseContext);
-
+const ReviewsWrapper = ({ productId, firebase }) => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    const data = firebase.getProductReviews(10);
+    const data = firebase.getProductReviews(productId);
     data.on("value", snapshot => {
       const reviewsObj = snapshot.val();
-      setReviews(Object.values(reviewsObj));
+      if (reviewsObj) setReviews(Object.values(reviewsObj));
+      else setReviews("There is no reviews!");
     });
-  }, []);
+  }, [productId]);
 
   const starsInArray = rating => {
     const arr = [];
@@ -26,19 +23,25 @@ const ReviewsWrapper = () => {
     return arr;
   };
 
+  if (reviews === "There is no reviews!")
+    return <h1 className="reviews-wrapper">No Reviews</h1>;
   return (
     <div className="reviews-wrapper">
-      {reviews.map(review => (
-        <div className="reviews-wrapper__item" key={review.uid}>
-          <h3>{review.title}</h3>
-          <div className="reviews-wrapper__stars">
-            {starsInArray(review.rating).map(star => (
-              <Star key={star} />
-            ))}
+      {Array.isArray(reviews) && reviews.length > 0 ? (
+        reviews.map(review => (
+          <div className="reviews-wrapper__item" key={review.uid}>
+            <h3>{review.title}</h3>
+            <div className="reviews-wrapper__stars">
+              {starsInArray(review.rating).map(star => (
+                <Star key={star} />
+              ))}
+            </div>
+            <p>{review.description}</p>
           </div>
-          <p>{review.description}</p>
-        </div>
-      ))}
+        ))
+      ) : (
+        <h2>Loading reviews...</h2>
+      )}
     </div>
   );
 };
