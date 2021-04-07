@@ -66,6 +66,9 @@ class Firebase {
 
   getProductReviews = productId => this.db.ref(`/productsReviews/${productId}`);
 
+  getSpecificReview = (productId, uid) =>
+    this.db.ref(`/productsReviews/${productId}/${uid}`);
+
   addProductReview = (productId, uid, rating, title, description) => {
     var updates = {};
     const reviewObj = {
@@ -79,9 +82,6 @@ class Firebase {
 
     return this.db.ref().update(updates);
   };
-
-  getSpecificReview = (productId, uid) =>
-    this.db.ref(`/productsReviews/${productId}/${uid}`);
 }
 
 export default Firebase;

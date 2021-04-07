@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import Select from "@material-ui/core/Select";
 import FormControl from "@material-ui/core/FormControl";
 import InputLabel from "@material-ui/core/InputLabel";
@@ -28,7 +28,7 @@ const useStyles = makeStyles({
   },
 });
 
-const SizeSelect = ({ productType }) => {
+const SizeSelect = forwardRef(({ productType }, ref) => {
   const classes = useStyles();
 
   const sizes =
@@ -39,7 +39,7 @@ const SizeSelect = ({ productType }) => {
       <FormControl variant="standard" className={classes.root}>
         <InputLabel id="size-select">Select Size</InputLabel>
 
-        <Select labelId="size-select" defaultValue="">
+        <Select labelId="size-select" defaultValue="" ref={ref}>
           {sizes.map(size => (
             <MenuItem value={size} key={size}>
               {size}
@@ -49,6 +49,6 @@ const SizeSelect = ({ productType }) => {
       </FormControl>
     </div>
   );
-};
+});
 
 export default SizeSelect;

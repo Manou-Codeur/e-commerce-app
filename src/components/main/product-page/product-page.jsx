@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import jwtGenerator from "jwt-decode";
 
 import HistoryContext from "./../../../context/historyContext";
 import ProductPresentation from "./product-presentation/product-presentation";
@@ -14,6 +15,15 @@ const ProdcutPage = ({
   },
   history,
 }) => {
+  const [authed, setAuthed] = useState(null);
+
+  useEffect(() => {
+    try {
+      const jwt = jwtGenerator(JSON.parse(localStorage.getItem("user-authed")));
+      setAuthed(jwt.user_id);
+    } catch (error) {}
+  });
+
   const productDetails = {
     type: productInfo.split("@")[0],
     genre: productInfo.split("@")[1],
@@ -38,8 +48,11 @@ const ProdcutPage = ({
     >
       <div className="product-page">
         <div className="product-page__main">
-          <ProductPresentation productDetails={productDetails} />
-          <ReviewComp />
+          <ProductPresentation
+            productDetails={productDetails}
+            userAuthed={authed}
+          />
+          <ReviewComp userAuthed={authed} />
           <Recommend
             headingTitle="You May Like Also"
             productList={fetchRecommendations(getCurrProductName())}

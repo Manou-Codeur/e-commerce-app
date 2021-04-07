@@ -11,6 +11,7 @@ const MobileNavBar = ({
   setSearchOpen,
   SingOut_SingIn,
   userAuthed,
+  cardLength,
 }) => {
   const closeNavBarSlider = ({ target }) => {
     if (target.className !== "nav-bar__mobile") setMenuOpen(false);
@@ -51,7 +52,7 @@ const MobileNavBar = ({
           {userAuthed ? "Sing Out" : "Sing In"}
         </a>
         <Link className="nav-bar__links--white" to="/bag">
-          MyCart(1)
+          {`My Card (${cardLength})`}
         </Link>
       </motion.div>
     </Fragment>

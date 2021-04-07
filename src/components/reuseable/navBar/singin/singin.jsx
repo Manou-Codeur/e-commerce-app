@@ -42,6 +42,7 @@ const Singin = ({ closeLogin, openSingUp, firebase, openPasswordReset }) => {
         )
       );
       closeLogin();
+      window.location.reload();
     } catch (error) {
       handleErrors("singin", error, setErrors, setGlobalErrors);
     }

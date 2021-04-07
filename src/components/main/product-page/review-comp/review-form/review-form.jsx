@@ -1,7 +1,6 @@
 import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import jwtGenerator from "jwt-decode";
 
 import InputsWrapper from "./../../../../reuseable/inputsWrapper/inputsWrapper";
 
@@ -9,7 +8,7 @@ import { generateReviewInputs } from "./inputs-list";
 import { reviewFormSchema } from "./yup-schema";
 import "./review-form.scss";
 
-const ReviewForm = ({ productId, firebase }) => {
+const ReviewForm = ({ productId, firebase, userAuthed }) => {
   const {
     values,
     touched,
@@ -32,28 +31,22 @@ const ReviewForm = ({ productId, firebase }) => {
 
   const doSubmit = values => {
     const { rating, title, description } = values;
-    //check if the user is authed
-    try {
-      const jwt = jwtGenerator(JSON.parse(localStorage.getItem("user-authed")));
 
-      firebase.getSpecificReview(productId, jwt.user_id).on("value", snap => {
-        if (!snap.exists()) {
-          firebase.addProductReview(
-            productId,
-            jwt.user_id,
-            rating,
-            title,
-            description
-          );
-        }
-      });
+    firebase.getSpecificReview(productId, userAuthed).on("value", snapshot => {
+      //test if the user has yet writen a review
+      if (!snapshot.exists()) {
+        firebase.addProductReview(
+          productId,
+          userAuthed,
+          rating,
+          title,
+          description
+        );
+      }
+    });
 
-      //reset all the inputs
-      handleReset();
-    } catch (error) {
-      //if not authed suggest the singIn
-      document.querySelector("a#singIn").click();
-    }
+    //reset all the inputs
+    handleReset();
   };
 
   return (
@@ -70,8 +63,9 @@ const ReviewForm = ({ productId, firebase }) => {
         className="review-form__submit-btn"
         onClick={handleSubmit}
         type="submit"
+        disabled={!userAuthed && true}
       >
-        Write a review
+        {userAuthed ? "Write a review" : "Sing in to write a review"}
       </button>
     </div>
   );

@@ -51,6 +51,7 @@ const SingUp = ({ closeSingup, firebase }) => {
         email,
       });
       closeSingup();
+      window.location.reload();
     } catch (error) {
       handleErrors("singup", error, setErrors, setGlobalErrors);
     }

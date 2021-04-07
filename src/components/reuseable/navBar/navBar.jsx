@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import jwtGenerator from "jwt-decode";
+import { useSelector } from "react-redux";
 
 import Search from "./search/search";
 import Singin from "./singin/singin";
@@ -19,10 +20,11 @@ const NavBar = () => {
   const [loginOpen, setLoginOpen] = useState(false);
   const [singupOpen, setSingupOpen] = useState(false);
   const [passwordResetOpen, setPasswordReset] = useState(false);
-  //this state is used to force rerendering login/logout
-  const [render, setRender] = useState(false);
 
   const { firebase } = useContext(FirebaseContext);
+
+  //get the card length from redux store
+  const cardLength = useSelector(state => state.products.length);
 
   //I wrapper this code in trycatch coz the jwtGenerator() throw an error if the string passed isn't valid jwt code
   try {
@@ -35,13 +37,12 @@ const NavBar = () => {
     if (userAuthed) {
       localStorage.setItem("user-authed", JSON.stringify(false));
       firebase.doSignOut();
-      setRender(prev => !prev);
+      window.location.reload();
     }
 
     //sing in
     else {
       setLoginOpen(true);
-      setRender(prev => !prev);
     }
   };
 
@@ -71,7 +72,7 @@ const NavBar = () => {
           {userAuthed ? "Sing Out" : "Sing In"}
         </a>
         <Link className="nav-bar__links" to="/bag">
-          MyCart(1)
+          {`My Card (${cardLength})`}
         </Link>
       </div>
 
@@ -82,6 +83,7 @@ const NavBar = () => {
         setSearchOpen={setSearchOpen}
         SingOut_SingIn={SingOut_SingIn}
         userAuthed={userAuthed}
+        cardLength={cardLength}
       />
 
       {/* down here is the condition rendering of search and authentification components */}

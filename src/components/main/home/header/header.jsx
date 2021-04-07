@@ -15,6 +15,7 @@ const Header = () => {
       genre: "Men",
       name: "airJordan",
       completeName: "New Air Jordan React Elevation",
+      id: 1,
       hexColor: "#3867d6",
       namedColor: "blue",
       node: airJordan,
@@ -24,6 +25,7 @@ const Header = () => {
       genre: "Men",
       name: "nikeLegend",
       completeName: "New Nike Legend React 3",
+      id: 4,
       hexColor: "#64a9b0",
       namedColor: "blue",
       node: nikeLegend,
@@ -33,6 +35,7 @@ const Header = () => {
       genre: "Men",
       name: "adidasNMD",
       completeName: "New Adidas NMD_R1 V1",
+      id: 5,
       hexColor: "#FF443C",
       namedColor: "black",
       node: adidasNMD,
@@ -68,10 +71,12 @@ const Header = () => {
   };
 
   const goToProductPage = () => {
-    let { completeName, namedColor, type, genre } = currProduct;
+    let { completeName, namedColor, type, genre, id } = currProduct;
     //i'm removing 'New' from the completeName variable coz this is uncompatible with my fake db
     completeName = completeName.replace("New", "").trim();
-    history.push(`/product/${type}@${genre}@${completeName}@${namedColor}`);
+    history.push(
+      `/product/${type}@${genre}@${completeName}@${namedColor}@${id}`
+    );
   };
 
   return (
