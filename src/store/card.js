@@ -2,7 +2,7 @@ import { createAction, createReducer } from "@reduxjs/toolkit";
 import jwtGenerator from "jwt-decode";
 
 //I need to get only the products picked up by the current user authed
-const allProducts = JSON.parse(localStorage.getItem("products"));
+let allProducts = JSON.parse(localStorage.getItem("products"));
 let currProducts = [];
 try {
   const { user_id } = jwtGenerator(
@@ -19,9 +19,23 @@ const initState = {
 };
 
 export const addToCard = createAction("ADD_TO_CARD");
+export const updateCard = createAction("UPDATE_CARD");
+export const removeFromCard = createAction("REMOVE_FROM_CARD");
 
 export const cardReducer = createReducer(initState, {
   [addToCard.type]: (state, action) => {
     state.products.push(action.payload);
+  },
+  [updateCard.type]: (state, action) => {
+    const productIndex = state.products.findIndex(
+      product => product.pid == action.payload.pid
+    );
+    state.products[productIndex].amount = action.payload.newAmount;
+  },
+  [removeFromCard.type]: (state, action) => {
+    const productIndex = state.products.findIndex(
+      product => product.pid == action.payload.pid
+    );
+    state.products.splice(productIndex, 1);
   },
 });

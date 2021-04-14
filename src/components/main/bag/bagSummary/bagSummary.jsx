@@ -2,14 +2,26 @@ import React from "react";
 
 import "./bagSummary.scss";
 
-const BagSummary = () => {
+const BagSummary = ({ fetchedProducts }) => {
+  const getTotalPrice = products => {
+    let totalPrice = 0;
+
+    for (let product of products) {
+      totalPrice +=
+        parseFloat(product.price.split("$")[1].trim()) *
+        parseInt(product.amount);
+    }
+
+    return `$ ${totalPrice}.00`;
+  };
+
   return (
     <div className="bag-summary">
       <h2>Summary</h2>
 
       <div className="bag-summary__subtotal">
         <span>Subtotal</span>
-        <span className="price">$ 300.00</span>
+        <span className="price">{getTotalPrice(fetchedProducts)}</span>
       </div>
       <div className="bag-summary__shipping">
         <span>Shipping</span>
@@ -17,7 +29,7 @@ const BagSummary = () => {
       </div>
       <div className="bag-summary__total">
         <span>Total</span>
-        <span className="price">$ 300.00</span>
+        <span className="price">{getTotalPrice(fetchedProducts)}</span>
       </div>
 
       <button>Payment</button>

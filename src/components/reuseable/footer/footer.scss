@@ -8,6 +8,9 @@
   justify-content: space-between;
   font-weight: 600;
   padding: 3em 4em 0 4em;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 
   &__left {
     span {

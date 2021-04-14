@@ -22,7 +22,7 @@ const ProdcutPage = ({
       const jwt = jwtGenerator(JSON.parse(localStorage.getItem("user-authed")));
       setAuthed(jwt.user_id);
     } catch (error) {}
-  });
+  }, []);
 
   const productDetails = {
     type: productInfo.split("@")[0],

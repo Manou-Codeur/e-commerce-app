@@ -1,7 +1,6 @@
 import React from "react";
 
 import HistoryContext from "./../../../context/historyContext";
-import NavBar from "./../../reuseable/navBar/navBar";
 import Header from "./header/header";
 import Recommend from "../../reuseable/recommend/recommend";
 import Trending from "./trending/trending";

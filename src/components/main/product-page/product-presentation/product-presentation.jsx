@@ -53,6 +53,7 @@ const ProductPresentation = ({
       pid: productId,
       color: currColor,
       size: sizeRef.current.textContent,
+      amount: 1,
     };
     products.push(product);
 

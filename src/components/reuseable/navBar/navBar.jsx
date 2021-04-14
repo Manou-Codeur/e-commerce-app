@@ -24,7 +24,15 @@ const NavBar = () => {
   const { firebase } = useContext(FirebaseContext);
 
   //get the card length from redux store
-  const cardLength = useSelector(state => state.products.length);
+  const cardLength = useSelector(state => {
+    let length = 0;
+
+    for (let product of state.products) {
+      length += product.amount;
+    }
+
+    return length;
+  });
 
   //I wrapper this code in trycatch coz the jwtGenerator() throw an error if the string passed isn't valid jwt code
   try {
