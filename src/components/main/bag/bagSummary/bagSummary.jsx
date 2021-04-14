@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+
+import HistoryContext from "./../../../../context/historyContext";
 
 import "./bagSummary.scss";
 
 const BagSummary = ({ fetchedProducts }) => {
+  const { history } = useContext(HistoryContext);
+
   const getTotalPrice = products => {
     let totalPrice = 0;
 
@@ -32,7 +36,7 @@ const BagSummary = ({ fetchedProducts }) => {
         <span className="price">{getTotalPrice(fetchedProducts)}</span>
       </div>
 
-      <button>Payment</button>
+      <button onClick={() => history.push("/order")}>Payment</button>
     </div>
   );
 };
