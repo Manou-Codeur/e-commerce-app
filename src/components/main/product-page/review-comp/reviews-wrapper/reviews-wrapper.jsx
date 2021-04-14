@@ -32,6 +32,7 @@ const ReviewsWrapper = ({ productId, firebase }) => {
     return <h1 className="reviews-wrapper">No Reviews</h1>;
   return (
     <div className="reviews-wrapper">
+      <h1>Reviwes</h1>
       {Array.isArray(reviews) && reviews.length > 0 ? (
         reviews.map(review => (
           <div className="reviews-wrapper__item" key={review.uid}>
