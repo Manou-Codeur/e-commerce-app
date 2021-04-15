@@ -3,29 +3,25 @@ import React from "react";
 import "./steps.scss";
 
 const Steps = ({ currentStep }) => {
-  const genrateClassName = step => {
+  const generateClassName = step => {
     if (step === "checkout") {
-      return currentStep === "checkout" ? "current" : "done";
+      return "done";
     } else if (step === "delivery") {
-      if (currentStep === "delivery") return "current";
-      else if (currentStep !== "checkout") {
-        return "done";
-      }
-      return null;
+      if (currentStep === "checkout") return null;
+      return "done";
     } else if (step === "final") {
-      return currentStep !== "delivery" && currentStep === "done"
-        ? "current"
-        : null;
+      if (currentStep === "checkout" || currentStep === "delivery") return null;
+      return "done";
     }
   };
 
   return (
     <div className="steps">
-      <span className={genrateClassName("checkout")}>Checkout</span>
+      <span className={generateClassName("checkout")}>Checkout</span>
       <div className="hr"></div>
-      <span className={genrateClassName("delivery")}>Delivery</span>
+      <span className={generateClassName("delivery")}>Delivery</span>
       <div className="hr"></div>
-      <span className={genrateClassName("final")}>Done</span>
+      <span className={generateClassName("final")}>Done</span>
     </div>
   );
 };

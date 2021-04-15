@@ -36,7 +36,12 @@ const BagSummary = ({ fetchedProducts }) => {
         <span className="price">{getTotalPrice(fetchedProducts)}</span>
       </div>
 
-      <button onClick={() => history.push("/order")}>Payment</button>
+      <button
+        disabled={getTotalPrice(fetchedProducts) === "$ 0.00"}
+        onClick={() => history.push("/order")}
+      >
+        Payment
+      </button>
     </div>
   );
 };
