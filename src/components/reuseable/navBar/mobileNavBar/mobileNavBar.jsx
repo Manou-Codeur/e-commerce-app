@@ -54,6 +54,11 @@ const MobileNavBar = ({
         <Link className="nav-bar__links--white" to="/bag">
           {`My Card (${cardLength})`}
         </Link>
+        {userAuthed && (
+          <Link className="nav-bar__links" to="/profile">
+            My Profile
+          </Link>
+        )}
       </motion.div>
     </Fragment>
   );

@@ -1,0 +1,27 @@
+.account {
+  width: 40%;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 5%;
+  align-self: flex-start;
+
+  .input-wrapper {
+    margin-top: 0.5em;
+  }
+
+  &__submit-btn {
+    background-color: black;
+    color: white;
+    padding: 1.1em 0;
+    border: 0;
+    width: 80%;
+    cursor: pointer;
+    font-weight: 500;
+    border-radius: 3px;
+  }
+
+  @media only screen and (max-width: 550px) {
+    width: 100%;
+    position: initial;
+  }
+}

@@ -21,8 +21,8 @@ const Order = ({ history }) => {
         <Steps currentStep={orderStep} />
 
         {/* condition rendering of <Checkout /> , <Delivery /> and <Done /> */}
-        {orderStep === "checkout" && <Checkout />}
         {orderStep === "delivery" && <Delivery />}
+        {orderStep === "checkout" && <Checkout />}
         {orderStep === "done" && <Done />}
       </div>
     </div>

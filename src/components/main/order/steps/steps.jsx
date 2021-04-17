@@ -4,10 +4,10 @@ import "./steps.scss";
 
 const Steps = ({ currentStep }) => {
   const generateClassName = step => {
-    if (step === "checkout") {
+    if (step === "delivery") {
       return "done";
-    } else if (step === "delivery") {
-      if (currentStep === "checkout") return null;
+    } else if (step === "checkout") {
+      if (currentStep === "delivery") return null;
       return "done";
     } else if (step === "final") {
       if (currentStep === "checkout" || currentStep === "delivery") return null;
@@ -17,9 +17,9 @@ const Steps = ({ currentStep }) => {
 
   return (
     <div className="steps">
-      <span className={generateClassName("checkout")}>Checkout</span>
-      <div className="hr"></div>
       <span className={generateClassName("delivery")}>Delivery</span>
+      <div className="hr"></div>
+      <span className={generateClassName("checkout")}>Checkout</span>
       <div className="hr"></div>
       <span className={generateClassName("final")}>Done</span>
     </div>

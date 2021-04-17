@@ -82,6 +82,11 @@ const NavBar = () => {
         <Link className="nav-bar__links" to="/bag">
           {`My Card (${cardLength})`}
         </Link>
+        {userAuthed && (
+          <Link className="nav-bar__links" to="/profile">
+            My Profile
+          </Link>
+        )}
       </div>
 
       {/* Down here is the mobile version of this nav bar */}

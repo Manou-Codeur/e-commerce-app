@@ -7,6 +7,10 @@
   align-items: flex-start;
   justify-content: flex-start;
   padding-left: 2em;
+  position: -webkit-sticky;
+  position: sticky;
+  align-self: flex-start;
+  top: 5%;
 
   h2 {
     margin-bottom: 1em;

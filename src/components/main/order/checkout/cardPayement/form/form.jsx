@@ -106,6 +106,7 @@ const Form = ({
 
   const doSubmit = values => {
     console.log("submit!!");
+    console.log(values);
   };
 
   return (
@@ -124,7 +125,7 @@ const Form = ({
         />
       </div>
 
-      <button className="form__submit" onClick={handleSubmit}>
+      <button className="form__submit" type="submit" onClick={handleSubmit}>
         Submit
       </button>
     </div>
