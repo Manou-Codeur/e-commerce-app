@@ -34,13 +34,6 @@ export const useCustomFormik = (form, submitFunction) => {
   });
 };
 
-export const checkErrors = errors => {
-  for (let els in errors) {
-    if (els) return true;
-  }
-  return false;
-};
-
 export const closeFormWithNoBubbling = ({ target }, closeFucntion) => {
   if (target.nodeName === "DIV" && target.className.includes("background"))
     closeFucntion();

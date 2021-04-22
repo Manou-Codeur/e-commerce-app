@@ -1,7 +1,6 @@
 import * as Yup from "yup";
 
 export const changePasswordFormSchema = {
-  password: Yup.string().required("Password is required!"),
   newPassword: Yup.string()
     .strict()
     .lowercase("New Password must contain only lowercase!")

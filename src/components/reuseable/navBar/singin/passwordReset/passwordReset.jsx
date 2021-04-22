@@ -9,9 +9,9 @@ import {
 } from "./../../helper-functions";
 import { handleErrors } from "./../../../../../server/firebase/errorHandling";
 import { generateResetPasswordInputs } from "../../inputs-list";
-import "./passwordReset.scss";
 import { ReactComponent as Close } from "../../../../../assets/img/close.svg";
 import Logo from "../../../../../assets/img/logo.png";
+import "./passwordReset.scss";
 
 const PasswordReset = ({ closePasswordReset, firebase }) => {
   const [resetting, setResetting] = useState(false);
@@ -28,7 +28,7 @@ const PasswordReset = ({ closePasswordReset, firebase }) => {
     setErrors,
   } = useCustomFormik("resetPassword", doResetPassword);
 
-  async function doResetPassword(email) {
+  async function doResetPassword({ email }) {
     setGlobalErrors(null);
     try {
       setResetting(true);
@@ -46,6 +46,9 @@ const PasswordReset = ({ closePasswordReset, firebase }) => {
       transition={{ duration: 0.6 }}
       exit={{ opacity: 0 }}
       onClick={e => closeFormWithNoBubbling(e, closePasswordReset)}
+      onKeyPress={e => {
+        if (e.key === "Enter") handleSubmit();
+      }}
     >
       <motion.div
         className="password-reset"

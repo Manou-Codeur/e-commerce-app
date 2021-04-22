@@ -101,32 +101,30 @@ const NavBar = () => {
 
       {/* down here is the condition rendering of search and authentification components */}
       <AnimatePresence>
-        {searchOpen ? (
-          <Search closeSearch={() => setSearchOpen(false)} />
-        ) : null}
+        {searchOpen && <Search closeSearch={() => setSearchOpen(false)} />}
 
-        {loginOpen ? (
+        {loginOpen && (
           <Singin
             closeLogin={() => setLoginOpen(false)}
             openSingUp={() => setSingupOpen(true)}
             openPasswordReset={() => setPasswordReset(true)}
             firebase={firebase}
           />
-        ) : null}
+        )}
 
-        {singupOpen ? (
+        {singupOpen && (
           <SingUp
             closeSingup={() => setSingupOpen(false)}
             firebase={firebase}
           />
-        ) : null}
+        )}
 
-        {passwordResetOpen ? (
+        {passwordResetOpen && (
           <PasswordReset
             closePasswordReset={() => setPasswordReset(false)}
             firebase={firebase}
           />
-        ) : null}
+        )}
       </AnimatePresence>
     </div>
   );

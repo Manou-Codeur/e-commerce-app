@@ -4,11 +4,7 @@ import { motion } from "framer-motion";
 import InputsWrapper from "../../inputsWrapper/inputsWrapper";
 
 import { handleErrors } from "../../../../server/firebase/errorHandling";
-import {
-  checkErrors,
-  useCustomFormik,
-  closeFormWithNoBubbling,
-} from "../helper-functions";
+import { useCustomFormik, closeFormWithNoBubbling } from "../helper-functions";
 import { generateSinginInputs } from "../inputs-list";
 import "./singin.scss";
 import { ReactComponent as Close } from "../../../../assets/img/close.svg";
@@ -99,7 +95,7 @@ const Singin = ({ closeLogin, openSingUp, firebase, openPasswordReset }) => {
           className="login__btn"
           type="submit"
           onClick={handleSubmit}
-          disabled={logging || checkErrors(errors)}
+          disabled={logging || Object.keys(errors).length > 0}
         >
           {logging ? "LOGGING..." : "LOGIN"}
         </button>
