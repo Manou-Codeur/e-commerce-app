@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
@@ -9,6 +9,11 @@ import { reviewFormSchema } from "./yup-schema";
 import "./review-form.scss";
 
 const ReviewForm = ({ productId, firebase, userAuthed }) => {
+  const [formMessage, setFormMessage] = useState({
+    error: false,
+    message: null,
+  });
+
   const {
     values,
     touched,
@@ -32,18 +37,29 @@ const ReviewForm = ({ productId, firebase, userAuthed }) => {
   const doSubmit = values => {
     const { rating, title, description } = values;
 
-    firebase.getSpecificReview(productId, userAuthed).on("value", snapshot => {
-      //test if the user has yet writen a review
-      if (!snapshot.exists()) {
-        firebase.addProductReview(
-          productId,
-          userAuthed,
-          rating,
-          title,
-          description
-        );
-      }
-    });
+    firebase
+      .getSpecificReview(productId, userAuthed)
+      .once("value", async snapshot => {
+        //test if the user has yet writen a review
+        if (!snapshot.exists()) {
+          await firebase.addProductReview(
+            productId,
+            userAuthed,
+            rating,
+            title,
+            description
+          );
+          setFormMessage({
+            error: false,
+            message: "Thank you for adding a review!",
+          });
+        } else {
+          setFormMessage({
+            error: true,
+            message: "You already added a review!",
+          });
+        }
+      });
 
     //reset all the inputs
     handleReset();
@@ -67,6 +83,17 @@ const ReviewForm = ({ productId, firebase, userAuthed }) => {
       >
         {userAuthed ? "Write a review" : "Sing in to write a review"}
       </button>
+
+      {formMessage.message && (
+        <h3
+          style={{
+            color: formMessage.error ? "red" : "green",
+            marginTop: ".5em",
+          }}
+        >
+          {formMessage.message}
+        </h3>
+      )}
     </div>
   );
 };

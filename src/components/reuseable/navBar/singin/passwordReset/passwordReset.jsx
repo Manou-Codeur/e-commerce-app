@@ -40,15 +40,20 @@ const PasswordReset = ({ closePasswordReset, firebase }) => {
     setResetting(false);
   }
 
+  const handleOnEnter = e => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      handleSubmit();
+    }
+  };
+
   return (
     <motion.div
       className="password-reset--background"
       transition={{ duration: 0.6 }}
       exit={{ opacity: 0 }}
       onClick={e => closeFormWithNoBubbling(e, closePasswordReset)}
-      onKeyPress={e => {
-        if (e.key === "Enter") handleSubmit();
-      }}
+      onKeyPress={handleOnEnter}
     >
       <motion.div
         className="password-reset"

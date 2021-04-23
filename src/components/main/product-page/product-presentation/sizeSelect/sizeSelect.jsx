@@ -28,11 +28,19 @@ const useStyles = makeStyles({
   },
 });
 
-const SizeSelect = forwardRef(({ productType }, ref) => {
+const SizeSelect = forwardRef(({ productType, productGenre }, ref) => {
   const classes = useStyles();
 
-  const sizes =
-    productType === "shoes" ? [36, 37, 38, 39, 40, 41, 42] : ["S", "M", "L"];
+  const generateSizes = () => {
+    if (productGenre === "kids") return [22, 23, 25, 26, 27, 28, 29];
+    else {
+      const sizes =
+        productType === "shoes"
+          ? [36, 37, 38, 39, 40, 41, 42]
+          : ["S", "M", "L", "XL"];
+      return sizes;
+    }
+  };
 
   return (
     <div className="size-select">
@@ -40,7 +48,7 @@ const SizeSelect = forwardRef(({ productType }, ref) => {
         <InputLabel id="size-select">Select Size</InputLabel>
 
         <Select labelId="size-select" defaultValue="" ref={ref}>
-          {sizes.map(size => (
+          {generateSizes().map(size => (
             <MenuItem value={size} key={size}>
               {size}
             </MenuItem>

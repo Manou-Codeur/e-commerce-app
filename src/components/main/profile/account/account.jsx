@@ -54,8 +54,15 @@ const Account = () => {
     setLogging(false);
   };
 
+  const handleOnEnter = e => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      handleSubmit();
+    }
+  };
+
   return (
-    <div className="account">
+    <div className="account" onKeyPress={handleOnEnter}>
       <h2>Account</h2>
 
       <InputsWrapper

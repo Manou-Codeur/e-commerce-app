@@ -73,7 +73,11 @@ const ProductPresentation = ({
           </span>
           <h3 className="product-presentation__name">{product.name}</h3>
           <OtherColors data={getOtherColors()} selectColor={setCurrColor} />
-          <SizeSelect productType={product.type} ref={sizeRef} />
+          <SizeSelect
+            productType={product.type}
+            productGenre={product.genre}
+            ref={sizeRef}
+          />
           <div className="product-presentation__payment">
             <button onClick={handleAddToCard}>
               {userAuthed ? "Add to card" : "Sing in to buy"}
