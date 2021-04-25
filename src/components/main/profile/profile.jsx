@@ -8,7 +8,7 @@ import "./profile.scss";
 
 const Profile = ({ history }) => {
   try {
-    const jwt = jwtGenerator(JSON.parse(localStorage.getItem("user-authed")));
+    var jwt = jwtGenerator(JSON.parse(localStorage.getItem("user-authed")));
     var userAuthed = jwt.aud === "react-e-commerce-app-18fea";
   } catch (error) {}
 
@@ -18,7 +18,7 @@ const Profile = ({ history }) => {
     <div className="profile">
       <div className="profile__main">
         <Account />
-        <Orders />
+        <Orders uid={jwt.user_id} />
       </div>
     </div>
   );

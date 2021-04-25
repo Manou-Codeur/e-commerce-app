@@ -21,6 +21,7 @@ const initState = {
 export const addToCard = createAction("ADD_TO_CARD");
 export const updateCard = createAction("UPDATE_CARD");
 export const removeFromCard = createAction("REMOVE_FROM_CARD");
+export const clearCard = createAction("CLEAR_CARD");
 
 export const cardReducer = createReducer(initState, {
   [addToCard.type]: (state, action) => {
@@ -37,5 +38,8 @@ export const cardReducer = createReducer(initState, {
       product => product.pid == action.payload.pid
     );
     state.products.splice(productIndex, 1);
+  },
+  [clearCard.type]: (state, action) => {
+    state.products = [];
   },
 });

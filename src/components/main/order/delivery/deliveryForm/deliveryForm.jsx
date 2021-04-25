@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
 import InputsWrapper from "./../../../../reuseable/inputsWrapper/inputsWrapper";
+import OrderContext from "./../../../../../context/orderContext";
 
 import {
   generateLine1,
@@ -14,6 +15,8 @@ import { deliveryInputsSchema } from "./yupSchema";
 import "./deliveryForm.scss";
 
 const DeliveryForm = () => {
+  const { goToStep } = useContext(OrderContext);
+
   const {
     values,
     touched,
@@ -39,7 +42,7 @@ const DeliveryForm = () => {
   });
 
   const doSubmit = values => {
-    console.log("submit!!");
+    goToStep("checkout");
   };
 
   return (

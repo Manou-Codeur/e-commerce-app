@@ -32,14 +32,12 @@ const SizeSelect = forwardRef(({ productType, productGenre }, ref) => {
   const classes = useStyles();
 
   const generateSizes = () => {
-    if (productGenre === "kids") return [22, 23, 25, 26, 27, 28, 29];
-    else {
-      const sizes =
-        productType === "shoes"
-          ? [36, 37, 38, 39, 40, 41, 42]
-          : ["S", "M", "L", "XL"];
-      return sizes;
+    if (productType === "clothes") {
+      return ["S", "M", "L", "XL"];
     }
+    return productGenre === "kids"
+      ? [22, 23, 25, 26, 27, 28, 29]
+      : [36, 37, 38, 39, 40, 41, 42];
   };
 
   return (

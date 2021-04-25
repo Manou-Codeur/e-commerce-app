@@ -64,7 +64,7 @@ class Firebase {
     this.user(uid).set({
       name,
       email,
-      personalAddress: "",
+      buyedProducts: "[]",
     });
 
   getProductReviews = productId => this.db.ref(`/productsReviews/${productId}`);
@@ -84,6 +84,27 @@ class Firebase {
     updates["/productsReviews/" + productId + "/" + uid] = reviewObj;
 
     return this.db.ref().update(updates);
+  };
+
+  getBuyedProducts = uid => this.db.ref(`/users/${uid}/buyedProducts`);
+
+  addBuyedProducts = newProducts => {
+    //get the uid
+    const uid = newProducts[0].uid;
+
+    //get curr products and merge them with new ones then update the db
+    const currProduts = this.getBuyedProducts(uid);
+    currProduts.once("value", snap => {
+      var updates = {};
+      let products = [...newProducts];
+
+      if (Array.isArray(snap.val())) {
+        products.push(...snap.val());
+      }
+
+      updates["/users/" + uid + "/buyedProducts"] = products;
+      return this.db.ref().update(updates);
+    });
   };
 }
 

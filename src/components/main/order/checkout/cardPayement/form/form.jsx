@@ -1,8 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { useSelector } from "react-redux";
 
 import InputsWrapper from "./../../../../../reuseable/inputsWrapper/inputsWrapper";
+import OrderContext from "./../../../../../../context/orderContext";
+import FirebaseContext from "./../../../../../../server/firebase/firebaseContext";
 
 import { generateLine1And2, generateLine3 } from "./inputsList";
 import { checkoutInputsSchema } from "./yupShema";
@@ -11,6 +14,11 @@ import "./form.scss";
 const Form = ({
   onChange: { setCardHolder, setCardNumber, setCardExp, setCardType },
 }) => {
+  const { goToStep } = useContext(OrderContext);
+  const { firebase } = useContext(FirebaseContext);
+  //redux
+  const products = useSelector(state => state.products);
+
   const {
     values,
     touched,
@@ -104,9 +112,16 @@ const Form = ({
     handleChange(e);
   };
 
-  const doSubmit = values => {
-    console.log("submit!!");
-    console.log(values);
+  const doSubmit = async values => {
+    try {
+      await firebase.addBuyedProducts(products);
+      // 3. do something about the payment
+    } catch (error) {
+      console.log(error);
+      console.log("sdsd");
+    }
+
+    goToStep("done");
   };
 
   return (

@@ -45,7 +45,7 @@ const SingUp = ({ closeSingup, firebase }) => {
         )
       );
       //add the new user to database
-      firebase.addUser({
+      await firebase.addUser({
         uid: data.user.uid,
         name: fullName,
         email,

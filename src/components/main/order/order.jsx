@@ -5,6 +5,7 @@ import Steps from "./steps/steps";
 import Checkout from "./checkout/checkout";
 import Delivery from "./delivery/delivery";
 import Done from "./done/done";
+import OrderContext from "./../../../context/orderContext";
 
 import "./order.scss";
 
@@ -20,10 +21,12 @@ const Order = ({ history }) => {
       <div className="order-page__main">
         <Steps currentStep={orderStep} />
 
-        {/* condition rendering of <Checkout /> , <Delivery /> and <Done /> */}
-        {orderStep === "delivery" && <Delivery />}
-        {orderStep === "checkout" && <Checkout />}
-        {orderStep === "done" && <Done />}
+        <OrderContext.Provider value={{ goToStep: step => setOrderStep(step) }}>
+          {/* condition rendering of <Checkout /> , <Delivery /> and <Done /> */}
+          {orderStep === "delivery" && <Delivery />}
+          {orderStep === "checkout" && <Checkout />}
+          {orderStep === "done" && <Done />}
+        </OrderContext.Provider>
       </div>
     </div>
   );
