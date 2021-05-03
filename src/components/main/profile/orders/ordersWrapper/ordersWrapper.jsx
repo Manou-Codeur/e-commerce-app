@@ -9,9 +9,7 @@ const OrdersWrapper = ({ products, errors }) => {
   return (
     <div className="orders__wrapper">
       {products.length === 0 ? (
-        <span style={{ marginTop: "1em" }}>
-          You have not purchased any product yet!
-        </span>
+        <span>You have not purchased any product yet!</span>
       ) : (
         products.map(product => <Order data={product} key={product.img} />)
       )}

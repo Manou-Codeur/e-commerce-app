@@ -1,0 +1,19 @@
+.reviews-area {
+  width: 40%;
+  max-height: 350px;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 0.2em;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: gainsboro;
+    border-radius: 5px;
+  }
+
+  @media screen and (max-width: 650px) {
+    width: 100%;
+    margin-bottom: 3em;
+  }
+}

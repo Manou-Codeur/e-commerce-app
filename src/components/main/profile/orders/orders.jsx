@@ -29,9 +29,9 @@ const Orders = ({ uid }) => {
   });
 
   useEffect(() => {
-    //handle unexpected errors like connection issue
+    //handle unexpected errors; if the user is still seeying the "loading" msg for 10 sec
     const timer = setTimeout(() => {
-      if (!buyedProducts || (buyedProducts && buyedProducts.length === 0)) {
+      if (!buyedProducts) {
         setErrors(true);
       }
     }, 10000);

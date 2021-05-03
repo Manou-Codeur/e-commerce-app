@@ -1,0 +1,17 @@
+.reviews-wrapper {
+  &__item {
+    margin: 1em 0;
+    border-left: 2px solid black;
+    padding-left: 0.5em;
+    border-radius: 2px;
+
+    svg {
+      height: 1.1em;
+    }
+
+    p {
+      width: 60%;
+      word-break: break-all;
+    }
+  }
+}
