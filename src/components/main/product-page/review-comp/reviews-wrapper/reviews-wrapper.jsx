@@ -17,15 +17,14 @@ const ReviewsWrapper = ({ productId, firebase }) => {
 
   useEffect(() => {
     //This is usefull to handle unexpected errors
-    const timeOut = setTimeout(() => {
+    const timer = setTimeout(() => {
       if (Array.isArray(reviews) && reviews.length === 0) {
-        console.log(reviews);
         setReviews("There's an unexpected error, reload the page please!");
       }
     }, 10000);
 
     return () => {
-      clearTimeout(timeOut);
+      clearTimeout(timer);
     };
   });
 
