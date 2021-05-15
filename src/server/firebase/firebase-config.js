@@ -88,13 +88,14 @@ class Firebase {
 
   getBuyedProducts = uid => this.db.ref(`/users/${uid}/buyedProducts`);
 
-  addBuyedProducts = newProducts => {
+  addBuyedProducts = async newProducts => {
     //get the uid
     const uid = newProducts[0].uid;
 
     //get curr products and merge them with new ones then update the db
     const currProduts = this.getBuyedProducts(uid);
-    currProduts.once("value", snap => {
+    try {
+      const snap = await currProduts.get();
       var updates = {};
       let products = [...newProducts];
 
@@ -103,8 +104,12 @@ class Firebase {
       }
 
       updates["/users/" + uid + "/buyedProducts"] = products;
-      return this.db.ref().update(updates);
-    });
+      this.db.ref().update(updates);
+    } catch (err) {
+      return await Promise.reject(
+        "There is an unexpected error, please reload the page!"
+      );
+    }
   };
 }
 

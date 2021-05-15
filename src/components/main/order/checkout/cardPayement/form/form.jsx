@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useContext, useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useSelector } from "react-redux";
@@ -14,6 +14,9 @@ import "./form.scss";
 const Form = ({
   onChange: { setCardHolder, setCardNumber, setCardExp, setCardType },
 }) => {
+  const [globalerrors, setGlobalErrors] = useState(false);
+  const [paying, setPaying] = useState(false);
+
   const { goToStep } = useContext(OrderContext);
   const { firebase } = useContext(FirebaseContext);
   //redux
@@ -114,14 +117,15 @@ const Form = ({
 
   const doSubmit = async values => {
     try {
+      setPaying(true);
       await firebase.addBuyedProducts(products);
       // 3. do something about the payment
-    } catch (error) {
-      console.log(error);
-      console.log("sdsd");
-    }
 
-    goToStep("done");
+      goToStep("done");
+    } catch (error) {
+      setGlobalErrors(error);
+    }
+    setPaying(false);
   };
 
   return (
@@ -140,9 +144,18 @@ const Form = ({
         />
       </div>
 
-      <button className="form__submit" type="submit" onClick={handleSubmit}>
-        Submit
+      <button
+        className="form__submit"
+        type="submit"
+        onClick={handleSubmit}
+        disabled={paying || Object.keys(errors).length > 0}
+      >
+        {paying ? "Processing..." : "Submit"}
       </button>
+
+      {globalerrors && (
+        <span className="form__error-message">{globalerrors}</span>
+      )}
     </div>
   );
 };
