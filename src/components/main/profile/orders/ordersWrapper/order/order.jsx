@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 import "./order.scss";
 
@@ -13,7 +14,12 @@ const Order = ({ data }) => {
   };
 
   return (
-    <div className="order">
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3 }}
+      className="order"
+    >
       <div className="order__img">
         <img src={data.img} alt="" />
       </div>
@@ -25,7 +31,7 @@ const Order = ({ data }) => {
           <span>{generatePrice()}</span>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

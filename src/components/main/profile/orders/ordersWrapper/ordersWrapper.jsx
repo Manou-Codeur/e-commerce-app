@@ -1,4 +1,5 @@
 import React from "react";
+import { AnimatePresence } from "framer-motion";
 
 import Order from "./order/order";
 
@@ -11,7 +12,11 @@ const OrdersWrapper = ({ products, errors }) => {
       {products.length === 0 ? (
         <span>You have not purchased any product yet!</span>
       ) : (
-        products.map(product => <Order data={product} key={product.img} />)
+        products.map(product => (
+          <AnimatePresence>
+            <Order data={product} key={product.img} />
+          </AnimatePresence>
+        ))
       )}
     </div>
   );
