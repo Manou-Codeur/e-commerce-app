@@ -14,7 +14,7 @@ import "./bag.scss";
 
 const Bag = ({ history }) => {
   //redux
-  const cardProducts = useSelector(state => state.products);
+  const cardProducts = useSelector(({ cardReducer }) => cardReducer.products);
 
   const fetchedProducts = fetchCardProducts(cardProducts);
 

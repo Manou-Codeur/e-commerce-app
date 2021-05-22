@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import jwtGenerator from "jwt-decode";
+import { useSelector } from "react-redux";
 
 import HistoryContext from "./../../../context/historyContext";
 import ProductPresentation from "./product-presentation/product-presentation";
@@ -15,14 +14,7 @@ const ProdcutPage = ({
   },
   history,
 }) => {
-  const [authed, setAuthed] = useState(null);
-
-  useEffect(() => {
-    try {
-      const jwt = jwtGenerator(JSON.parse(localStorage.getItem("user-authed")));
-      setAuthed(jwt.user_id);
-    } catch (error) {}
-  }, []);
+  const userAuthed = useSelector(({ authReducer }) => authReducer.uid);
 
   const productDetails = {
     type: productInfo.split("@")[0],
@@ -50,9 +42,9 @@ const ProdcutPage = ({
         <div className="product-page__main">
           <ProductPresentation
             productDetails={productDetails}
-            userAuthed={authed}
+            userAuthed={userAuthed}
           />
-          <ReviewComp userAuthed={authed} />
+          <ReviewComp userAuthed={userAuthed} />
           <Recommend
             headingTitle="You May Like Also"
             productList={fetchRecommendations(getCurrProductName())}

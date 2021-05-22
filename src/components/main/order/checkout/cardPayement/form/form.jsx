@@ -21,7 +21,7 @@ const Form = ({
   const { goToStep } = useContext(OrderContext);
   const { firebase } = useContext(FirebaseContext);
   //redux
-  const products = useSelector(state => state.products);
+  const products = useSelector(({ cardReducer }) => cardReducer.products);
   const totalPrice = getTotalPrice(products);
 
   const { values, touched, errors, handleSubmit, handleChange, handleBlur } =

@@ -1,7 +1,6 @@
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-import jwtGenerator from "jwt-decode";
 import { useSelector } from "react-redux";
 
 import Search from "./search/search";
@@ -24,21 +23,18 @@ const NavBar = () => {
   const { firebase } = useContext(FirebaseContext);
 
   //get the card length from redux store
-  const cardLength = useSelector(state => {
+  const cardLength = useSelector(({ cardReducer }) => {
     let length = 0;
+    const products = cardReducer.products;
 
-    for (let product of state.products) {
+    for (let product of products) {
       length += product.amount;
     }
 
     return length;
   });
 
-  //I wrapper this code in trycatch coz the jwtGenerator() throw an error if the string passed isn't valid jwt code
-  try {
-    const jwt = jwtGenerator(JSON.parse(localStorage.getItem("user-authed")));
-    var userAuthed = jwt.aud === "react-e-commerce-app-18fea";
-  } catch (error) {}
+  const userAuthed = useSelector(({ authReducer }) => authReducer.userAuthed);
 
   const SingOut_SingIn = () => {
     //sing out

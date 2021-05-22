@@ -14,7 +14,7 @@ const ProductPresentation = ({
   productDetails: { type, genre, name, color },
   userAuthed,
 }) => {
-  const sizeRef = React.createRef();
+  const sizeRef = createRef();
   const [product, setProduct] = useState(null);
   const [currColor, setCurrColor] = useState(null);
 

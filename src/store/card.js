@@ -5,9 +5,11 @@ import jwtGenerator from "jwt-decode";
 let allProducts = JSON.parse(localStorage.getItem("products"));
 let currProducts = [];
 try {
-  const { user_id } = jwtGenerator(
+  const { user_id, aud } = jwtGenerator(
     JSON.parse(localStorage.getItem("user-authed"))
   );
+
+  if (aud !== "react-e-commerce-app-18fea") throw new Error();
 
   for (let product of allProducts) {
     if (product.uid === user_id) currProducts.push(product);
