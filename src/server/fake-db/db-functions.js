@@ -81,3 +81,15 @@ export const fetchCardProducts = cardProducts => {
 
   return products;
 };
+
+export const getTotalPrice = cardProduct => {
+  const products = fetchCardProducts(cardProduct);
+  let totalPrice = 0;
+
+  for (let product of products) {
+    totalPrice +=
+      parseFloat(product.price.split("$")[1].trim()) * parseInt(product.amount);
+  }
+
+  return `$ ${totalPrice}.00`;
+};

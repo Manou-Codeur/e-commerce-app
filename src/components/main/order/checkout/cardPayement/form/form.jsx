@@ -7,6 +7,7 @@ import InputsWrapper from "./../../../../../reuseable/inputsWrapper/inputsWrappe
 import OrderContext from "./../../../../../../context/orderContext";
 import FirebaseContext from "./../../../../../../server/firebase/firebaseContext";
 
+import { getTotalPrice } from "../../../../../../server/fake-db/db-functions";
 import { generateLine1And2, generateLine3 } from "./inputsList";
 import { checkoutInputsSchema } from "./yupShema";
 import "./form.scss";
@@ -21,27 +22,22 @@ const Form = ({
   const { firebase } = useContext(FirebaseContext);
   //redux
   const products = useSelector(state => state.products);
+  const totalPrice = getTotalPrice(products);
 
-  const {
-    values,
-    touched,
-    errors,
-    handleSubmit,
-    handleChange,
-    handleBlur,
-  } = useFormik({
-    initialValues: {
-      cardNumber: "",
-      holderName: "",
-      expirationDate: "",
-      year: "",
-      cvv: "",
-    },
-    validationSchema: Yup.object(checkoutInputsSchema),
-    onSubmit: values => {
-      doSubmit(values);
-    },
-  });
+  const { values, touched, errors, handleSubmit, handleChange, handleBlur } =
+    useFormik({
+      initialValues: {
+        cardNumber: "",
+        holderName: "",
+        expirationDate: "",
+        year: "",
+        cvv: "",
+      },
+      validationSchema: Yup.object(checkoutInputsSchema),
+      onSubmit: values => {
+        doSubmit(values);
+      },
+    });
 
   const CARDS = {
     visa: "^4",
@@ -120,7 +116,6 @@ const Form = ({
       setPaying(true);
       await firebase.addBuyedProducts(products);
       // 3. do something about the payment
-
       goToStep("done");
     } catch (error) {
       setGlobalErrors(error);
@@ -150,7 +145,7 @@ const Form = ({
         onClick={handleSubmit}
         disabled={paying || Object.keys(errors).length > 0}
       >
-        {paying ? "Processing..." : "Submit"}
+        {paying ? "Processing..." : `Pay ${totalPrice}`}
       </button>
 
       {globalerrors && (

@@ -5,7 +5,11 @@ import HistoryContext from "../../../context/historyContext";
 import ProductsWrapper from "./productsWrapper/productsWrapper";
 import BagSummary from "./bagSummary/bagSummary";
 
-import { fetchCardProducts } from "./../../../server/fake-db/db-functions";
+import {
+  fetchCardProducts,
+  getTotalPrice,
+} from "./../../../server/fake-db/db-functions";
+
 import "./bag.scss";
 
 const Bag = ({ history }) => {
@@ -19,7 +23,7 @@ const Bag = ({ history }) => {
       <div className="bag">
         <div className="bag__main">
           <ProductsWrapper fetchedProducts={fetchedProducts} />
-          <BagSummary fetchedProducts={fetchedProducts} />
+          <BagSummary totalPrice={getTotalPrice(cardProducts)} />
         </div>
       </div>
     </HistoryContext.Provider>

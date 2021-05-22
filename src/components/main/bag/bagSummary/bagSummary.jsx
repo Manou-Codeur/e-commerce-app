@@ -4,20 +4,8 @@ import HistoryContext from "./../../../../context/historyContext";
 
 import "./bagSummary.scss";
 
-const BagSummary = ({ fetchedProducts }) => {
+const BagSummary = ({ totalPrice }) => {
   const { history } = useContext(HistoryContext);
-
-  const getTotalPrice = products => {
-    let totalPrice = 0;
-
-    for (let product of products) {
-      totalPrice +=
-        parseFloat(product.price.split("$")[1].trim()) *
-        parseInt(product.amount);
-    }
-
-    return `$ ${totalPrice}.00`;
-  };
 
   return (
     <div className="bag-summary">
@@ -25,7 +13,7 @@ const BagSummary = ({ fetchedProducts }) => {
 
       <div className="bag-summary__subtotal">
         <span>Subtotal</span>
-        <span className="price">{getTotalPrice(fetchedProducts)}</span>
+        <span className="price">{totalPrice}</span>
       </div>
       <div className="bag-summary__shipping">
         <span>Shipping</span>
@@ -33,11 +21,11 @@ const BagSummary = ({ fetchedProducts }) => {
       </div>
       <div className="bag-summary__total">
         <span>Total</span>
-        <span className="price">{getTotalPrice(fetchedProducts)}</span>
+        <span className="price">{totalPrice}</span>
       </div>
 
       <button
-        disabled={getTotalPrice(fetchedProducts) === "$ 0.00"}
+        disabled={totalPrice === "$ 0.00"}
         onClick={() => history.push("/order")}
       >
         Payment
