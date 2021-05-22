@@ -45,6 +45,13 @@
 
   &__right-part {
     display: inherit;
+    width: 45%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__left-part {
+    width: 45%;
   }
 
   &__menu-bar {
@@ -80,7 +87,13 @@
     }
   }
 
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 1200px) {
+    & {
+      font-size: 13px;
+    }
+  }
+
+  @media only screen and (max-width: 930px) {
     & {
       font-size: 12px;
 
