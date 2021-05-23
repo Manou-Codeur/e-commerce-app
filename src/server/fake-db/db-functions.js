@@ -11,9 +11,9 @@ const allProducts = [
 ];
 
 export const filterProducts = query => {
-  return allProducts.filter(product => {
-    return product.name.toLowerCase().includes(query.toLowerCase().trim());
-  });
+  return allProducts.filter(product =>
+    product.name.toLowerCase().includes(query.toLowerCase().trim())
+  );
 };
 
 export const fetchRecommendations = currProduct => {
@@ -40,19 +40,9 @@ export const fetchRecommendations = currProduct => {
   return recomended.slice(0, 6);
 };
 
-export const fetchProduct = (type, genre, name, color) => {
-  //here if we come from the search component (no type, genre and color)
-  if (!color) {
-    //i'm using "genre" coz in this case the "genre" is considred as "id"
-    const index = genre;
-    const product = allProducts[index - 1];
-    return product;
-  } else {
-    const product = products[type][genre.toLowerCase()].filter(
-      product => product.name === name
-    );
-    return product[0];
-  }
+export const fetchProduct = id => {
+  const index = id - 1;
+  return allProducts[index];
 };
 
 export const fetchGenres = genre => {
@@ -72,8 +62,8 @@ export const fetchCardProducts = cardProducts => {
       type: fullProductDetails.type,
       price: fullProductDetails.price,
       name: fullProductDetails.name,
-      img: fullProductDetails.colors[cardProduct.color][0],
       pid: fullProductDetails.id,
+      img: fullProductDetails.colors[cardProduct.color][0],
       amount: cardProduct.amount,
     };
     products.push(product);

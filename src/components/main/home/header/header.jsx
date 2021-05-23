@@ -71,12 +71,10 @@ const Header = () => {
   };
 
   const goToProductPage = () => {
-    let { completeName, namedColor, type, genre, id } = currProduct;
+    let { completeName, id } = currProduct;
     //i'm removing 'New' from the completeName variable coz this is uncompatible with my fake db
     completeName = completeName.replace("New", "").trim();
-    history.push(
-      `/product/${type}@${genre}@${completeName}@${namedColor}@${id}`
-    );
+    history.push(`/product/${completeName}@${id}`);
   };
 
   return (

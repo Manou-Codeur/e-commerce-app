@@ -17,37 +17,26 @@ const ProdcutPage = ({
   const userAuthed = useSelector(({ authReducer }) => authReducer.uid);
 
   const productDetails = {
-    type: productInfo.split("@")[0],
-    genre: productInfo.split("@")[1],
-    name: productInfo.split("@")[2],
-    color: productInfo.split("@")[3],
-  };
-
-  const getCurrProductName = () => {
-    //check if the curr url has the "name" param
-    if (productDetails.color) {
-      return productDetails.name;
-    }
-    return productDetails.type;
+    name: productInfo.split("@")[0],
+    id: productInfo.split("@")[1],
   };
 
   return (
     <HistoryContext.Provider
       value={{
         history,
-        productId: productInfo.split("@")[productInfo.split("@").length - 1],
       }}
     >
       <div className="product-page">
         <div className="product-page__main">
           <ProductPresentation
-            productDetails={productDetails}
+            productId={productDetails.id}
             userAuthed={userAuthed}
           />
           <ReviewComp userAuthed={userAuthed} />
           <Recommend
             headingTitle="You May Like Also"
-            productList={fetchRecommendations(getCurrProductName())}
+            productList={fetchRecommendations(productDetails.name)}
           />
         </div>
       </div>

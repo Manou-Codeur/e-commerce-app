@@ -93,9 +93,9 @@ class Firebase {
     const uid = newProducts[0].uid;
 
     //get curr products and merge them with new ones then update the db
-    const currProduts = this.getBuyedProducts(uid);
+    const currProducts = this.getBuyedProducts(uid);
     try {
-      const snap = await currProduts.get();
+      const snap = await currProducts.get();
       var updates = {};
       let products = [...newProducts];
 

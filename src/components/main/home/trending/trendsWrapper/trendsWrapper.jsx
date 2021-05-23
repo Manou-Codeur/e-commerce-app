@@ -13,11 +13,8 @@ const TrendsWrapper = () => {
       <div className="trends-wrapper__big">
         <Trend
           data={{
-            type: "shoes",
-            genre: "women",
             imgUrl: NikeInfinity,
             name: "Nike React Infinity Run Flyknit 2",
-            color: "pink",
             id: 6,
           }}
           big={true}
@@ -27,21 +24,15 @@ const TrendsWrapper = () => {
       <div className="trends-wrapper__small">
         <Trend
           data={{
-            type: "shoes",
-            genre: "men",
             imgUrl: LacosteSneakers,
             name: "Sneakers Run Breaker",
-            color: "white",
             id: 2,
           }}
         />
         <Trend
           data={{
-            type: "shoes",
-            genre: "men",
             imgUrl: NikeZoom,
             name: "Nike Zoom X",
-            color: "orange",
             id: 3,
           }}
         />

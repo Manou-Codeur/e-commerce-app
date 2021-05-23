@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext, createRef } from "react";
+import React, { useState, useEffect, createRef } from "react";
 import { useDispatch } from "react-redux";
 
 import ImagesWrapper from "./imagesWrapper/images-wrapper";
@@ -7,27 +7,21 @@ import SizeSelect from "./sizeSelect/sizeSelect";
 
 import { addToCard } from "./../../../../store/card";
 import { fetchProduct } from "./../../../../server/fake-db/db-functions";
-import HistoryContext from "./../../../../context/historyContext";
 import "./product-presentation.scss";
 
-const ProductPresentation = ({
-  productDetails: { type, genre, name, color },
-  userAuthed,
-}) => {
+const ProductPresentation = ({ productId, userAuthed }) => {
   const sizeRef = createRef();
   const [product, setProduct] = useState(null);
   const [currColor, setCurrColor] = useState(null);
 
-  const { productId } = useContext(HistoryContext);
-
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const fetchedProduct = fetchProduct(type, genre, name, color);
+    const fetchedProduct = fetchProduct(productId);
 
     setProduct(fetchedProduct);
     setCurrColor(fetchedProduct.mainColor);
-  }, [type, genre, name, color]);
+  }, [productId]);
 
   function getOtherColors() {
     const colors = product.colors;
