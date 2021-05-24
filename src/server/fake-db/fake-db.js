@@ -6,7 +6,7 @@ export const shoes = {
       price: "$ 80",
       name: "Air Jordan React Elevation",
       mainColor: "blue",
-      id: "1",
+      id: 1,
       colors: {
         blue: [
           "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/d7e2664c-32ec-4f85-a882-93a0f6c66059/chaussure-de-basketball-jordan-react-elevation-pour-3MNcdW.jpg",
@@ -34,7 +34,7 @@ export const shoes = {
       price: "$ 80",
       name: "Sneakers Run Breaker",
       mainColor: "white",
-      id: "2",
+      id: 2,
       colors: {
         white: [
           "https://image1.lacoste.com/dw/image/v2/AAQM_PRD/on/demandware.static/Sites-FR-Site/Sites-master/fr/dw6e072fd9/40SMA0001_T66_01.jpg?imwidth=915&impolicy=product",
@@ -56,7 +56,7 @@ export const shoes = {
       price: "$ 80",
       name: "Nike Zoom X",
       mainColor: "orange",
-      id: "3",
+      id: 3,
       colors: {
         orange: [
           "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/6317f4a9-6761-4113-b436-85a87a01795b/chaussure-dentrainement-en-endurance-zoomx-superrep-surge-pour-rg4m19.jpg",
@@ -84,7 +84,7 @@ export const shoes = {
       price: "$ 80",
       name: "Nike Legend React 3",
       mainColor: "blue",
-      id: "4",
+      id: 4,
       colors: {
         blue: [
           "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a5d4c177-4ca1-472a-9c87-d693c3c6dcc6/chaussure-de-running-legend-react-3-shield-pour-wDskG9.jpg",
@@ -106,7 +106,7 @@ export const shoes = {
       price: "$ 80",
       name: "Adidas NMD_R1 V1",
       mainColor: "black",
-      id: "5",
+      id: 5,
       colors: {
         black: [
           "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/4d241e5c9bd0492aa085ac6400b327f1_9366/Chaussure_NMD_R1_Noir_FX6794_06_standard.jpg",
@@ -130,7 +130,7 @@ export const shoes = {
       price: "$ 80",
       name: "Nike React Infinity Run Flyknit 2",
       mainColor: "pink",
-      id: "6",
+      id: 6,
       colors: {
         pink: [
           "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/767b0f87-f47a-4c9b-bb74-6e875e6c5887/chaussure-de-running-react-infinity-run-flyknit-2-pour-qzRzKl.jpg",
@@ -146,7 +146,7 @@ export const shoes = {
       price: "$ 80",
       name: "Stan Smith",
       mainColor: "white",
-      id: "7",
+      id: 7,
       colors: {
         white: [
           "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/10b5f3e893ad4464960aabd50106a569_9366/Chaussure_Stan_Smith_Blanc_FW2524_01_standard.jpg",
@@ -168,7 +168,7 @@ export const shoes = {
       price: "$ 80",
       name: "Adidas Falcon",
       mainColor: "white",
-      id: "8",
+      id: 8,
       colors: {
         white: [
           "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/2be71a96aa5c4d6886dfac2f0131b1ec_9366/Chaussure_Falcon_Blanc_FW2520_01_standard.jpg",
@@ -190,7 +190,7 @@ export const shoes = {
       price: "$ 80",
       name: "Air Force 1",
       mainColor: "pink",
-      id: "9",
+      id: 9,
       colors: {
         pink: [
           "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/te6y2d0eti6qsqyfvl6e/chaussure-air-force-1-sage-low-pour-zQtBPv.jpg",
@@ -214,7 +214,7 @@ export const shoes = {
       price: "$ 80",
       name: "Nike Revolution 5",
       mainColor: "gray",
-      id: "10",
+      id: 10,
       colors: {
         gray: [
           "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/a1ac8959-4b62-4576-a204-fb41cbe8bbba/chaussure-revolution-5-pour-petit-BgH6Fj.jpg",
@@ -230,7 +230,7 @@ export const shoes = {
       price: "$ 80",
       name: "Nike Vision",
       mainColor: "blue",
-      id: "11",
+      id: 11,
       colors: {
         blue: [
           "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/956338ac-3a10-4cbe-905f-d0f0494cfd2e/chaussure-react-vision-pour-plus-age-pSC5vz.jpg",
@@ -252,7 +252,7 @@ export const shoes = {
       price: "$ 80",
       name: "Nike Valiant",
       mainColor: "black",
-      id: "12",
+      id: 12,
       colors: {
         black: [
           "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/47ea58af-3d36-4ba0-b3e9-03f30260b473/chaussure-md-valiant-pour-et-petit-0GDDx9.jpg",
@@ -273,7 +273,7 @@ export const clothes = {
       price: "$ 120",
       name: "Nike Sport Jacket",
       mainColor: "white",
-      id: "13",
+      id: 13,
       colors: {
         white: [
           "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/6aec520c-f008-41a9-8f7a-e9884267d47a/sweat-a-capuche-entierement-zippe-camouflage-sportswear-tech-fleece-pour-PpdHNV.jpg",
@@ -295,7 +295,7 @@ export const clothes = {
       price: "$ 120",
       name: "Nike Sportswear Club Fleece",
       mainColor: "red",
-      id: "14",
+      id: 14,
       colors: {
         red: [
           "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/nl2xle7edpxe0ggnalzw/sweat-a-capuche-sportswear-club-fleece-39qLnk.jpg",
@@ -317,7 +317,7 @@ export const clothes = {
       price: "$ 120",
       name: "Adidas Jacket",
       mainColor: "blue",
-      id: "15",
+      id: 15,
       colors: {
         blue: [
           "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/d7e1f9f92762438aa8fdaa4500aae950_9366/Doudoune_a_capuche_Varilite_Soft_Bleu_DZ1447_21_model.jpg",
@@ -339,7 +339,7 @@ export const clothes = {
       price: "$ 120",
       name: "Adidas Sweat pants",
       mainColor: "red",
-      id: "16",
+      id: 16,
       colors: {
         red: [
           "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/ffeb37a255444a978a82ab8b00ab23c4_9366/Pantalon_de_survetement_Adicolor_Classics_Primeblue_SST_Rouge_GF0208_21_model.jpg",
@@ -363,7 +363,7 @@ export const clothes = {
       genre: "women",
       name: "Nike Sportswear Icon Clash",
       mainColor: "black",
-      id: "17",
+      id: 17,
       colors: {
         black: [
           "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/9c1f356c-95f2-48d4-8aa2-965f329b0ae2/legging-taille-haute-sportswear-icon-clash-pour-Wl0Hl3.jpg",
@@ -379,7 +379,7 @@ export const clothes = {
       genre: "women",
       name: "Jordan Moto",
       mainColor: "black",
-      id: "18",
+      id: 18,
       colors: {
         black: [
           "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/i1-9dea31af-bc80-421a-8721-8cc1d7bce9b2/haut-court-jordan-moto-pour-VjvdRq.jpg",
@@ -395,7 +395,7 @@ export const clothes = {
       genre: "women",
       name: "Adidas Stripes Shorts",
       mainColor: "red",
-      id: "19",
+      id: 19,
       colors: {
         red: [
           "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/686336201aff4afdb8f1ac4400e94cb6_9366/Short_Adicolor_Classics_3-Stripes_Rouge_GN2886_21_model.jpg",
@@ -411,7 +411,7 @@ export const clothes = {
       genre: "women",
       name: "Adidas Sweat Shirt",
       mainColor: "white",
-      id: "20",
+      id: 20,
       colors: {
         white: [
           "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/a7907f66cd0147f7aee3ac85007945df_9366/Sweat-shirt_a_capuche_LOUNGEWEAR_Adicolor_Essentials_Blanc_H45581_21_model.jpg",
@@ -435,7 +435,7 @@ export const clothes = {
       genre: "kids",
       name: "Nike Sportswear",
       mainColor: "gray",
-      id: "21",
+      id: 21,
       colors: {
         gray: [
           "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/vm6ob7sb9lciwasdak8k/sweat-a-capuche-a-zip-integral-sportswear-pour-Vt3Rps.jpg",
@@ -457,7 +457,7 @@ export const clothes = {
       genre: "kids",
       name: "Nike Kids Jacket",
       mainColor: "white",
-      id: "22",
+      id: 22,
       colors: {
         white: [
           "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/eb1ea280-d150-4f0e-bd53-9835cd0776b5/veste-deperlante-a-garnissage-synthetique-avec-effet-marbre-sportswear-pour-plus-age-M1PHkH.jpg",
@@ -473,7 +473,7 @@ export const clothes = {
       genre: "kids",
       name: "Nike Sportswear Windrunner",
       mainColor: "blue",
-      id: "23",
+      id: 23,
       colors: {
         blue: [
           "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/ec0b21f1-086c-47ee-8665-4799c5037965/veste-sportswear-windrunner-pour-plus-age-3mzkTS.jpg",

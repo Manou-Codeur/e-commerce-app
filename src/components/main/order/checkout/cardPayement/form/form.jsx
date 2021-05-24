@@ -15,6 +15,8 @@ import "./form.scss";
 const Form = ({
   onChange: { setCardHolder, setCardNumber, setCardExp, setCardType },
 }) => {
+  console.log("checkout form--render");
+
   const [globalerrors, setGlobalErrors] = useState(false);
   const [paying, setPaying] = useState(false);
 
@@ -50,6 +52,8 @@ const Form = ({
   };
 
   const generateCardType = cardNumber => {
+    // console.log("funct--call");
+
     const number = cardNumber;
     let re;
     for (const [card, pattern] of Object.entries(CARDS)) {
@@ -79,7 +83,7 @@ const Form = ({
       setCardNumber(formalizeCardNumber(values.cardNumber));
       setCardType(generateCardType(values.cardNumber));
     }
-  }, [values.cardNumber]);
+  }, [values.cardNumber, generateCardType, setCardNumber, setCardType]);
 
   useEffect(() => {
     if (values.holderName === "") setCardHolder("UserName");

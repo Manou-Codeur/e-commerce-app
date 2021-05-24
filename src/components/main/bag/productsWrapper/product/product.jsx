@@ -12,7 +12,7 @@ const Product = ({ data }) => {
   //local storage data
   let allProducts = JSON.parse(localStorage.getItem("products"));
   const productIndex = allProducts.findIndex(
-    product => product.pid == data.pid
+    product => parseInt(product.pid) === data.pid
   );
 
   const handleOnRemove = () => {

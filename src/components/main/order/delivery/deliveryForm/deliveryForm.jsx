@@ -17,29 +17,23 @@ import "./deliveryForm.scss";
 const DeliveryForm = () => {
   const { goToStep } = useContext(OrderContext);
 
-  const {
-    values,
-    touched,
-    errors,
-    handleSubmit,
-    handleChange,
-    handleBlur,
-  } = useFormik({
-    initialValues: {
-      firstName: "",
-      lastName: "",
-      phone: "",
-      email: "",
-      country: "",
-      city: "",
-      zipCode: "",
-      address: "",
-    },
-    validationSchema: Yup.object(deliveryInputsSchema),
-    onSubmit: values => {
-      doSubmit(values);
-    },
-  });
+  const { values, touched, errors, handleSubmit, handleChange, handleBlur } =
+    useFormik({
+      initialValues: {
+        firstName: "",
+        lastName: "",
+        phone: "",
+        email: "",
+        country: "",
+        city: "",
+        zipCode: "",
+        address: "",
+      },
+      validationSchema: Yup.object(deliveryInputsSchema),
+      onSubmit: values => {
+        doSubmit(values);
+      },
+    });
 
   const doSubmit = values => {
     goToStep("checkout");
@@ -72,7 +66,11 @@ const DeliveryForm = () => {
         />
       </div>
 
-      <button className="delivery-form__submit" onClick={handleSubmit}>
+      <button
+        className="delivery-form__submit"
+        onClick={handleSubmit}
+        type="submit"
+      >
         Submit
       </button>
     </div>
