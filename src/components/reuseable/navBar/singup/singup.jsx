@@ -15,6 +15,8 @@ import { ReactComponent as Close } from "../../../../assets/img/close.svg";
 import Logo from "../../../../assets/img/logo.png";
 
 const SingUp = ({ closeSingup, firebase }) => {
+  console.log("singUp--render");
+
   const [registering, setRegistering] = useState(false);
   const [globalErrors, setGlobalErrors] = useState(null);
 

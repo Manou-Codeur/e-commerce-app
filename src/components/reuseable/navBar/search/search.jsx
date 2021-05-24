@@ -10,6 +10,8 @@ import Logo from "../../../../assets/img/logo.png";
 import { ReactComponent as Close } from "../../../../assets/img/close.svg";
 
 const Search = ({ closeSearch }) => {
+  console.log("search--render");
+
   const [filtredProducts, setFiltredProducts] = useState([]);
 
   const onQueryChange = ({ target }) => {
