@@ -6,9 +6,10 @@
   .singup {
     @include card-style;
     height: 43em;
+    overflow-y: scroll;
 
     &__btn--margin {
-      margin-top: 2.5em;
+      margin: 2.5em 0 1em 0;
     }
 
     @media only screen and (max-width: 800px) {

@@ -4,11 +4,7 @@ import { motion } from "framer-motion";
 import InputsWrapper from "./../../inputsWrapper/inputsWrapper";
 
 import { handleErrors } from "../../../../server/firebase/errorHandling";
-import {
-  checkErrors,
-  useCustomFormik,
-  closeFormWithNoBubbling,
-} from "../helper-functions";
+import { useCustomFormik, closeFormWithNoBubbling } from "../helper-functions";
 import { generateSingupInputs } from "../inputs-list";
 import "./singup.scss";
 import { ReactComponent as Close } from "../../../../assets/img/close.svg";
