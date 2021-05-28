@@ -10,7 +10,7 @@ import OrderContext from "./../../../context/orderContext";
 import "./order.scss";
 
 const Order = ({ history }) => {
-  const [orderStep, setOrderStep] = useState("checkout");
+  const [orderStep, setOrderStep] = useState("delivery");
 
   //get products length from redux store, then test if the user is allowed to get to this page
   const productsLength = useSelector(

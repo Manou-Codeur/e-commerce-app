@@ -26,7 +26,7 @@ const Orders = ({ uid }) => {
     fetchBuyedProducts();
 
     return () => firebase.getBuyedProducts(uid).off();
-  });
+  }, []);
 
   useEffect(() => {
     //handle unexpected errors; if the user is still seeying the "loading" msg for 10 sec

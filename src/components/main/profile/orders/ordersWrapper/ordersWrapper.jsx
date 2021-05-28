@@ -12,11 +12,11 @@ const OrdersWrapper = ({ products, errors }) => {
       {products.length === 0 ? (
         <span>You have not purchased any product yet!</span>
       ) : (
-        products.map(product => (
-          <AnimatePresence>
+        <AnimatePresence>
+          {products.map(product => (
             <Order data={product} key={product.img} />
-          </AnimatePresence>
-        ))
+          ))}
+        </AnimatePresence>
       )}
     </div>
   );
