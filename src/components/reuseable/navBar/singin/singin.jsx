@@ -6,9 +6,9 @@ import InputsWrapper from "../../inputsWrapper/inputsWrapper";
 import { handleErrors } from "../../../../server/firebase/errorHandling";
 import { useCustomFormik, closeFormWithNoBubbling } from "../helper-functions";
 import { generateSinginInputs } from "../inputs-list";
-import "./singin.scss";
 import { ReactComponent as Close } from "../../../../assets/img/close.svg";
 import Logo from "../../../../assets/img/logo.png";
+import "./singin.scss";
 
 const Singin = ({ closeLogin, openSingUp, firebase, openPasswordReset }) => {
   const [logging, setLogging] = useState(false);

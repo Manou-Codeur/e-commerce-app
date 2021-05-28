@@ -33,6 +33,12 @@ const Product = ({ data }) => {
       <div className="bag-product__info">
         <span className="bag-product__name">{data.name}</span>
         <span className="bag-product__genre">{`${data.genre}'s ${data.type}`}</span>
+        <div className="bag-product__size">
+          <span>Size</span>
+          <strong>
+            <span className="size">{data.size}</span>
+          </strong>
+        </div>
         <div className="bag-product__amountAndPrice">
           <AmountSelect
             pid={data.pid}
@@ -40,7 +46,9 @@ const Product = ({ data }) => {
             allProducts={allProducts}
             productIndex={productIndex}
           />
-          <span className="price">{data.price}</span>
+          <strong>
+            <span className="price">{data.price}</span>
+          </strong>
         </div>
         <button className="bag-product__remove-btn" onClick={handleOnRemove}>
           Remove

@@ -9,7 +9,7 @@ const ProductsWrapper = ({ fetchedProducts }) => {
     <div className="product-wrapper">
       {fetchedProducts.length > 0 ? (
         fetchedProducts.map(product => (
-          <Product data={product} key={product.img} />
+          <Product data={product} key={product.img + product.size} />
         ))
       ) : (
         <h1>There's no products in you bag!</h1>

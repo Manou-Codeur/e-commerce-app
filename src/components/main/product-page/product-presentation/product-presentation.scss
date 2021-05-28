@@ -36,11 +36,22 @@
         font-weight: 600;
         cursor: pointer;
         outline: none;
+
+        &:disabled {
+          cursor: not-allowed;
+        }
       }
 
       .price {
         font-weight: 700;
       }
+    }
+
+    .product-presentation__errors {
+      color: red;
+      margin: 0.5em 0;
+      font-size: 1.1em;
+      font-weight: 600;
     }
   }
 

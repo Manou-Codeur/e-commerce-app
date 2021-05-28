@@ -38,6 +38,13 @@
       margin-bottom: 0.5em;
     }
 
+    .bag-product__size {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin: 0.1em 0 0.5em 0;
+    }
+
     .bag-product__amountAndPrice {
       display: flex;
       align-items: flex-end;

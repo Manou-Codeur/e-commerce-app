@@ -65,6 +65,7 @@ export const fetchCardProducts = cardProducts => {
       pid: fullProductDetails.id,
       img: fullProductDetails.colors[cardProduct.color][0],
       amount: cardProduct.amount,
+      size: cardProduct.size,
     };
     products.push(product);
   }
