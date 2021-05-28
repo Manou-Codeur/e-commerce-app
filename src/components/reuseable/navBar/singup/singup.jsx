@@ -92,6 +92,7 @@ const SingUp = ({ closeSingup, firebase }) => {
           className="singup__btn singup__btn--margin"
           disabled={registering || Object.keys(errors).length > 0}
           onClick={handleSubmit}
+          type="submit"
         >
           {registering ? "REGISTERING" : "REGISTER"}
         </button>

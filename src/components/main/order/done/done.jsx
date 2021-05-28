@@ -10,7 +10,7 @@ const Done = () => {
 
   useEffect(() => {
     //clear the store and the local storage
-    setTimeout(() => dispatch(clearCard()), 2000);
+    dispatch(clearCard());
     localStorage.setItem("products", JSON.stringify([]));
   }, []);
 
@@ -20,7 +20,7 @@ const Done = () => {
         <DoneIcon />
       </div>
 
-      <h2>Thank you Salim! Your order has been confirmed</h2>
+      <h2>Thank you, Your order has been confirmed!</h2>
     </div>
   );
 };

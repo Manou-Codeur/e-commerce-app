@@ -15,9 +15,7 @@ import "./form.scss";
 const Form = ({
   onChange: { setCardHolder, setCardNumber, setCardExp, setCardType },
 }) => {
-  console.log("checkout form--render");
-
-  const [globalerrors, setGlobalErrors] = useState(false);
+  const [globalErrors, setGlobalErrors] = useState(false);
   const [paying, setPaying] = useState(false);
 
   const { goToStep } = useContext(OrderContext);
@@ -52,8 +50,6 @@ const Form = ({
   };
 
   const generateCardType = cardNumber => {
-    // console.log("funct--call");
-
     const number = cardNumber;
     let re;
     for (const [card, pattern] of Object.entries(CARDS)) {
@@ -83,7 +79,7 @@ const Form = ({
       setCardNumber(formalizeCardNumber(values.cardNumber));
       setCardType(generateCardType(values.cardNumber));
     }
-  }, [values.cardNumber, generateCardType, setCardNumber, setCardType]);
+  }, [values.cardNumber]);
 
   useEffect(() => {
     if (values.holderName === "") setCardHolder("UserName");
@@ -120,11 +116,12 @@ const Form = ({
       setPaying(true);
       await firebase.addBuyedProducts(products);
       // 3. do something about the payment
+      setPaying(false);
       goToStep("done");
     } catch (error) {
+      setPaying(false);
       setGlobalErrors(error);
     }
-    setPaying(false);
   };
 
   return (
@@ -152,8 +149,8 @@ const Form = ({
         {paying ? "Processing..." : `Pay ${totalPrice}`}
       </button>
 
-      {globalerrors && (
-        <span className="form__error-message">{globalerrors}</span>
+      {globalErrors && (
+        <span className="form__error-message">{globalErrors}</span>
       )}
     </div>
   );

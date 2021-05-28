@@ -13,8 +13,8 @@ const OrdersWrapper = ({ products, errors }) => {
         <span>You have not purchased any product yet!</span>
       ) : (
         <AnimatePresence>
-          {products.map(product => (
-            <Order data={product} key={product.img} />
+          {products.map((product, index) => (
+            <Order data={product} key={index} />
           ))}
         </AnimatePresence>
       )}
