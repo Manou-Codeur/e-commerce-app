@@ -2,6 +2,7 @@ import { createAction, createReducer } from "@reduxjs/toolkit";
 import jwtGenerator from "jwt-decode";
 
 //if the user is authed => state with uid, else => state without any data
+var initState;
 try {
   const { user_id, aud } = jwtGenerator(
     JSON.parse(localStorage.getItem("user-authed"))
@@ -9,12 +10,12 @@ try {
 
   if (aud !== "react-e-commerce-app-18fea") throw new Error();
 
-  var initState = {
+  initState = {
     userAuthed: true,
     uid: user_id,
   };
 } catch (e) {
-  var initState = {
+  initState = {
     userAuthed: false,
     uid: null,
   };

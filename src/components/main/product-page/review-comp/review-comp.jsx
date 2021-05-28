@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 
 import ReviewsArea from "./reviews-area/reviews-area";
 import ReviewForm from "./review-form/review-form";
-import HistoryContext from "./../../../../context/historyContext";
 import FirebaseContext from "./../../../../server/firebase/firebaseContext";
 
 import "./review-comp.scss";

@@ -58,9 +58,4 @@ const Product = ({ data }) => {
   );
 };
 
-const areEqual = ({ data: prevData }, { data: nextData }) => {
-  if (prevData.amount !== nextData.amount) return false;
-  return true;
-};
-
-export default React.memo(Product, areEqual);
+export default Product;

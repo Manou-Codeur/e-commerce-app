@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 
 import ReviewsWrapper from "./reviews-wrapper/reviews-wrapper";
 
@@ -8,6 +8,15 @@ const ReviewsArea = ({ productId, firebase }) => {
   const [reviews, setReviews] = useState(null);
   const [errors, setErrors] = useState(false);
 
+  const fetchReviews = useCallback(() => {
+    const data = firebase.getProductReviews(productId);
+    data.on("value", snapshot => {
+      const reviewsObj = snapshot.val();
+      if (reviewsObj) setReviews(Object.values(reviewsObj));
+      else setReviews([]);
+    });
+  }, [productId, firebase]);
+
   useEffect(() => {
     fetchReviews();
 
@@ -15,7 +24,7 @@ const ReviewsArea = ({ productId, firebase }) => {
     return () => {
       firebase.getProductReviews(productId).off();
     };
-  }, [productId]);
+  }, [productId, firebase, fetchReviews]);
 
   useEffect(() => {
     //handle unexpected errors; if the user is still seeying the "loading" msg for 10 sec
@@ -29,15 +38,6 @@ const ReviewsArea = ({ productId, firebase }) => {
       clearTimeout(timer);
     };
   });
-
-  const fetchReviews = () => {
-    const data = firebase.getProductReviews(productId);
-    data.on("value", snapshot => {
-      const reviewsObj = snapshot.val();
-      if (reviewsObj) setReviews(Object.values(reviewsObj));
-      else setReviews([]);
-    });
-  };
 
   return (
     <div className="reviews-area">
