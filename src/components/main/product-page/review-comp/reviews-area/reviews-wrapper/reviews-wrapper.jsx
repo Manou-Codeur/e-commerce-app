@@ -12,7 +12,9 @@ const ReviewsWrapper = ({ reviews, errors }) => {
   return (
     <div className="reviews-wrapper">
       {reviews.length > 0 ? (
-        reviews.map(review => <Review data={review} />)
+        reviews.map(review => (
+          <Review data={review} key={new Date().getMilliseconds()} />
+        ))
       ) : (
         <span>There's no reviews.</span>
       )}

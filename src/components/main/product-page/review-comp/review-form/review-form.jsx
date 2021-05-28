@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
@@ -33,6 +33,13 @@ const ReviewForm = ({ productId, firebase, userAuthed }) => {
       doSubmit(values);
     },
   });
+
+  useEffect(() => {
+    setFormMessage({
+      error: false,
+      message: null,
+    });
+  }, [productId]);
 
   const doSubmit = values => {
     const { rating, title, description } = values;

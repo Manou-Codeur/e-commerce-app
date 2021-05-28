@@ -7,8 +7,7 @@ import FirebaseContext from "./../../../../server/firebase/firebaseContext";
 
 import "./review-comp.scss";
 
-const ReviewComp = ({ userAuthed }) => {
-  const { productId } = useContext(HistoryContext);
+const ReviewComp = ({ userAuthed, productId }) => {
   const { firebase } = useContext(FirebaseContext);
 
   return (

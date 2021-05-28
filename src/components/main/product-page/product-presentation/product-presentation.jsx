@@ -25,7 +25,7 @@ const ProductPresentation = ({ productId, userAuthed }) => {
   }, [productId]);
 
   useEffect(() => {
-    setErrors(null);
+    if (errors) setErrors(null);
   }, [currColor, productId]);
 
   function getOtherColors() {

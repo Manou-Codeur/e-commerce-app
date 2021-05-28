@@ -33,7 +33,7 @@ const ProdcutPage = ({
             productId={productDetails.id}
             userAuthed={userAuthed}
           />
-          <ReviewComp userAuthed={userAuthed} />
+          <ReviewComp userAuthed={userAuthed} productId={productDetails.id} />
           <Recommend
             headingTitle="You May Like Also"
             productList={fetchRecommendations(productDetails.name)}
