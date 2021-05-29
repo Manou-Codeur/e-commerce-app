@@ -28,33 +28,40 @@ const useStyles = makeStyles({
   },
 });
 
-const SizeSelect = forwardRef(({ productType, productGenre }, ref) => {
-  const classes = useStyles();
+const SizeSelect = forwardRef(
+  ({ productType, productGenre, handleOnChange }, ref) => {
+    const classes = useStyles();
 
-  const generateSizes = () => {
-    if (productType === "clothes") {
-      return ["S", "M", "L", "XL"];
-    }
-    return productGenre === "kids"
-      ? [22, 23, 25, 26, 27, 28, 29]
-      : [36, 37, 38, 39, 40, 41, 42];
-  };
+    const generateSizes = () => {
+      if (productType === "clothes") {
+        return ["S", "M", "L", "XL"];
+      }
+      return productGenre === "kids"
+        ? [22, 23, 25, 26, 27, 28, 29]
+        : [36, 37, 38, 39, 40, 41, 42];
+    };
 
-  return (
-    <div className="size-select">
-      <FormControl variant="standard" className={classes.root}>
-        <InputLabel id="size-select">Select Size</InputLabel>
+    return (
+      <div className="size-select">
+        <FormControl variant="standard" className={classes.root}>
+          <InputLabel id="size-select">Select Size</InputLabel>
 
-        <Select labelId="size-select" defaultValue="" ref={ref}>
-          {generateSizes().map(size => (
-            <MenuItem value={size} key={size}>
-              {size}
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-    </div>
-  );
-});
+          <Select
+            labelId="size-select"
+            defaultValue=""
+            ref={ref}
+            onChange={e => handleOnChange({ error: false, message: null })}
+          >
+            {generateSizes().map(size => (
+              <MenuItem value={size} key={size}>
+                {size}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+      </div>
+    );
+  }
+);
 
 export default SizeSelect;

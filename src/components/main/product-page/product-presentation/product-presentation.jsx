@@ -10,10 +10,15 @@ import { fetchProduct } from "./../../../../server/fake-db/db-functions";
 import "./product-presentation.scss";
 
 const ProductPresentation = ({ productId, userAuthed }) => {
+  console.log("prese--render");
+
   const sizeRef = createRef();
   const [product, setProduct] = useState(null);
   const [currColor, setCurrColor] = useState(null);
-  const [errors, setErrors] = useState(null);
+  const [cardMessage, setCardMessage] = useState({
+    error: false,
+    message: null,
+  });
 
   const dispatch = useDispatch();
 
@@ -25,7 +30,7 @@ const ProductPresentation = ({ productId, userAuthed }) => {
   }, [productId]);
 
   useEffect(() => {
-    if (errors) setErrors(null);
+    if (cardMessage.message) setCardMessage({ error: false, message: null });
   }, [currColor, productId]);
 
   function getOtherColors() {
@@ -56,7 +61,10 @@ const ProductPresentation = ({ productId, userAuthed }) => {
         els.size === sizeRef.current.textContent
       ) {
         if (els.amount == 5) {
-          setErrors("Can't add more than 5 items of the same product!");
+          setCardMessage({
+            error: true,
+            message: "Can't add more than 5 items of the same product!",
+          });
           return;
         } else {
           els.amount += 1;
@@ -81,6 +89,7 @@ const ProductPresentation = ({ productId, userAuthed }) => {
     }
     //update both localstorage
     localStorage.setItem("products", JSON.stringify(products));
+    setCardMessage({ error: false, message: "Product added to the card!" });
   };
 
   if (product)
@@ -98,15 +107,25 @@ const ProductPresentation = ({ productId, userAuthed }) => {
             productType={product.type}
             productGenre={product.genre}
             ref={sizeRef}
+            handleOnChange={setCardMessage}
           />
           <div className="product-presentation__payment">
-            <button onClick={handleAddToCard} disabled={!userAuthed || errors}>
+            <button
+              onClick={handleAddToCard}
+              disabled={!userAuthed || cardMessage.error}
+            >
               {userAuthed ? "Add to card" : "Sing in to buy"}
             </button>
             <span className="price">{product.price}</span>
           </div>
-          {errors && (
-            <div className="product-presentation__errors">{errors}</div>
+          {cardMessage.message && (
+            <div
+              className={`product-presentation__${
+                cardMessage.error ? "errors" : "success"
+              }`}
+            >
+              {cardMessage.message}
+            </div>
           )}
         </div>
       </div>
