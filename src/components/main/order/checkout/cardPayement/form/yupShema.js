@@ -1,11 +1,10 @@
 import * as Yup from "yup";
 
 export const checkoutInputsSchema = {
-  cardNumber: Yup.number().required("Card number is required!"),
+  cardNumber: Yup.number().min(16).max(16).required("Card number is required!"),
   holderName: Yup.string()
     .matches(/^[a-z ,.'-]+$/i, { message: "Invalid holder name" })
     .max(55)
-    .min(8)
     .required("Holder name is required!")
     .trim(),
   expirationDate: Yup.number().required("Expiration date is required!"),
