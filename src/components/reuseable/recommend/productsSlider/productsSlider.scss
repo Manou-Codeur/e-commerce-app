@@ -16,6 +16,11 @@
     transform: translateY(-50%);
     cursor: pointer;
     z-index: 10;
+
+    &--disable {
+      opacity: 0.2;
+      cursor: not-allowed;
+    }
   }
 
   &__left-control {

@@ -8,6 +8,8 @@ import "./productsSlider.scss";
 
 const ProductsSlider = ({ productsList }) => {
   const containner = useRef();
+  const leftCursor = useRef();
+  const rightCursor = useRef();
 
   useEffect(() => {
     //init the left property of the containner to 0
@@ -18,9 +20,9 @@ const ProductsSlider = ({ productsList }) => {
   const goRight = () => {
     const recommendComponent = document.querySelector(".recommend");
     const body = document.body;
-    const scrollAmount =
+    let scrollAmount =
       containner.current.clientWidth - recommendComponent.clientWidth;
-    const currPosition =
+    let currPosition =
       containner.current.style.left.split("px")[0] !== ""
         ? parseFloat(containner.current.style.left.split("px")[0])
         : 0;
@@ -38,18 +40,41 @@ const ProductsSlider = ({ productsList }) => {
         containner.current.style.left = `${currPosition - FifthScrollAmount}px`;
       }
     }
+
+    //about cursors disabilty
+    scrollAmount =
+      containner.current.clientWidth - recommendComponent.clientWidth;
+    currPosition =
+      containner.current.style.left.split("px")[0] !== ""
+        ? parseFloat(containner.current.style.left.split("px")[0])
+        : 0;
+    leftCursor.current.className = "products-slider__left-control";
+    if (currPosition === -scrollAmount) {
+      rightCursor.current.className +=
+        " products-slider__right-control--disable";
+    }
   };
 
   const goLeft = () => {
     containner.current.style.left = "0";
+    leftCursor.current.className += " products-slider__left-control--disable";
+    rightCursor.current.className = "products-slider__right-control";
   };
 
   return (
     <div className="products-slider">
-      <div className="products-slider__left-control" onClick={goLeft}>
+      <div
+        className="products-slider__left-control products-slider__left-control--disable"
+        onClick={goLeft}
+        ref={leftCursor}
+      >
         <LeftArrow />
       </div>
-      <div className="products-slider__right-control" onClick={goRight}>
+      <div
+        className="products-slider__right-control"
+        onClick={goRight}
+        ref={rightCursor}
+      >
         <RightArrow />
       </div>
 

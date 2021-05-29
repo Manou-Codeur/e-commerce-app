@@ -10,8 +10,6 @@ import { fetchProduct } from "./../../../../server/fake-db/db-functions";
 import "./product-presentation.scss";
 
 const ProductPresentation = ({ productId, userAuthed }) => {
-  console.log("prese--render");
-
   const sizeRef = createRef();
   const [product, setProduct] = useState(null);
   const [currColor, setCurrColor] = useState(null);
