@@ -1,7 +1,9 @@
 import * as Yup from "yup";
 
 export const checkoutInputsSchema = {
-  cardNumber: Yup.number().min(16).max(16).required("Card number is required!"),
+  cardNumber: Yup.number()
+    .required("Card number is required!")
+    .min(16, "Card number must be equal to 16 digits"),
   holderName: Yup.string()
     .matches(/^[a-z ,.'-]+$/i, { message: "Invalid holder name" })
     .max(55)
