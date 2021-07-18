@@ -42,20 +42,20 @@ const MobileNavBar = ({
         <Link className="nav-bar__links--white" to="/kids">
           Kids
         </Link>
-        <a
+        <Link
           className="nav-bar__links--white"
           onClick={() => setSearchOpen(true)}
         >
           Search
-        </a>
-        <a className="nav-bar__links--white" onClick={SingOut_SingIn}>
+        </Link>
+        <Link className="nav-bar__links--white" onClick={SingOut_SingIn}>
           {userAuthed ? "Sing Out" : "Sing In"}
-        </a>
+        </Link>
         <Link className="nav-bar__links--white" to="/bag">
           {`My Card (${cardLength})`}
         </Link>
         {userAuthed && (
-          <Link className="nav-bar__links" to="/profile">
+          <Link className="nav-bar__links--white" to="/profile">
             My Profile
           </Link>
         )}
