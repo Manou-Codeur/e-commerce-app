@@ -7,6 +7,8 @@ import "./bagSummary.scss";
 const BagSummary = ({ totalPrice }) => {
   const { history } = useContext(HistoryContext);
 
+  const goToOrder = () => history.push("/order");
+
   return (
     <div className="bag-summary">
       <h2>Summary</h2>
@@ -24,10 +26,7 @@ const BagSummary = ({ totalPrice }) => {
         <span className="price">{totalPrice}</span>
       </div>
 
-      <button
-        disabled={totalPrice === "$ 0.00"}
-        onClick={() => history.push("/order")}
-      >
+      <button disabled={totalPrice === "$ 0.00"} onClick={goToOrder}>
         Payment
       </button>
     </div>

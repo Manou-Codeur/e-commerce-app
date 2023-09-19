@@ -3,12 +3,14 @@ import React from "react";
 import "./notFound.scss";
 
 const NotFound = ({ history }) => {
+  const goHome = () => history.push("/");
+
   return (
     <div className="not-found">
       <div className="not-found__main">
         <h1>Oops... Page Not Found!</h1>
 
-        <button onClick={() => history.push("/")}>Go Home</button>
+        <button onClick={goHome}>Go Home</button>
       </div>
     </div>
   );

@@ -54,12 +54,16 @@ const SingUp = ({ closeSingup, firebase }) => {
     setRegistering(false);
   }
 
+  const closeForm = e => {
+    closeFormWithNoBubbling(e, closeSingup);
+  };
+
   return (
     <motion.div
       transition={{ duration: 0.6 }}
       exit={{ opacity: 0 }}
       className="singup--background"
-      onClick={e => closeFormWithNoBubbling(e, closeSingup)}
+      onClick={closeForm}
       onKeyPress={e => {
         if (e.key === "Enter") handleSubmit();
       }}

@@ -4,8 +4,10 @@ import { Link } from "react-router-dom";
 import "./search-result.scss";
 
 const SearchResult = ({ filtredProducts, closeSearch }) => {
+  const _closeSearch = () => closeSearch();
+
   return (
-    <div className="search-result" onClick={() => closeSearch()}>
+    <div className="search-result" onClick={_closeSearch}>
       <span>
         {filtredProducts.length === 0 ? "Popular searches" : "Best suggestion"}
       </span>

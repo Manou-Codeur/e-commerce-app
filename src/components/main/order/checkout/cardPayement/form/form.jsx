@@ -113,13 +113,13 @@ const Form = ({
 
   const doSubmit = async values => {
     try {
-      setPaying(true);
+      setPaying(prev => !prev);
       await firebase.addBuyedProducts(products);
       // 3. do something about the payment
-      setPaying(false);
+      setPaying(prev => !prev);
       goToStep("done");
     } catch (error) {
-      setPaying(false);
+      setPaying(prev => !prev);
       setGlobalErrors(error);
     }
   };

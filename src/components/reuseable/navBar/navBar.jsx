@@ -36,6 +36,8 @@ const NavBar = () => {
 
   const userAuthed = useSelector(({ authReducer }) => authReducer.userAuthed);
 
+  const openSearch = () => setSearchOpen(true);
+
   const SingOut_SingIn = () => {
     //sing out
     if (userAuthed) {
@@ -69,7 +71,7 @@ const NavBar = () => {
       </a>
 
       <div className="nav-bar__right-part">
-        <a className="nav-bar__links" onClick={() => setSearchOpen(true)}>
+        <a className="nav-bar__links" onClick={openSearch}>
           Search
         </a>
         <a className="nav-bar__links" onClick={SingOut_SingIn} id="singIn">

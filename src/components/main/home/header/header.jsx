@@ -8,40 +8,40 @@ import airJordan from "../../../../assets/img/featured-products/air-jordan.png";
 import nikeLegend from "../../../../assets/img/featured-products/nike-legende.png";
 import adidasNMD from "../../../../assets/img/featured-products/adidas-uqt.png";
 
-const Header = () => {
-  const featuredProduct = [
-    {
-      type: "shoes",
-      genre: "Men",
-      name: "airJordan",
-      completeName: "New Air Jordan React Elevation",
-      id: 1,
-      hexColor: "#3867d6",
-      namedColor: "blue",
-      node: airJordan,
-    },
-    {
-      type: "shoes",
-      genre: "Men",
-      name: "nikeLegend",
-      completeName: "New Nike Legend React 3",
-      id: 4,
-      hexColor: "#64a9b0",
-      namedColor: "blue",
-      node: nikeLegend,
-    },
-    {
-      type: "shoes",
-      genre: "Men",
-      name: "adidasNMD",
-      completeName: "New Adidas NMD_R1 V1",
-      id: 5,
-      hexColor: "#FF443C",
-      namedColor: "black",
-      node: adidasNMD,
-    },
-  ];
+const featuredProduct = [
+  {
+    type: "shoes",
+    genre: "Men",
+    name: "airJordan",
+    completeName: "New Air Jordan React Elevation",
+    id: 1,
+    hexColor: "#3867d6",
+    namedColor: "blue",
+    node: airJordan,
+  },
+  {
+    type: "shoes",
+    genre: "Men",
+    name: "nikeLegend",
+    completeName: "New Nike Legend React 3",
+    id: 4,
+    hexColor: "#64a9b0",
+    namedColor: "blue",
+    node: nikeLegend,
+  },
+  {
+    type: "shoes",
+    genre: "Men",
+    name: "adidasNMD",
+    completeName: "New Adidas NMD_R1 V1",
+    id: 5,
+    hexColor: "#FF443C",
+    namedColor: "black",
+    node: adidasNMD,
+  },
+];
 
+const Header = () => {
   let [index, setIndex] = useState(0);
   let currProduct = featuredProduct[index];
 

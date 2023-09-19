@@ -17,13 +17,12 @@ const MobileNavBar = ({
     if (target.className !== "nav-bar__mobile") setMenuOpen(false);
   };
 
+  const openMenu = () => setMenuOpen(true);
+  const openSearch = () => setSearchOpen(true);
+
   return (
     <Fragment>
-      <Menu
-        className="nav-bar__menu-bar"
-        stroke="black"
-        onClick={() => setMenuOpen(true)}
-      />
+      <Menu className="nav-bar__menu-bar" stroke="black" onClick={openMenu} />
 
       <motion.div
         animate={!menuOpen ? { left: "100%" } : { left: 0 }}
@@ -42,10 +41,7 @@ const MobileNavBar = ({
         <Link className="nav-bar__links--white" to="/kids">
           Kids
         </Link>
-        <Link
-          className="nav-bar__links--white"
-          onClick={() => setSearchOpen(true)}
-        >
+        <Link className="nav-bar__links--white" onClick={openSearch}>
           Search
         </Link>
         <Link className="nav-bar__links--white" onClick={SingOut_SingIn}>

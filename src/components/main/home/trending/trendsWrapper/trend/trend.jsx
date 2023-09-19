@@ -7,11 +7,10 @@ import "./trend.scss";
 const Trend = ({ data: { imgUrl, name, id }, big }) => {
   const { history } = useContext(HistoryContext);
 
+  const goToProductPage = () => history.push(`/product/${name}@${id}`);
+
   return (
-    <div
-      className={big ? "trend--big" : "trend"}
-      onClick={() => history.push(`/product/${name}@${id}`)}
-    >
+    <div className={big ? "trend--big" : "trend"} onClick={goToProductPage}>
       <div className={big ? "trend--big__img-wrapper" : "trend__img-wrapper"}>
         <img src={imgUrl} alt={name} />
       </div>

@@ -45,6 +45,20 @@ const Singin = ({ closeLogin, openSingUp, firebase, openPasswordReset }) => {
     setLogging(false);
   }
 
+  const closeForm = e => {
+    closeFormWithNoBubbling(e, closeLogin);
+  };
+
+  const openPassForget = () => {
+    closeLogin();
+    openPasswordReset();
+  };
+
+  const openRegister = () => {
+    closeLogin();
+    openSingUp();
+  };
+
   return (
     <motion.div
       className="login--background"
@@ -52,7 +66,7 @@ const Singin = ({ closeLogin, openSingUp, firebase, openPasswordReset }) => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
       exit={{ opacity: 0 }}
-      onClick={e => closeFormWithNoBubbling(e, closeLogin)}
+      onClick={closeForm}
       onKeyPress={e => {
         if (e.key === "Enter") handleSubmit();
       }}
@@ -81,13 +95,7 @@ const Singin = ({ closeLogin, openSingUp, firebase, openPasswordReset }) => {
           eventsFunctions={{ onChange: handleChange, onBlur: handleBlur }}
         />
 
-        <span
-          className="login__forgetPassword"
-          onClick={() => {
-            closeLogin();
-            openPasswordReset();
-          }}
-        >
+        <span className="login__forgetPassword" onClick={openPassForget}>
           Forget password ?
         </span>
 
@@ -102,14 +110,7 @@ const Singin = ({ closeLogin, openSingUp, firebase, openPasswordReset }) => {
 
         <p className="login__goToRegister">
           You are not member yet?
-          <span
-            onClick={() => {
-              closeLogin();
-              openSingUp();
-            }}
-          >
-            Register now.
-          </span>
+          <span onClick={openRegister}>Register now.</span>
         </p>
       </motion.div>
     </motion.div>

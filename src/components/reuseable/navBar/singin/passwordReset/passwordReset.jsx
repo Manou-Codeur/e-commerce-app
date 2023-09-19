@@ -47,12 +47,16 @@ const PasswordReset = ({ closePasswordReset, firebase }) => {
     }
   };
 
+  const closeForm = e => {
+    closeFormWithNoBubbling(e, closePasswordReset);
+  };
+
   return (
     <motion.div
       className="password-reset--background"
       transition={{ duration: 0.6 }}
       exit={{ opacity: 0 }}
-      onClick={e => closeFormWithNoBubbling(e, closePasswordReset)}
+      onClick={closeForm}
       onKeyPress={handleOnEnter}
     >
       <motion.div

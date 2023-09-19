@@ -7,11 +7,10 @@ import "./genre.scss";
 const Genre = ({ data: { genre, imgUrl } }) => {
   const { history } = useContext(HistoryContext);
 
+  const goToGenrePage = () => history.push(`/${genre.toLowerCase()}`);
+
   return (
-    <div
-      className="genre"
-      onClick={() => history.push(`/${genre.toLowerCase()}`)}
-    >
+    <div className="genre" onClick={goToGenrePage}>
       <img className="genre__img" src={imgUrl} alt="People" />
       <div className="genre__name">{genre}</div>
     </div>
